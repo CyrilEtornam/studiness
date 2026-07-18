@@ -1,0 +1,9 @@
+# Raw lecture-slide PDFs and generated per-course staging content are
+# working files, not meant to be committed wholesale — keep the folder
+# structure and docs (README.md, TEMPLATE.*) tracked, ignore the rest.
+sources/*/
+staging/*/
+
+__pycache__/
+*.pyc
+.DS_Store

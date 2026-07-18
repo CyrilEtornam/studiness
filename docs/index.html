@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Studiness</title>
+  <meta name="description" content="An offline field manual for your courses — flashcards, quizzes, and notes.">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F6F3EC">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#17171B">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      var saved = localStorage.getItem('studiness-theme');
+      var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.classList.toggle('dark', dark);
+    })();
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="masthead">Studiness</div>
+    <div class="topbar-actions">
+      <span class="conn-badge" id="conn-badge" hidden>offline</span>
+      <button class="icon-btn" id="btn-theme-toggle" aria-label="Toggle dark mode">&#9788;</button>
+    </div>
+  </header>
+
+  <nav class="course-bar" id="course-bar" hidden aria-label="Choose a course"></nav>
+
+  <main id="view-root"></main>
+
+  <nav class="tabbar" id="tabbar">
+    <button class="tab-btn" data-tab="library" aria-current="page">Library</button>
+    <button class="tab-btn" data-tab="quiz">Quiz</button>
+    <button class="tab-btn" data-tab="notes">Notes</button>
+  </nav>
+
+  <template id="tpl-library">
+    <section class="view view-library">
+      <p class="status-line" id="status-line"></p>
+
+      <button class="btn-continue" id="btn-continue-today">
+        <span class="btn-continue-label">Continue today</span>
+        <span class="btn-continue-count" id="continue-count"></span>
+      </button>
+
+      <h2 class="section-label">Curriculum</h2>
+      <nav class="toc" id="toc" aria-label="Curriculum, in course order"></nav>
+
+      <h2 class="section-label">Practice Exams</h2>
+      <div class="exam-grid" id="exam-grid"></div>
+
+      <button class="text-link footer-link" id="btn-reset-progress">Reset progress&hellip;</button>
+    </section>
+  </template>
+
+  <template id="tpl-no-courses">
+    <section class="view view-empty-courses">
+      <div class="empty-state">
+        <p>No courses added yet.</p>
+        <p class="empty-state-detail">Drop lecture-slide PDFs into <code>sources/&lt;course-slug&gt;/</code> and run the pipeline scripts to add your first course.</p>
+      </div>
+    </section>
+  </template>
+
+  <template id="tpl-quiz">
+    <section class="view view-quiz">
+      <p class="status-line" id="quiz-status-line"></p>
+
+      <h2 class="section-label">Practice Exams</h2>
+      <div class="exam-grid" id="quiz-exam-grid"></div>
+
+      <h2 class="section-label">Quiz by domain</h2>
+      <nav class="toc" id="quiz-domain-list" aria-label="Quiz by domain"></nav>
+
+      <h2 class="section-label">Quick quiz</h2>
+      <button class="btn" id="btn-quick-quiz">20 random questions</button>
+
+      <div id="quiz-history-block" hidden>
+        <h2 class="section-label">Recent attempts</h2>
+        <div class="quiz-history-list" id="quiz-history-list"></div>
+      </div>
+    </section>
+  </template>
+
+  <template id="tpl-quiz-runner">
+    <section class="view view-quiz-runner">
+      <header class="study-head">
+        <button class="study-exit" id="btn-quiz-exit" aria-label="Exit to Quiz">&larr;</button>
+        <span class="study-runner" id="quiz-runner"></span>
+        <span class="quiz-score-badge" id="quiz-score-badge"></span>
+      </header>
+      <div class="card-area" id="quiz-card-area"></div>
+    </section>
+  </template>
+
+  <template id="tpl-study">
+    <section class="view view-study">
+      <header class="study-head">
+        <button class="study-exit" id="btn-study-exit" aria-label="Exit to Library">&larr;</button>
+        <span class="study-runner" id="study-runner"></span>
+      </header>
+      <div class="card-area" id="card-area"></div>
+    </section>
+  </template>
+
+  <template id="tpl-notes">
+    <section class="view view-notes">
+      <div class="notes-layout">
+        <nav class="notes-list" id="notes-list" aria-label="Notes topics"></nav>
+        <article class="notes-content" id="notes-content"></article>
+      </div>
+    </section>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

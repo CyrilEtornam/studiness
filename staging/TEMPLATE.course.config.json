@@ -1,0 +1,9 @@
+{
+  "slug": "example-course",
+  "title": "Example Course — Full Title",
+  "shortLabel": "Example",
+  "domains": [
+    { "domain": 1, "title": "First unit / module title" },
+    { "domain": 2, "title": "Second unit / module title" }
+  ]
+}

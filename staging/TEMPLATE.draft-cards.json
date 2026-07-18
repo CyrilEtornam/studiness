@@ -1,0 +1,27 @@
+[
+  {
+    "type": "cloze",
+    "deck": "Example Course — Full Title",
+    "tags": ["week01"],
+    "text": "The {{c1::example term}} is defined as ...",
+    "extra": "Optional extra context shown after the answer is revealed.",
+    "topic": "first-unit-topic-slug",
+    "domain": 1
+  },
+  {
+    "type": "mcq",
+    "deck": "Example Course — Full Title",
+    "tags": ["week01"],
+    "question": "<p>Example question text?</p>",
+    "choices": [
+      { "letter": "A", "text": "First choice" },
+      { "letter": "B", "text": "Second choice (correct)" },
+      { "letter": "C", "text": "Third choice" },
+      { "letter": "D", "text": "Fourth choice" }
+    ],
+    "correct": ["B"],
+    "explanation": "Why B is correct, shown after answering.",
+    "topic": "first-unit-topic-slug",
+    "domain": 1
+  }
+]
