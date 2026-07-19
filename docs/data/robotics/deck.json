@@ -1,0 +1,2120 @@
+[
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "The Robot Institute of America formally defines a robot as a {{c1::reprogrammable, multifunctional manipulator}} designed to move material, parts, tools, or specialized devices through various programmed motions for the performance of a variety of tasks.",
+    "extra": "The emphasis on reprogrammability and multifunctionality is what separates a 'robot' from fixed-purpose automation — the same hardware can be repurposed via software for a different task.",
+    "topic": "robot-definitions",
+    "domain": 1,
+    "id": "bad9b2c849a4"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "Robotics is the field of study focused on developing robots and {{c1::automation}}, distinct from 'robot,' which denotes the machine itself.",
+    "extra": "Keeping this distinction straight matters: robotics is the discipline, robot is the artifact.",
+    "topic": "robot-definitions",
+    "domain": 1,
+    "id": "0b77e83fcbd1"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>What best distinguishes a robot from a fixed-purpose automated machine, according to the RIA definition?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "It uses electric motors"
+      },
+      {
+        "letter": "B",
+        "text": "It is reprogrammable and multifunctional"
+      },
+      {
+        "letter": "C",
+        "text": "It has sensors"
+      },
+      {
+        "letter": "D",
+        "text": "It operates without human supervision"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The RIA definition hinges on reprogrammability and multifunctionality — a single robot can be reprogrammed to do many different jobs, unlike hard automation built for one task. Sensors, motors, and autonomy are common features but not the defining criterion.",
+    "topic": "robot-definitions",
+    "domain": 1,
+    "id": "8660b2dbf0a4"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Robot autonomy levels range from fully human-controlled to fully autonomous. What determines where a robot sits on this spectrum?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Its number of joints"
+      },
+      {
+        "letter": "B",
+        "text": "How much external influence/control it needs to complete its tasks"
+      },
+      {
+        "letter": "C",
+        "text": "Its physical size"
+      },
+      {
+        "letter": "D",
+        "text": "Its manufacturer"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Autonomy is about dependence on external (usually human) control to act — teleoperated bots sit at one end, bots needing zero external influence sit at the other.",
+    "topic": "robot-definitions",
+    "domain": 1,
+    "id": "e72af7b77943"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Which of these is NOT one of the common application domains for robots covered in the lecture?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Medical (robot-assisted surgery)"
+      },
+      {
+        "letter": "B",
+        "text": "Planetary exploration"
+      },
+      {
+        "letter": "C",
+        "text": "Financial trading"
+      },
+      {
+        "letter": "D",
+        "text": "Undersea exploration"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The lecture lists industrial, commercial, military, medical, planetary, and undersea exploration as common application areas — algorithmic trading isn't among them, even though it's casually called 'robotic' trading.",
+    "topic": "robot-definitions",
+    "domain": 1,
+    "id": "3aa9c26b3477"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "In a manipulator, the {{c1::joint}} is the moveable part containing the actuators that make the robot move, while the {{c2::link}} is the rigid mechanical part connecting joints.",
+    "extra": "Links give the manipulator its shape; joints give it motion.",
+    "topic": "manipulator-anatomy",
+    "domain": 1,
+    "id": "0228fcf60aef"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "The {{c1::robot base}} is the first link of the manipulator, attaching it to the environment; the {{c2::end effector}} is the last link, farthest from the base.",
+    "extra": "Counting always starts at the base and runs outward to the end effector.",
+    "topic": "manipulator-anatomy",
+    "domain": 1,
+    "id": "dc688c992fbe"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "The two most common joint types are {{c1::revolute}} (rotating, like a hinge) and {{c2::prismatic}} (extending linearly, like a drawer slide).",
+    "extra": "These two joint types are exactly what the R/P letters in configuration shorthand like 'RRP' refer to.",
+    "topic": "manipulator-anatomy",
+    "domain": 1,
+    "id": "219858695f5f"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "A {{c1::tool flange}} is the standardized mounting plate on the last link that lets tools be fastened to the robot; a device attached there is a {{c2::tool}}, also called End-Of-Arm-Tooling (EOAT).",
+    "extra": "Grippers are the most common tool, but welding equipment, paint sprayers, and 3D-printing nozzles are all EOAT too.",
+    "topic": "manipulator-anatomy",
+    "domain": 1,
+    "id": "e77e91ef00a6"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Which pair correctly matches a manipulator part to its role?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Link — moveable part containing actuators"
+      },
+      {
+        "letter": "B",
+        "text": "Joint — rigid part connecting links"
+      },
+      {
+        "letter": "C",
+        "text": "End effector — the link farthest from the base"
+      },
+      {
+        "letter": "D",
+        "text": "Tool flange — the first link attaching to the environment"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The end effector is defined as the last link, counted outward from the base — tools attach there via the tool flange. The other three options swap the definitions of joint, link, and flange.",
+    "topic": "manipulator-anatomy",
+    "domain": 1,
+    "id": "0592528cd213"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>A welding torch mounted on a robot arm's tool flange is an example of which manipulator component?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "The base"
+      },
+      {
+        "letter": "B",
+        "text": "A tool / End-Of-Arm-Tooling (EOAT)"
+      },
+      {
+        "letter": "C",
+        "text": "A joint"
+      },
+      {
+        "letter": "D",
+        "text": "A link"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Anything attached to the flange to perform the actual task — welding, painting, gripping — is the tool (EOAT), not part of the manipulator's own kinematic chain of joints and links.",
+    "topic": "manipulator-anatomy",
+    "domain": 1,
+    "id": "c5468ff61ef1"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "The {{c1::configuration}} of a manipulator is a complete specification of every point on it; for rigid links, this can be captured entirely by the {{c2::joint angles}} (joint variables q).",
+    "extra": "Rigid links can't deform, so the only freedom in the system is at the joints — fixing all joint variables pins down every point on the robot.",
+    "topic": "configuration-space-workspace",
+    "domain": 1,
+    "id": "9153589c8faf"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "The set of all possible configurations a manipulator can take is called its {{c1::configuration space}}.",
+    "extra": "Configuration space is a joint-angle space, not a physical (workspace) space.",
+    "topic": "configuration-space-workspace",
+    "domain": 1,
+    "id": "f7cfa53807b3"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "The {{c1::workspace}} of a manipulator is the reachable space its tool/end-effector can achieve.",
+    "extra": "Workspace lives in physical (task) space, in contrast with configuration space, which lives in joint-angle space.",
+    "topic": "configuration-space-workspace",
+    "domain": 1,
+    "id": "96acd2a769e3"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Why is it sufficient to specify a rigid-link manipulator's configuration using just the joint angles, rather than the position of every point on the robot?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because links are rigid, so once the joint variables are fixed, the position of every point on every link is geometrically determined"
+      },
+      {
+        "letter": "B",
+        "text": "Because only the end-effector position matters"
+      },
+      {
+        "letter": "C",
+        "text": "Because the base can move freely"
+      },
+      {
+        "letter": "D",
+        "text": "Because gravity fixes the shape"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Rigid links can't deform, so their shape never changes — the only source of freedom in the whole system is at the joints. Knowing all joint variables q therefore fixes every point on the manipulator.",
+    "topic": "configuration-space-workspace",
+    "domain": 1,
+    "id": "5818cbf76e58"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>What distinguishes the 'reachable workspace' from the 'dextrous workspace'?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "There is no difference — they're synonyms"
+      },
+      {
+        "letter": "B",
+        "text": "Reachable = every point the tool can reach in at least one orientation; dextrous = every point it can reach in every orientation"
+      },
+      {
+        "letter": "C",
+        "text": "The dextrous workspace is always larger than the reachable workspace"
+      },
+      {
+        "letter": "D",
+        "text": "The dextrous workspace only applies to mobile robots"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Reachable asks 'can the tool get there at all?'; dextrous asks 'can the tool get there with arbitrary orientation?'. The dextrous workspace is therefore always a subset of the reachable workspace, never larger.",
+    "topic": "configuration-space-workspace",
+    "domain": 1,
+    "id": "16f81c4fcc8b"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "In manipulator naming shorthand, 'RRR' denotes an {{c1::elbow}} manipulator (three revolute joints), as in the anthropomorphic ABB IRB1400 arm.",
+    "extra": "Elbow manipulators are the most anthropomorphic-looking of the standard configurations.",
+    "topic": "manipulator-configurations",
+    "domain": 1,
+    "id": "ad3461b64074"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "The Stanford arm configuration (RRP) is a {{c1::spherical}} manipulator, whose workspace forms a set of concentric spheres.",
+    "extra": "It's named 'spherical' precisely because of the shape its reachable workspace traces out.",
+    "topic": "manipulator-configurations",
+    "domain": 1,
+    "id": "c022fddae2e2"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "A cylindrical robot has an {{c1::RPP}} joint arrangement, and its workspace forms a {{c2::cylinder}}.",
+    "extra": "One revolute joint (sweeping around) plus two prismatic joints (radial and vertical) traces out a cylindrical volume.",
+    "topic": "manipulator-configurations",
+    "domain": 1,
+    "id": "03f0ab2ceeb9"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "A Cartesian robot uses a {{c1::PPP}} (three prismatic) joint arrangement, giving increased structural rigidity and higher precision — well suited to pick-and-place operations.",
+    "extra": "All-prismatic joints avoid the compounding angular errors that revolute joints introduce, which is why Cartesian robots are so precise.",
+    "topic": "manipulator-configurations",
+    "domain": 1,
+    "id": "166eb107d6c6"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Which joint-type sequence corresponds to a SCARA robot, and what is its main practical advantage?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "PPP — highest precision for pick-and-place"
+      },
+      {
+        "letter": "B",
+        "text": "RRP — fast, rigid planar reach with a compliant vertical axis for insertion"
+      },
+      {
+        "letter": "C",
+        "text": "RPP — cylindrical workspace for material handling"
+      },
+      {
+        "letter": "D",
+        "text": "RRR — maximum dexterity for surgery"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "SCARA (Selective Compliance Assembly Robot Arm) is RRP: two revolute joints give fast planar reach, and the prismatic joint gives vertical insertion — that's why SCARAs dominate PCB/electronics assembly, not because they're the most dexterous or most rigid option overall.",
+    "topic": "manipulator-configurations",
+    "domain": 1,
+    "id": "8c596ed3f252"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Why might a parallel manipulator (e.g. a Stewart platform) be preferred over a serial manipulator for high-bandwidth control, despite a smaller workspace and harder kinematics?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "It has more degrees of freedom"
+      },
+      {
+        "letter": "B",
+        "text": "Its motors can sit proximally (near the base), so they can be less powerful and give higher bandwidth / easier control"
+      },
+      {
+        "letter": "C",
+        "text": "It requires no kinematic analysis at all"
+      },
+      {
+        "letter": "D",
+        "text": "It always has a larger workspace than serial arms"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Parallel manipulators let actuators sit near the base instead of being carried along the arm, reducing moving mass — that's the direct reason for higher bandwidth and easier control, at the cost of reduced motion range and harder (closed-chain) kinematics.",
+    "topic": "manipulator-configurations",
+    "domain": 1,
+    "id": "fbfe290b13ec"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>A robot whose workspace is a set of concentric spheres most likely has which joint configuration?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "PPP (Cartesian)"
+      },
+      {
+        "letter": "B",
+        "text": "RPP (cylindrical)"
+      },
+      {
+        "letter": "C",
+        "text": "RRP (spherical/Stanford)"
+      },
+      {
+        "letter": "D",
+        "text": "RRR (parallel closed-chain)"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The Stanford-arm-style RRP configuration is literally called the 'spherical' manipulator because two revolute joints plus one prismatic joint sweep the end-effector through concentric spherical shells.",
+    "topic": "manipulator-configurations",
+    "domain": 1,
+    "id": "20a81908e655"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "{{c1::Forward kinematics}} computes the position and orientation of the end-effector from given joint parameter values.",
+    "extra": "It's a purely geometric mapping: joint values in, end-effector pose out.",
+    "topic": "forward-inverse-kinematics-intro",
+    "domain": 1,
+    "id": "8eb5813c9989"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "{{c1::Inverse kinematics}} takes a desired end-effector position/orientation and solves for the joint variable values that achieve it.",
+    "extra": "It's forward kinematics run in reverse — asking 'what joint angles produce this pose?'",
+    "topic": "forward-inverse-kinematics-intro",
+    "domain": 1,
+    "id": "84ad60e38215"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Which statement correctly contrasts forward and inverse kinematics?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Forward: joint values → end-effector pose. Inverse: end-effector pose → joint values"
+      },
+      {
+        "letter": "B",
+        "text": "Forward: end-effector pose → joint values. Inverse: joint values → end-effector pose"
+      },
+      {
+        "letter": "C",
+        "text": "They are the same computation performed at different frequencies"
+      },
+      {
+        "letter": "D",
+        "text": "Forward kinematics requires a Jacobian; inverse kinematics does not"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Forward kinematics maps known joint angles/lengths to where the end-effector ends up; inverse kinematics runs that mapping backward — given a desired end-effector pose, it solves for the joint values that produce it.",
+    "topic": "forward-inverse-kinematics-intro",
+    "domain": 1,
+    "id": "d7ba7e1d9ae9"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Why does inverse kinematics typically admit multiple solutions (e.g. 'elbow up' and 'elbow down') where forward kinematics gives a single unique answer?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Forward kinematics can be a many-to-one mapping of joint angles onto end-effector poses, so inverting it can recover more than one joint configuration"
+      },
+      {
+        "letter": "B",
+        "text": "Because inverse kinematics ignores link lengths"
+      },
+      {
+        "letter": "C",
+        "text": "Because sensors are noisy"
+      },
+      {
+        "letter": "D",
+        "text": "Because forward kinematics is nonlinear and inverse kinematics is linear"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Several distinct joint-angle combinations can place the end-effector at exactly the same pose (an elbow bent one way or the other can reach the same point) — forward kinematics collapses those distinct configurations to one pose, so inverting it must, in general, recover more than one candidate.",
+    "topic": "forward-inverse-kinematics-intro",
+    "domain": 1,
+    "id": "d661b7c9a1cf"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>What question is path planning trying to answer in a robotic manipulation task?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "How to convert joint torques into voltages"
+      },
+      {
+        "letter": "B",
+        "text": "How to move the tool from position A to B while avoiding singularities and collisions, generating a workspace path over time"
+      },
+      {
+        "letter": "C",
+        "text": "How to calibrate the encoders"
+      },
+      {
+        "letter": "D",
+        "text": "How to choose the DH parameters"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Path planning generates a trajectory in the workspace (often as time-parameterized polynomials) that safely gets the tool from A to B; this path is then converted, via inverse kinematics, into joint-space trajectories.",
+    "topic": "forward-inverse-kinematics-intro",
+    "domain": 1,
+    "id": "6ed36bb5ac45"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "Robot control methods that use a force/torque sensor on the end-effector to regulate contact forces are called {{c1::force control}} or {{c2::impedance control}} (or a hybrid of both).",
+    "extra": "Both require a force/torque sensor on the end-effector, unlike pure position control.",
+    "topic": "control-sensors-actuators",
+    "domain": 1,
+    "id": "1923a552550d"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "{{c1::Visual servoing}} uses visual cues (camera feedback) to attain local or global pose information for control.",
+    "extra": "It's an external-sensor-based control strategy, contrasted with internal sensing like encoders.",
+    "topic": "control-sensors-actuators",
+    "domain": 1,
+    "id": "5d412e3824c8"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "text": "Robot control challenges mentioned in the lecture include {{c1::underactuation}}, {{c2::nonholonomy}} (especially in mobile agents), and nonlinearity.",
+    "extra": "These are exactly the properties that make simple linear feedback control insufficient for many real robots.",
+    "topic": "control-sensors-actuators",
+    "domain": 1,
+    "id": "5afccca34862"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>What is the key difference between an internal sensor like a motor encoder and an external sensor like a vision system?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Internal sensors measure the robot's own state (e.g. joint position); external sensors measure the robot relative to the environment"
+      },
+      {
+        "letter": "B",
+        "text": "Internal sensors are always more accurate"
+      },
+      {
+        "letter": "C",
+        "text": "External sensors cannot be used for feedback control"
+      },
+      {
+        "letter": "D",
+        "text": "There is no meaningful difference"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Encoders and IMUs report the robot's own internal state (joint angle, orientation); vision is 'external' because it perceives the robot (or a target) relative to the surrounding environment — both feed into estimation, but they answer different questions.",
+    "topic": "control-sensors-actuators",
+    "domain": 1,
+    "id": "48f3b8b1b864"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>In the general multivariable control overview, what is the role of the inverse-kinematics/Jacobian block?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "It converts a desired end-effector trajectory into desired joint trajectories/torques for the joint controllers"
+      },
+      {
+        "letter": "B",
+        "text": "It measures torque directly from the motors"
+      },
+      {
+        "letter": "C",
+        "text": "It replaces the need for joint controllers entirely"
+      },
+      {
+        "letter": "D",
+        "text": "It is only used for mobile robots"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The desired task-space trajectory must be converted into joint-space commands before the low-level joint controllers can track it — that conversion is exactly what inverse kinematics (with the Jacobian for velocities) provides.",
+    "topic": "control-sensors-actuators",
+    "domain": 1,
+    "id": "cd273e0a5214"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "text": "A coordinate frame is defined as a set of {{c1::n orthonormal}} basis vectors spanning ℝⁿ.",
+    "extra": "Orthonormal means each basis vector is unit length and mutually perpendicular to the others.",
+    "topic": "coordinate-frames-points",
+    "domain": 2,
+    "id": "c0ca1bb3f4d8"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "text": "A physical point p is an {{c1::invariant geometric entity}} — but its numeric coordinate representation {{c2::depends on the choice of coordinate frame}} used to express it.",
+    "extra": "This is why the same physical point p has completely different-looking coordinate vectors p⁰ and p¹ when expressed in two different frames.",
+    "topic": "coordinate-frames-points",
+    "domain": 2,
+    "id": "c512090eed24"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>The same physical point p is expressed as p⁰ in frame o₀ and as p¹ in frame o₁. Why can these have completely different numerical values?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because the point physically moved between frames"
+      },
+      {
+        "letter": "B",
+        "text": "Because coordinates are frame-dependent representations of a frame-independent geometric point"
+      },
+      {
+        "letter": "C",
+        "text": "Because p⁰ and p¹ refer to different points"
+      },
+      {
+        "letter": "D",
+        "text": "Because only one of the frames is valid"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The point itself doesn't change — only the numbers used to describe it change, because those numbers are measured relative to whichever frame's basis vectors and origin you chose.",
+    "topic": "coordinate-frames-points",
+    "domain": 2,
+    "id": "a45808b174b5"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Why do we attach a whole coordinate frame to a rigid body, rather than just tracking a single point on it?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "A single point can't capture orientation — a frame (origin + basis) is needed to describe both position and orientation"
+      },
+      {
+        "letter": "B",
+        "text": "Coordinate frames make computation slower on purpose"
+      },
+      {
+        "letter": "C",
+        "text": "It's only needed for mobile robots, not manipulators"
+      },
+      {
+        "letter": "D",
+        "text": "A point is sufficient; frames are purely notational with no extra information"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Position alone (a point) tells you where the body is, but not which way it's facing. A frame rigidly attached to the body carries both — its origin gives position, and its basis vectors give orientation.",
+    "topic": "coordinate-frames-points",
+    "domain": 2,
+    "id": "0f764aec5d55"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "text": "For a 2D rotation of frame o₁ relative to o₀ by angle θ, the rotation matrix R₀¹ has columns {{c1::[cos θ, sin θ]ᵀ}} and {{c2::[−sin θ, cos θ]ᵀ}}.",
+    "extra": "Each column is the o₁ unit vector expressed in o₀ coordinates.",
+    "topic": "planar-rotation-matrices",
+    "domain": 2,
+    "id": "94383c82f4a5"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "text": "The columns (and rows) of a valid rotation matrix are mutually {{c1::orthogonal}}, and each is a {{c2::unit vector}} — matrices with this property form the Special Orthogonal group, SO(n).",
+    "extra": "This orthonormality is exactly what makes R⁻¹ = Rᵀ.",
+    "topic": "planar-rotation-matrices",
+    "domain": 2,
+    "id": "d7c6922cd021"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>How can a 2D rotation matrix R₀¹ be constructed directly from geometry, without memorizing the formula?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "By projecting each axis of frame o₁ onto each axis of frame o₀ — each entry is a dot product (cosine of the angle) between an o₁ axis and an o₀ axis"
+      },
+      {
+        "letter": "B",
+        "text": "By measuring the distance between the two origins"
+      },
+      {
+        "letter": "C",
+        "text": "By averaging the two frames' axes"
+      },
+      {
+        "letter": "D",
+        "text": "By taking the cross product of the two z-axes"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Each entry Rᵢⱼ of a rotation matrix is literally the cosine of the angle between axis i of the target frame and axis j of the reference frame — i.e. a projection/dot product. That's exactly why the columns come out as [cos θ, sin θ] and [−sin θ, cos θ] for a 2D rotation by θ.",
+    "topic": "planar-rotation-matrices",
+    "domain": 2,
+    "id": "27fc6fc1cae7"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Why must the determinant of a valid (physical, right-handed) rotation matrix equal exactly +1, rather than −1?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "+1 corresponds to a proper rotation preserving handedness; −1 corresponds to a reflection, which flips handedness and isn't a physical rigid rotation"
+      },
+      {
+        "letter": "B",
+        "text": "Because rotation matrices are always symmetric"
+      },
+      {
+        "letter": "C",
+        "text": "Because +1 makes the matrix invertible"
+      },
+      {
+        "letter": "D",
+        "text": "Determinant sign is arbitrary and both are equally valid"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "det(R) = ±1 for any orthogonal matrix, but only +1 preserves a right-handed frame's orientation — a physical rotation never turns a right-handed frame into a left-handed one, so we restrict to SO(n) (det = +1) and exclude reflections (det = −1).",
+    "topic": "planar-rotation-matrices",
+    "domain": 2,
+    "id": "e45ea5758bc5"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "text": "The inverse of a rotation matrix equals its {{c1::transpose}}: R⁻¹ = Rᵀ, so RᵀR = I.",
+    "extra": "This is a huge computational shortcut versus general matrix inversion — it falls straight out of orthonormality.",
+    "topic": "special-orthogonal-group",
+    "domain": 2,
+    "id": "f26ec9b7ab97"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "text": "SO(3) forms a group under multiplication, satisfying closure, {{c1::identity}} (the 3×3 identity matrix I), {{c2::inverse}} (Rᵀ), and associativity.",
+    "extra": "These four properties are exactly what let us chain and undo sequences of rotations reliably.",
+    "topic": "special-orthogonal-group",
+    "domain": 2,
+    "id": "6286f9183cef"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "text": "In general, members of SO(3) do {{c1::not commute}}: R₁R₂ ≠ R₂R₁.",
+    "extra": "Only rotations about a common axis commute — everything else depends on order.",
+    "topic": "special-orthogonal-group",
+    "domain": 2,
+    "id": "2c0b620ca42b"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Why is R⁻¹ = Rᵀ for a rotation matrix, rather than requiring general matrix inversion?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because rotation matrices are orthogonal — orthonormal columns is precisely the condition that makes RᵀR = I"
+      },
+      {
+        "letter": "B",
+        "text": "Because all 3×3 matrices satisfy this"
+      },
+      {
+        "letter": "C",
+        "text": "Because rotation matrices are diagonal"
+      },
+      {
+        "letter": "D",
+        "text": "It is only an approximation, not exact"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Orthonormal columns (mutually perpendicular unit vectors) is the defining property of an orthogonal matrix, and for any orthogonal matrix RᵀR = I exactly — so the transpose is the exact inverse, with no numerical inversion needed.",
+    "topic": "special-orthogonal-group",
+    "domain": 2,
+    "id": "b447534fcab9"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>You compose two 3D rotations, R₁ then R₂. Does the order in which you apply them generally matter?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "No — rotations always commute"
+      },
+      {
+        "letter": "B",
+        "text": "Yes — R₁R₂ ≠ R₂R₁ in general, since SO(3) is non-abelian; rotations about the same axis are the exception"
+      },
+      {
+        "letter": "C",
+        "text": "Only 2D rotations fail to commute"
+      },
+      {
+        "letter": "D",
+        "text": "Order only matters if the rotation angles differ"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Rotate a book 90° about x then 90° about z, versus z then x — you get different final orientations. This non-commutativity is a defining feature of SO(3) as a non-abelian group; rotations sharing a common axis are the one case that does commute.",
+    "topic": "special-orthogonal-group",
+    "domain": 2,
+    "id": "16c99a6947e2"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Which SO(3) group property guarantees that composing any sequence of valid rotations always yields another valid rotation matrix?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Closure"
+      },
+      {
+        "letter": "B",
+        "text": "Associativity"
+      },
+      {
+        "letter": "C",
+        "text": "The existence of an identity element"
+      },
+      {
+        "letter": "D",
+        "text": "Non-commutativity"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Closure is the group property stating that for R₁, R₂ in SO(3), the product R₁R₂ is also in SO(3) — this is what lets us safely chain rotations without ever leaving the group.",
+    "topic": "special-orthogonal-group",
+    "domain": 2,
+    "id": "b00c1d0a1dc6"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "text": "When composing successive rotations with respect to the current (moving) reference frame, you {{c1::post-multiply}} the rotation matrices in the order the rotations are applied.",
+    "extra": "First-applied rotation ends up leftmost in the product.",
+    "topic": "rotation-composition-rules",
+    "domain": 2,
+    "id": "25b02c1370c4"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "text": "When composing successive rotations with respect to a fixed reference frame, you {{c1::pre-multiply}} the rotation matrices.",
+    "extra": "This is the mirror image of the current-frame rule — order flips because the most recent rotation gets pre-multiplied (put leftmost).",
+    "topic": "rotation-composition-rules",
+    "domain": 2,
+    "id": "26cee5385b8a"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>You perform rotation A about the current frame, then rotation B about the current frame. What is the correct composite rotation matrix?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "R = R_B · R_A"
+      },
+      {
+        "letter": "B",
+        "text": "R = R_A · R_B"
+      },
+      {
+        "letter": "C",
+        "text": "R = R_A + R_B"
+      },
+      {
+        "letter": "D",
+        "text": "R = R_A⁻¹ · R_B"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Current-frame (body-frame) rotations compose by post-multiplication in the order performed — the first rotation applied is leftmost, the second is multiplied on the right: R = R_A R_B.",
+    "topic": "rotation-composition-rules",
+    "domain": 2,
+    "id": "b7545cc2969b"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>You perform rotation A about a fixed frame, then rotation B about the same fixed frame. What is the correct composite rotation matrix?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "R = R_A · R_B"
+      },
+      {
+        "letter": "B",
+        "text": "R = R_B · R_A"
+      },
+      {
+        "letter": "C",
+        "text": "R = R_A + R_B"
+      },
+      {
+        "letter": "D",
+        "text": "R = R_B⁻¹ · R_A"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Fixed-frame rotations compose by pre-multiplication — the most recently applied rotation is placed on the left, so performing A then B gives R = R_B R_A, the reverse order from the current-frame case.",
+    "topic": "rotation-composition-rules",
+    "domain": 2,
+    "id": "46bf45905024"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Why does the current-frame vs fixed-frame distinction flip the multiplication order (post- vs pre-multiply)?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "It's an arbitrary convention with no underlying reason"
+      },
+      {
+        "letter": "B",
+        "text": "A rotation about the (already-rotated) current frame must be re-expressed in the base frame via a similarity transform before combining, and working through that algebra produces the opposite multiplication order from the fixed-frame case"
+      },
+      {
+        "letter": "C",
+        "text": "Fixed-frame rotations are always smaller in magnitude"
+      },
+      {
+        "letter": "D",
+        "text": "Only the current-frame case is mathematically valid"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Deriving the composite by applying a rotation about already-rotated current axes runs through a similarity-transform (R' = R⁻¹AR-style) derivation that lands the new term on the right of the product; the fixed-frame derivation lands it on the left. It's not arbitrary — it falls straight out of the algebra covered in class.",
+    "topic": "rotation-composition-rules",
+    "domain": 2,
+    "id": "c6fcbcc2be00"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>A rigid body rotates about its current z-axis, then rotates about the FIXED x-axis. How should these two steps be composed?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Entirely by pre-multiplication, since one step is a fixed-frame rotation"
+      },
+      {
+        "letter": "B",
+        "text": "Entirely by post-multiplication, since one step is a current-frame rotation"
+      },
+      {
+        "letter": "C",
+        "text": "As a hybrid composition — apply the current/fixed rule to each step individually using the same rules"
+      },
+      {
+        "letter": "D",
+        "text": "This mixed case cannot be represented as a single rotation matrix"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The lecture notes explicitly that hybrid compositions — mixing current-frame and fixed-frame rotations in one sequence — are possible using the same pre-/post-multiplication rules applied per step, without needing a special-case formula.",
+    "topic": "rotation-composition-rules",
+    "domain": 2,
+    "id": "72d6a82544b0"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "text": "The three classical parameterizations for an arbitrary 3D rotation are {{c1::Euler angles}}, {{c2::Roll-Pitch-Yaw angles}}, and {{c3::Axis/Angle}} representation.",
+    "extra": "Each uses three numbers, matching the three rotational degrees of freedom of SO(3).",
+    "topic": "rotation-parameterizations",
+    "domain": 2,
+    "id": "32835e1b2fd2"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "text": "ZYZ Euler angles (φ, θ, ψ) are formed by rotating about the {{c1::z-axis}} by φ, then the {{c2::current y-axis}} by θ, then the {{c3::current z-axis}} again by ψ.",
+    "extra": "This gives the ZYZ-Euler Angle Transformation R_ZYZ.",
+    "topic": "rotation-parameterizations",
+    "domain": 2,
+    "id": "e3af3c82f01d"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "text": "Roll-Pitch-Yaw angles are three consecutive rotations about the {{c1::fixed}} principal axes — unlike Euler angles, which rotate about the current axes.",
+    "extra": "This fixed-vs-current distinction is exactly the composition-order rule applied to a specific parameterization.",
+    "topic": "rotation-parameterizations",
+    "domain": 2,
+    "id": "d8657d3632da"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Which three-axis rotation sequence would NOT be a valid Euler-angle set for representing an arbitrary rotation, and why?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "XYZ — invalid, because it uses three different axes"
+      },
+      {
+        "letter": "B",
+        "text": "ZZY — invalid, because two consecutive rotations about the same (z) axis compose into a single net rotation about that axis, losing a degree of freedom"
+      },
+      {
+        "letter": "C",
+        "text": "ZYZ — invalid, because it repeats an axis"
+      },
+      {
+        "letter": "D",
+        "text": "All three-axis sequences are equally valid"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "A valid Euler sequence needs its middle axis to differ from its neighbors, but the first and third CAN repeat (e.g. ZYZ is valid). ZZY fails because the first two rotations share an axis and simply add together, so the sequence can't independently span all three rotational degrees of freedom.",
+    "topic": "rotation-parameterizations",
+    "domain": 2,
+    "id": "583cd50d457e"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>What is the key structural difference between Euler angles and Roll-Pitch-Yaw angles?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "There is no difference — they are the same parameterization under different names"
+      },
+      {
+        "letter": "B",
+        "text": "Euler angles' 2nd and 3rd rotations are about the current (already-rotated) axes; Roll-Pitch-Yaw's three rotations are always about the fixed world axes"
+      },
+      {
+        "letter": "C",
+        "text": "Roll-Pitch-Yaw only works in 2D"
+      },
+      {
+        "letter": "D",
+        "text": "Euler angles require 4 angles, RPY requires 3"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Both use three successive single-axis rotations, but Euler angles' later rotations happen about the axes of the already-rotated (current) frame, whereas RPY's three rotations are always about the original fixed x, y, z axes.",
+    "topic": "rotation-parameterizations",
+    "domain": 2,
+    "id": "01427617ba6c"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>In the axis/angle representation, what two quantities together fully specify a 3D rotation?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Three Euler angles"
+      },
+      {
+        "letter": "B",
+        "text": "A unit vector defining the rotation axis, and a scalar angle θ of rotation about that axis"
+      },
+      {
+        "letter": "C",
+        "text": "A 3×3 matrix and its transpose"
+      },
+      {
+        "letter": "D",
+        "text": "Two unit vectors"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Axis/angle is the most geometrically direct parameterization: pick any axis k̂ in space and an angle θ, and rotating by θ about k̂ produces any desired rotation matrix — this underlies the exponential-map/Rodrigues formula for SO(3).",
+    "topic": "rotation-parameterizations",
+    "domain": 2,
+    "id": "0c8034d08b69"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Why is the inverse axis/angle problem (given an arbitrary R, find k̂ and θ) practically useful in robotics, beyond being a math curiosity?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "It has no practical use"
+      },
+      {
+        "letter": "B",
+        "text": "It lets you interpret or interpolate an arbitrary computed rotation matrix in terms of a single, physically-intuitive axis and angle, useful for control and visualization"
+      },
+      {
+        "letter": "C",
+        "text": "It replaces forward kinematics entirely"
+      },
+      {
+        "letter": "D",
+        "text": "It only matters for 2D robots"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Kinematics computations often produce a raw rotation matrix; extracting a single axis and angle from it gives an intuitive, compact description of 'how far off' or how to interpolate between orientations — useful in motion planning and control.",
+    "topic": "rotation-parameterizations",
+    "domain": 2,
+    "id": "3ea6dc2b46f2"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "text": "A rigid motion combines a rotation matrix {{c1::R}} and a displacement vector {{c2::d}}; the group of all rigid motions (d, R) is called the {{c3::Special Euclidean group, SE(3)}}.",
+    "extra": "SE(3) is bigger than SO(3) precisely because it bundles in translation, not just rotation.",
+    "topic": "homogeneous-transforms",
+    "domain": 2,
+    "id": "a780e3caeba9"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "text": "A homogeneous transform H packs R and d into a single 4×4 matrix: the top-left 3×3 block is {{c1::R}}, the top-right 3×1 block is {{c2::d}}, and the bottom row is {{c3::[0 0 0 1]}}.",
+    "extra": "This packaging is what lets rigid motions be chained by plain matrix multiplication.",
+    "topic": "homogeneous-transforms",
+    "domain": 2,
+    "id": "30ec8d670084"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "text": "The inverse of a homogeneous transform H is not simply its matrix transpose — it is H⁻¹ = [[{{c1::Rᵀ}}, {{c2::−Rᵀd}}], [0, 1]].",
+    "extra": "Only the rotation block inverts by transpose; the translation block has to be un-rotated and negated.",
+    "topic": "homogeneous-transforms",
+    "domain": 2,
+    "id": "4f1cfa640dec"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Why can't you just take the plain transpose of a homogeneous transform H to invert it, the way you can for a pure rotation matrix?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because H also encodes a translation d, and transposing the full 4×4 matrix does not correctly undo it — the correct inverse needs Rᵀ AND the transformed translation −Rᵀd"
+      },
+      {
+        "letter": "B",
+        "text": "Because homogeneous transforms are never invertible"
+      },
+      {
+        "letter": "C",
+        "text": "Because the bottom row breaks the transpose operation"
+      },
+      {
+        "letter": "D",
+        "text": "There's no difference — Hᵀ = H⁻¹ always"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Only the rotation block is orthogonal (transpose = inverse); the translation part must be un-rotated and negated (−Rᵀd), not merely transposed, because H⁻¹ must correctly map a point back through both the inverse rotation and the inverse translation.",
+    "topic": "homogeneous-transforms",
+    "domain": 2,
+    "id": "c8ce09ba2859"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Given H₀₁ (frame 1 relative to frame 0) and H₁₂ (frame 2 relative to frame 1), how do you express a point p, given in frame 2 coordinates, in frame 0 coordinates?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "p⁰ = H₁₂ H₀₁ p²"
+      },
+      {
+        "letter": "B",
+        "text": "p⁰ = H₀₁ H₁₂ p²"
+      },
+      {
+        "letter": "C",
+        "text": "p⁰ = H₀₁⁻¹ H₁₂ p²"
+      },
+      {
+        "letter": "D",
+        "text": "p⁰ = (H₀₁ + H₁₂) p²"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Homogeneous transforms chain left-to-right matching frame subscripts: H₀₁H₁₂ takes you 2 → 1 → 0, and the matching inner subscripts (1,1) confirm the chain is valid. This is the same convention used to build the full forward-kinematics chain T⁰ₙ = A₁A₂...Aₙ.",
+    "topic": "homogeneous-transforms",
+    "domain": 2,
+    "id": "7a1efa18740a"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Which of these is a 'basic' homogeneous transform building block described in the lecture?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Only pure translation transforms exist as basic building blocks"
+      },
+      {
+        "letter": "B",
+        "text": "Three pure translations (Trans_x, Trans_y, Trans_z) and three pure rotations (Rot_x, Rot_y, Rot_z)"
+      },
+      {
+        "letter": "C",
+        "text": "Only rotations, since translation is derived from rotation"
+      },
+      {
+        "letter": "D",
+        "text": "A single universal 4×4 matrix covers all cases without decomposition"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Any homogeneous transform can be built by composing these six elementary transforms — three along/about each axis — which is exactly how the DH convention assembles each joint's transform Aᵢ from four of these basic pieces.",
+    "topic": "homogeneous-transforms",
+    "domain": 2,
+    "id": "80e08b2741fd"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The four Denavit-Hartenberg parameters for link i are: link length {{c1::aᵢ}}, link twist {{c2::αᵢ}}, link offset {{c3::dᵢ}}, and joint angle {{c4::θᵢ}}.",
+    "extra": "Three of these four are constant for any given link — only one varies as the joint moves.",
+    "topic": "denavit-hartenberg-parameters",
+    "domain": 3,
+    "id": "b2fd8dddafcb"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "text": "For a revolute joint i, the variable DH parameter is {{c1::θᵢ (joint angle)}}; for a prismatic joint i, the variable DH parameter is {{c2::dᵢ (link offset)}} — the other two DH parameters stay constant.",
+    "extra": "This is the direct link between joint type and which DH parameter becomes the joint variable q.",
+    "topic": "denavit-hartenberg-parameters",
+    "domain": 3,
+    "id": "b9d50487535d"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>A rigid body in 3D generally needs 6 parameters (3 for orientation, 3 for position) to be fully described. Why does the DH convention need only 4 parameters (a, α, d, θ) per joint transform Aᵢ?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because DH parameters ignore orientation entirely"
+      },
+      {
+        "letter": "B",
+        "text": "Because the DH frame-assignment rules (xᵢ must be perpendicular to and intersect zᵢ₋₁) constrain 2 of the 6 general degrees of freedom, leaving exactly 4 free parameters"
+      },
+      {
+        "letter": "C",
+        "text": "Because only planar manipulators are considered"
+      },
+      {
+        "letter": "D",
+        "text": "Because 4 parameters is just an approximation, not exact"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The DH convention deliberately restricts how frames may be placed (x̂ᵢ ⊥ ẑᵢ₋₁ and intersecting it), so 2 of the general 6 degrees of freedom of a rigid transform get 'used up' by the frame-assignment convention itself, leaving exactly the 4 free numbers a, α, d, θ.",
+    "topic": "denavit-hartenberg-parameters",
+    "domain": 3,
+    "id": "68e83d5f79ac"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "text": "Physically, the DH parameter {{c1::aᵢ}} (link length) is the distance between zᵢ₋₁ and zᵢ, measured along xᵢ; the DH parameter {{c2::αᵢ}} (link twist) is the angle between zᵢ₋₁ and zᵢ, measured around xᵢ.",
+    "extra": "Both a and α describe the fixed geometric relationship between consecutive joint axes.",
+    "topic": "denavit-hartenberg-parameters",
+    "domain": 3,
+    "id": "542dd7ec0623"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "text": "Physically, the DH parameter {{c1::dᵢ}} (link offset) is the distance between oᵢ₋₁ and the intersection of zᵢ₋₁ with xᵢ, measured along zᵢ₋₁; the DH parameter {{c2::θᵢ}} (joint angle) is the angle between xᵢ₋₁ and xᵢ, measured around zᵢ₋₁.",
+    "extra": "d and θ are the ones that typically become the variable joint parameter (prismatic → d, revolute → θ).",
+    "topic": "denavit-hartenberg-parameters",
+    "domain": 3,
+    "id": "cb14017ade5a"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>In the DH convention, the transform Aᵢ is built as a product of four elementary transforms. What is the correct order?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Rot_z(θᵢ) · Trans_z(dᵢ) · Trans_x(aᵢ) · Rot_x(αᵢ)"
+      },
+      {
+        "letter": "B",
+        "text": "Trans_x(aᵢ) · Rot_x(αᵢ) · Rot_z(θᵢ) · Trans_z(dᵢ)"
+      },
+      {
+        "letter": "C",
+        "text": "Rot_x(αᵢ) · Trans_x(aᵢ) · Trans_z(dᵢ) · Rot_z(θᵢ)"
+      },
+      {
+        "letter": "D",
+        "text": "Trans_z(dᵢ) · Rot_z(θᵢ) · Trans_x(aᵢ) · Rot_x(αᵢ)"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The standard DH transform is Aᵢ = Rot_z(θᵢ)·Trans_z(dᵢ)·Trans_x(aᵢ)·Rot_x(αᵢ): first spin about and slide along the old z-axis (the joint motion, θᵢ and dᵢ), then translate and twist about the new x-axis (the fixed link geometry, aᵢ and αᵢ). Because matrix multiplication doesn't commute, getting this order wrong silently produces the wrong transform.",
+    "topic": "denavit-hartenberg-parameters",
+    "domain": 3,
+    "id": "e62bfb5f03be"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "text": "DH condition 1 (DH1) requires x̂ᵢ to be {{c1::perpendicular}} to ẑᵢ₋₁; DH condition 2 (DH2) requires x̂ᵢ to {{c2::intersect}} ẑᵢ₋₁.",
+    "extra": "Together, DH1 and DH2 are exactly what guarantees a unique 4-parameter transform exists between the two frames.",
+    "topic": "denavit-hartenberg-frame-assignment",
+    "domain": 3,
+    "id": "842f484ad9f4"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "text": "To assign DH frames, zᵢ is chosen as the axis of {{c1::rotation}} for a revolute joint i+1, or the axis of {{c2::translation}} for a prismatic joint i+1.",
+    "extra": "This is the very first step in the DH frame-assignment procedure, before any origins are chosen.",
+    "topic": "denavit-hartenberg-frame-assignment",
+    "domain": 3,
+    "id": "59f604a131df"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>When two consecutive joint axes zᵢ₋₁ and zᵢ are parallel, the offset dᵢ can be made zero by an appropriate choice. How?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "By choosing xᵢ along the common normal between the two axes that intersects zᵢ₋₁, i.e. placing origin oᵢ at that intersection point"
+      },
+      {
+        "letter": "B",
+        "text": "dᵢ is always zero automatically for parallel axes, no choice needed"
+      },
+      {
+        "letter": "C",
+        "text": "By setting aᵢ to zero instead"
+      },
+      {
+        "letter": "D",
+        "text": "Parallel axes cannot use the DH convention"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Parallel z-axes have infinitely many equal-length common normals to choose from; picking the specific one that passes through oᵢ₋₁ makes dᵢ (measured along zᵢ₋₁) vanish — it's a deliberate, convenient choice, not an automatic property of parallel axes.",
+    "topic": "denavit-hartenberg-frame-assignment",
+    "domain": 3,
+    "id": "f354628b8036"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>For non-coplanar (skew) consecutive joint axes zᵢ₋₁ and zᵢ, how is xᵢ chosen in the DH frame-assignment procedure?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Along the unique common perpendicular (shortest connecting) line segment between the two skew axes"
+      },
+      {
+        "letter": "B",
+        "text": "Parallel to zᵢ₋₁"
+      },
+      {
+        "letter": "C",
+        "text": "Arbitrarily, since skew axes have no natural choice"
+      },
+      {
+        "letter": "D",
+        "text": "Along the bisector of the angle between the axes"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Skew lines in 3D have exactly one shared perpendicular of minimum length connecting them — the DH convention uses that unique segment as xᵢ, which is what guarantees the frame assignment is well-defined.",
+    "topic": "denavit-hartenberg-frame-assignment",
+    "domain": 3,
+    "id": "5c84177d8f4e"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>For a manipulator's last link (frame n), where no wrist/gripper axis is yet defined, how is the tool frame typically chosen (as in the two-link planar and cylindrical robot examples)?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Randomly, since it doesn't matter"
+      },
+      {
+        "letter": "B",
+        "text": "zₙ is chosen parallel to the previous z-axis, purely for consistency, since there's no further joint to define its direction"
+      },
+      {
+        "letter": "C",
+        "text": "zₙ must always point straight up regardless of the arm's geometry"
+      },
+      {
+        "letter": "D",
+        "text": "The tool frame is skipped entirely if there's no wrist"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Without a subsequent joint to anchor the choice, both worked examples simply pick the final z-axis parallel to the last real joint axis for consistency — it's a convention, not a physical requirement, since this last frame is otherwise arbitrary in a wristless example.",
+    "topic": "denavit-hartenberg-frame-assignment",
+    "domain": 3,
+    "id": "1c9f2b90596f"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The tool frame's axes are conventionally labeled {{c1::n}} (normal), {{c2::s}} (sliding, the gripper open/close direction), and {{c3::a}} (approach direction).",
+    "extra": "These n-s-a axes describe the end-effector's orientation once wrist/gripper joints are included.",
+    "topic": "denavit-hartenberg-frame-assignment",
+    "domain": 3,
+    "id": "ae79878db27d"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "text": "For an n-DOF manipulator, the transform from the tool frame to the inertial frame is the product of all individual joint transforms: {{c1::T₀ₙ = A₁A₂...Aₙ}}.",
+    "extra": "Each Aᵢ is itself built from that link's four DH parameters, so this single matrix product is the entire forward-kinematics solution.",
+    "topic": "forward-kinematics-composition",
+    "domain": 3,
+    "id": "acd83220e1ed"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The {{c1::inertial frame}} is fixed to the most proximal (base) link of the manipulator, while the {{c2::tool frame}} is attached to the most distal link.",
+    "extra": "Forward kinematics is the search for the mapping between exactly these two frames.",
+    "topic": "forward-kinematics-composition",
+    "domain": 3,
+    "id": "b59ed36a82c7"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "text": "For an n-DOF manipulator with one degree of freedom per joint, there are {{c1::n}} joints and {{c2::n+1}} links, since each joint connects two links.",
+    "extra": "This +1 offset is a common source of off-by-one errors when indexing frames o₀ through oₙ.",
+    "topic": "forward-kinematics-composition",
+    "domain": 3,
+    "id": "d0a110faed14"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Why does forward kinematics deliberately ignore joint torques and dynamics (described in the lecture as 'purely geometric')?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because torque sensors don't exist"
+      },
+      {
+        "letter": "B",
+        "text": "Forward kinematics only answers a geometric question — where is the end-effector given the joint values — independent of the forces/torques that got it there; dynamics is a separate later topic"
+      },
+      {
+        "letter": "C",
+        "text": "Because dynamics makes the equations linear"
+      },
+      {
+        "letter": "D",
+        "text": "Because torques are irrelevant to any part of robot control"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Forward kinematics is purely about geometry: given joint values, what pose results? How much force/torque was needed to reach those joint values is an entirely separate question, addressed later by dynamics — it isn't necessary to answer the geometric question first.",
+    "topic": "forward-kinematics-composition",
+    "domain": 3,
+    "id": "122db1898c8b"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>A multi-DOF joint like a spherical or universal joint doesn't fit the DH convention's 'one DOF per joint' assumption directly. How does the lecture say to handle this?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Multi-DOF joints simply can't be modeled with DH parameters"
+      },
+      {
+        "letter": "B",
+        "text": "Model the multi-DOF joint as a combination of several 1-DOF joints with zero length between them"
+      },
+      {
+        "letter": "C",
+        "text": "Ignore the extra degrees of freedom"
+      },
+      {
+        "letter": "D",
+        "text": "Use a completely different, non-DH transform just for that joint"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Rather than extending the DH formalism, a multi-DOF joint is decomposed into a sequence of fictitious zero-length 1-DOF joints — each still fits the standard Aᵢ = f(single variable) form, so the whole chain stays within the DH framework.",
+    "topic": "forward-kinematics-composition",
+    "domain": 3,
+    "id": "0f0eaf2ae629"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>The transform Tᵢⱼ (frame j relative to frame i) is defined as Aᵢ₊₁Aᵢ₊₂...Aⱼ when j > i. What is it when j < i?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "It is undefined"
+      },
+      {
+        "letter": "B",
+        "text": "The inverse of the corresponding forward-order transform: Tᵢⱼ = (Tⱼᵢ)⁻¹"
+      },
+      {
+        "letter": "C",
+        "text": "It equals the identity matrix"
+      },
+      {
+        "letter": "D",
+        "text": "It equals Tⱼᵢ unchanged"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "You can't get the reverse-direction transform by multiplying the individual Aᵢ matrices in reverse order and expecting the same result — the correct way to go from a higher-numbered frame back to a lower one is to take the matrix inverse of the forward chain, (Tⱼᵢ)⁻¹.",
+    "topic": "forward-kinematics-composition",
+    "domain": 3,
+    "id": "137a630e33ff"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "text": "In the two-link planar manipulator example, all zᵢ axes are chosen {{c1::parallel}} to each other (since there's no wrist), which makes every link twist αᵢ equal to {{c2::zero}}.",
+    "extra": "Link twist measures the angle between consecutive z-axes — parallel axes means that angle is always zero.",
+    "topic": "denavit-hartenberg-worked-examples",
+    "domain": 3,
+    "id": "1ee333160772"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "text": "For the two-link planar manipulator, the only variable DH parameters are the two joint angles {{c1::θ₁ and θ₂}}; both link offsets d₁, d₂ and link twists α₁, α₂ are zero.",
+    "extra": "Both joints are revolute, so θ is the joint variable for each — matching the general revolute-joint rule.",
+    "topic": "denavit-hartenberg-worked-examples",
+    "domain": 3,
+    "id": "7a4d5271d1c1"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The x-coordinate of the two-link planar manipulator's end-effector (link lengths a₁, a₂) is {{c1::a₁cos(θ₁) + a₂cos(θ₁+θ₂)}}.",
+    "extra": "This is the classic closed-form forward-kinematics result for a 2R planar arm.",
+    "topic": "denavit-hartenberg-worked-examples",
+    "domain": 3,
+    "id": "dc7bbe7fcd72"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The y-coordinate of the two-link planar manipulator's end-effector is {{c1::a₁sin(θ₁) + a₂sin(θ₁+θ₂)}}.",
+    "extra": "Paired with the x-coordinate formula, this fully locates the end-effector given the two joint angles.",
+    "topic": "denavit-hartenberg-worked-examples",
+    "domain": 3,
+    "id": "87c344b067b9"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "text": "In the three-link cylindrical robot example, joint 1 is {{c1::revolute}} (rotation about z₀), while joints 2 and 3 are {{c2::prismatic}} (translation along z₁ and z₂).",
+    "extra": "This R-P-P joint sequence is exactly the 'cylindrical robot' configuration from the manipulator-types discussion.",
+    "topic": "denavit-hartenberg-worked-examples",
+    "domain": 3,
+    "id": "4455bf8698bd"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The spherical wrist example uses three joints — {{c1::yaw, pitch, and roll}} — whose axes all intersect at a single point called the {{c2::wrist center}}.",
+    "extra": "That shared intersection point is what makes the spherical wrist kinematically special.",
+    "topic": "denavit-hartenberg-worked-examples",
+    "domain": 3,
+    "id": "238d883f01c4"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Why does a spherical wrist (3 revolute axes all intersecting at one point) simplify the inverse kinematics of a 6-DOF arm?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "It doesn't simplify anything"
+      },
+      {
+        "letter": "B",
+        "text": "Because the wrist center's position doesn't depend on the wrist's own joint angles (they only affect orientation), the IK problem decouples into a positioning sub-problem and an orientation sub-problem"
+      },
+      {
+        "letter": "C",
+        "text": "Because spherical wrists have no orientation"
+      },
+      {
+        "letter": "D",
+        "text": "Because it eliminates the need for DH parameters"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Since all three wrist axes pass through one point, rotating the wrist joints changes the end-effector's orientation but not the wrist center's position — this 'kinematic decoupling' trick is what makes 6-DOF arms with spherical wrists tractable to solve in closed form.",
+    "topic": "denavit-hartenberg-worked-examples",
+    "domain": 3,
+    "id": "c797076f7326"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>For the two-link planar manipulator, why are all three link-twist parameters (α) zero?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because both joints are prismatic"
+      },
+      {
+        "letter": "B",
+        "text": "Because all rotation axes (z₀, z₁, z₂) are chosen parallel to one another, so there's no twist angle between consecutive z-axes"
+      },
+      {
+        "letter": "C",
+        "text": "Because the manipulator has only 2 links"
+      },
+      {
+        "letter": "D",
+        "text": "Link twist is only relevant in 3D wrist assemblies"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "α measures the angle between consecutive z-axes — deliberately choosing every zᵢ parallel to the last (since there's no out-of-plane wrist here) makes that angle zero by construction.",
+    "topic": "denavit-hartenberg-worked-examples",
+    "domain": 3,
+    "id": "7c9db17407c5"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "text": "For a 2-link planar manipulator, given a desired tool position (x,y), inverse kinematics generally yields {{c1::two}} solutions, known as {{c2::elbow up and elbow down}}.",
+    "extra": "This non-uniqueness is exactly why inverse kinematics is harder than forward kinematics in general.",
+    "topic": "inverse-kinematics-basics",
+    "domain": 3,
+    "id": "dc95df23e8fe"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Geometrically, why does a 2-link planar arm have exactly two (not one, not infinitely many) inverse-kinematics solutions for a generic reachable target point?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because the two links plus the line to the target form a triangle with fixed side lengths, which can close in exactly two mirror-image ways (elbow bent to one side or the other)"
+      },
+      {
+        "letter": "B",
+        "text": "Because there are two joints"
+      },
+      {
+        "letter": "C",
+        "text": "Because θ is always double-valued"
+      },
+      {
+        "letter": "D",
+        "text": "Because of measurement noise"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "With both link lengths fixed, the two links plus the line to the target form a triangle; a triangle with two fixed side lengths and a fixed base can close in exactly two ways (elbow up or down), giving exactly two valid solutions for a generic point inside the reachable workspace.",
+    "topic": "inverse-kinematics-basics",
+    "domain": 3,
+    "id": "70cd95e035ac"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>What happens to the number of inverse-kinematics solutions for a 2-link planar arm when the target point lies exactly at the edge of the workspace (arm fully outstretched)?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "There are still two distinct solutions"
+      },
+      {
+        "letter": "B",
+        "text": "The two solutions (elbow up/down) coincide into a single solution, since the arm is fully extended with no 'bend' choice left"
+      },
+      {
+        "letter": "C",
+        "text": "There are zero solutions"
+      },
+      {
+        "letter": "D",
+        "text": "There are infinitely many solutions"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "At full extension the triangle collapses to a straight line — elbow up and elbow down become the same configuration, so the two generic solutions merge into one. This is a singular configuration, at the boundary of the workspace.",
+    "topic": "inverse-kinematics-basics",
+    "domain": 3,
+    "id": "b7666dd1dbd0"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 424 — Robotics",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Inverse kinematics for a manipulator, once the tool trajectory is known, feeds into what next stage of the control pipeline described in the lecture?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Joint control — using the Jacobian to create desired joint trajectories that the joint controllers track"
+      },
+      {
+        "letter": "B",
+        "text": "Directly commanding motor voltages with no further processing"
+      },
+      {
+        "letter": "C",
+        "text": "Recomputing the DH parameters from scratch"
+      },
+      {
+        "letter": "D",
+        "text": "It feeds back into forward kinematics only"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Once a workspace path exists, inverse kinematics and the Jacobian convert it into desired joint trajectories, which the joint controllers then track — inverse kinematics is a translation step between task-space planning and joint-space control, not the final control action itself.",
+    "topic": "inverse-kinematics-basics",
+    "domain": 3,
+    "id": "361496f638b0"
+  }
+]
