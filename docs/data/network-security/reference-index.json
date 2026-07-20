@@ -1,0 +1,6 @@
+[
+  { "file": "lecture-01-overview.md", "title": "Lecture 1 — Security Overview & Fundamentals" },
+  { "file": "lecture-02-threat-modeling.md", "title": "Lecture 2 — Threat Modeling & Security Policy" },
+  { "file": "lecture-03-symmetric-crypto.md", "title": "Lecture 3 — Symmetric-Key Cryptography (AES)" },
+  { "file": "lecture-04-asymmetric-crypto.md", "title": "Lecture 4 — Asymmetric Cryptography, Hashing & PKI" }
+]

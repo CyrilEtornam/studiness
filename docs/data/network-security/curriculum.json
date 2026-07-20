@@ -1,0 +1,140 @@
+[
+  {
+    "domain": 1,
+    "title": "Security Fundamentals & Threat Landscape",
+    "count": 27,
+    "topics": [
+      {
+        "slug": "attacker-landscape",
+        "title": "Attacker Landscape",
+        "count": 6
+      },
+      {
+        "slug": "cia-triad",
+        "title": "Cia Triad",
+        "count": 5
+      },
+      {
+        "slug": "security-definitions",
+        "title": "Security Definitions",
+        "count": 7
+      },
+      {
+        "slug": "security-mechanisms-policy",
+        "title": "Security Mechanisms Policy",
+        "count": 3
+      },
+      {
+        "slug": "threats-and-attacks",
+        "title": "Threats And Attacks",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "domain": 2,
+    "title": "Threat Modeling & Risk Assessment",
+    "count": 25,
+    "topics": [
+      {
+        "slug": "risk-assessment-scoring",
+        "title": "Risk Assessment Scoring",
+        "count": 5
+      },
+      {
+        "slug": "stride-framework",
+        "title": "Stride Framework",
+        "count": 7
+      },
+      {
+        "slug": "threat-model-worked-example",
+        "title": "Threat Model Worked Example",
+        "count": 2
+      },
+      {
+        "slug": "threat-modeling-methods",
+        "title": "Threat Modeling Methods",
+        "count": 4
+      },
+      {
+        "slug": "threat-modeling-process",
+        "title": "Threat Modeling Process",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "domain": 3,
+    "title": "Symmetric-Key Cryptography",
+    "count": 40,
+    "topics": [
+      {
+        "slug": "aes-algorithm",
+        "title": "Aes Algorithm",
+        "count": 10
+      },
+      {
+        "slug": "classical-ciphers",
+        "title": "Classical Ciphers",
+        "count": 7
+      },
+      {
+        "slug": "crypto-evolution",
+        "title": "Crypto Evolution",
+        "count": 4
+      },
+      {
+        "slug": "crypto-terminology",
+        "title": "Crypto Terminology",
+        "count": 4
+      },
+      {
+        "slug": "encryption-modes",
+        "title": "Encryption Modes",
+        "count": 8
+      },
+      {
+        "slug": "stream-vs-block-ciphers",
+        "title": "Stream Vs Block Ciphers",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "domain": 4,
+    "title": "Asymmetric Cryptography, Hashing & PKI",
+    "count": 40,
+    "topics": [
+      {
+        "slug": "cryptographic-hashing",
+        "title": "Cryptographic Hashing",
+        "count": 8
+      },
+      {
+        "slug": "digital-signatures",
+        "title": "Digital Signatures",
+        "count": 7
+      },
+      {
+        "slug": "ecc-algorithm",
+        "title": "Ecc Algorithm",
+        "count": 5
+      },
+      {
+        "slug": "mac-and-hmac",
+        "title": "Mac And Hmac",
+        "count": 5
+      },
+      {
+        "slug": "public-key-infrastructure",
+        "title": "Public Key Infrastructure",
+        "count": 5
+      },
+      {
+        "slug": "rsa-algorithm",
+        "title": "Rsa Algorithm",
+        "count": 10
+      }
+    ]
+  }
+]

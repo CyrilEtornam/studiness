@@ -1,0 +1,2783 @@
+[
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "text": "{{c1::Confidentiality}}, {{c2::Integrity}}, and {{c3::Availability}} together make up the CIA triad, the foundational model for information security.",
+    "extra": "Every other security concept in this course maps back to protecting one or more of these three properties.",
+    "topic": "security-definitions",
+    "domain": 1,
+    "id": "21cc1211fe1a"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "text": "A {{c1::vulnerability}} is a weakness in a system, while a {{c2::threat}} is a potential danger that could exploit that weakness, and an {{c3::attack}} is the actual attempt to exploit it.",
+    "extra": "Keeping these three terms distinct matters: a system can have a vulnerability with no active threat yet, or a threat with no exploitable vulnerability.",
+    "topic": "security-definitions",
+    "domain": 1,
+    "id": "f0404e6420b6"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "text": "{{c1::Risk}} is generally understood as the likelihood of a threat exploiting a vulnerability, combined with the resulting impact.",
+    "extra": "Risk = f(threat, vulnerability, impact) — this is why risk assessment always looks at probability and consequence together, not either alone.",
+    "topic": "security-definitions",
+    "domain": 1,
+    "id": "d5d789ce323a"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "text": "An {{c1::attack vector}} is the specific path or means by which an attacker gains access, while the {{c2::attack surface}} is the total sum of all possible attack vectors/entry points into a system.",
+    "extra": "Reducing attack surface (fewer exposed services, less code) is a core defensive strategy precisely because it shrinks the number of vectors available.",
+    "topic": "security-definitions",
+    "domain": 1,
+    "id": "395a6ca78b58"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>A company patches a specific known SQL injection flaw in its login form. Did this reduce the system's vulnerability, threat, or attack surface?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Only the threat, since attackers still exist"
+      },
+      {
+        "letter": "B",
+        "text": "The vulnerability (the flaw itself is gone) and, correspondingly, the attack surface (one fewer usable entry point)"
+      },
+      {
+        "letter": "C",
+        "text": "Only the attack surface, not the vulnerability"
+      },
+      {
+        "letter": "D",
+        "text": "None of these — patching doesn't affect any of these categories"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Patching removes the specific weakness (the vulnerability) that could be exploited through that entry point, which also shrinks the attack surface by one vector. The threat (attackers wanting to exploit systems) still exists in the world regardless — patching addresses your exposure, not their intent.",
+    "topic": "security-definitions",
+    "domain": 1,
+    "id": "1da26fd3f591"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Which pair of terms is correctly distinguished?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Threat: the weakness itself. Vulnerability: the potential danger."
+      },
+      {
+        "letter": "B",
+        "text": "Vulnerability: a weakness in the system. Threat: a potential danger that could exploit that weakness."
+      },
+      {
+        "letter": "C",
+        "text": "Attack vector: the total sum of all entry points. Attack surface: one specific entry point."
+      },
+      {
+        "letter": "D",
+        "text": "Risk: the actual exploitation attempt. Attack: the likelihood and impact of exploitation."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Vulnerability = the weakness, threat = the potential danger that could exploit it, attack = the actual exploitation attempt, and risk = the combination of likelihood and impact. Option B is the only pairing that keeps these straight; the others swap the definitions.",
+    "topic": "security-definitions",
+    "domain": 1,
+    "id": "bd317cfe60c8"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Why is 'attack surface' a more useful metric for a security team to track over time than counting individual vulnerabilities?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because attack surface is always a smaller number"
+      },
+      {
+        "letter": "B",
+        "text": "Because attack surface captures overall exposure (all reachable entry points) at once, giving a holistic sense of exposure trend, rather than requiring the team to track every individual flaw"
+      },
+      {
+        "letter": "C",
+        "text": "Because vulnerabilities don't relate to attack surface at all"
+      },
+      {
+        "letter": "D",
+        "text": "Because attack surface never changes once a system is deployed"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Attack surface is a system-level exposure metric — it goes up when you add services, ports, or code paths, and down when you remove or lock them down, independent of tracking any single vulnerability. That makes it a useful trend indicator for 'are we becoming more or less exposed,' complementary to (not a replacement for) vulnerability-level tracking.",
+    "topic": "security-definitions",
+    "domain": 1,
+    "id": "fabfd8f8e49a"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "text": "{{c1::Confidentiality}} ensures information is not disclosed to unauthorized parties; {{c2::integrity}} ensures information is not altered improperly; {{c3::availability}} ensures information/systems are accessible when needed by authorized users.",
+    "extra": "These three definitions are the exact scope of the classic CIA triad.",
+    "topic": "cia-triad",
+    "domain": 1,
+    "id": "c5168dd5451e"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "text": "Beyond the core CIA triad, the course adds {{c1::authenticity}} (verifying the claimed identity/origin of data or a user) and {{c2::accountability}} (the ability to trace actions back to a responsible entity) as extended security principles.",
+    "extra": "These extended principles are exactly what later map onto two of the six STRIDE threat categories (Spoofing and Repudiation).",
+    "topic": "cia-triad",
+    "domain": 1,
+    "id": "0162b070ce09"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>An attacker doesn't steal or alter any data, but instead floods a company's web server with traffic so legitimate customers can't access it. Which leg of the CIA triad is most directly violated?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Confidentiality"
+      },
+      {
+        "letter": "B",
+        "text": "Integrity"
+      },
+      {
+        "letter": "C",
+        "text": "Availability"
+      },
+      {
+        "letter": "D",
+        "text": "Authenticity"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "No data was read (confidentiality intact) or changed (integrity intact) — the harm is purely that authorized users can no longer access the service when they need it, which is precisely what availability protects against. This is the classic signature of a denial-of-service attack.",
+    "topic": "cia-triad",
+    "domain": 1,
+    "id": "52673ef543d5"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>An attacker intercepts a bank transfer message and changes the destination account number before it reaches the bank, without the sender or receiver noticing. Which security property was violated?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Availability"
+      },
+      {
+        "letter": "B",
+        "text": "Integrity"
+      },
+      {
+        "letter": "C",
+        "text": "Confidentiality only"
+      },
+      {
+        "letter": "D",
+        "text": "None — the message still arrived"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Integrity is about data not being altered improperly in transit or storage. Here the content of the message was modified without authorization or detection, which is exactly an integrity violation — regardless of whether the message's contents were ever kept secret (confidentiality) or whether the service stayed up (availability).",
+    "topic": "cia-triad",
+    "domain": 1,
+    "id": "fed5fc02bfa9"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Why does the course extend the classic CIA triad with 'authenticity' and 'accountability' as separate principles, rather than folding them into integrity?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because they're unrelated to security at all"
+      },
+      {
+        "letter": "B",
+        "text": "Integrity is about data not being altered, while authenticity is about verifying WHO the data or user really claims to be, and accountability is about tracing an action to a responsible party — each answers a distinctly different question"
+      },
+      {
+        "letter": "C",
+        "text": "Because authenticity and accountability are just other names for confidentiality"
+      },
+      {
+        "letter": "D",
+        "text": "Because CIA is now considered obsolete and unused"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Data can be perfectly unaltered (high integrity) but still forged from the start by an impersonator (an authenticity failure) — or altered by someone whose identity is verified but who later denies doing it (an accountability failure). These are genuinely separate failure modes, which is why they get their own labels rather than being absorbed into integrity.",
+    "topic": "cia-triad",
+    "domain": 1,
+    "id": "60ead68a8c12"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "text": "{{c1::Phishing}} is a social-engineering attack that tricks users into revealing sensitive information or credentials, typically via deceptive emails or messages.",
+    "extra": "It targets human trust and judgment rather than a technical flaw.",
+    "topic": "threats-and-attacks",
+    "domain": 1,
+    "id": "7a7f23c15605"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "text": "An {{c1::Advanced Persistent Threat (APT)}} is a prolonged, targeted attack in which an intruder gains and maintains unauthorized access to a network over an extended period, typically to steal data rather than cause immediate damage.",
+    "extra": "The 'persistent' part is the defining feature — sustained, stealthy access, not a quick smash-and-grab.",
+    "topic": "threats-and-attacks",
+    "domain": 1,
+    "id": "ce2bef0fa6ed"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "text": "An {{c1::insider threat}} originates from someone with legitimate authorized access to a system — an employee, contractor, or partner — who misuses that access, whether maliciously or accidentally.",
+    "extra": "Traditional perimeter defenses don't apply, since the insider is already inside the trust boundary.",
+    "topic": "threats-and-attacks",
+    "domain": 1,
+    "id": "010d2b1ab004"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Why are insider threats generally considered harder to defend against than external attacks, even though the attacker's access is already 'legitimate'?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Insiders never have real access to sensitive systems"
+      },
+      {
+        "letter": "B",
+        "text": "Perimeter defenses are designed to keep outsiders out, but an insider already has authorized access, so the attack never has to cross that perimeter at all"
+      },
+      {
+        "letter": "C",
+        "text": "Insider threats don't actually cause any real damage"
+      },
+      {
+        "letter": "D",
+        "text": "Insiders are always immediately detected because they're known employees"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Most traditional security controls are built around a trust boundary — keeping unauthorized outsiders from getting in. An insider starts already inside that boundary with legitimate credentials, so those perimeter-focused defenses simply don't apply to them; detecting insider misuse requires different controls (monitoring, least-privilege, auditing) than blocking external attackers.",
+    "topic": "threats-and-attacks",
+    "domain": 1,
+    "id": "825e609a33ae"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>What distinguishes an Advanced Persistent Threat (APT) from a typical smash-and-grab malware attack?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "APTs are always less sophisticated than ordinary malware"
+      },
+      {
+        "letter": "B",
+        "text": "APTs are characterized by a prolonged, targeted campaign that maintains long-term covert access for sustained data theft, rather than a quick, one-off compromise"
+      },
+      {
+        "letter": "C",
+        "text": "APTs only target home users, never organizations"
+      },
+      {
+        "letter": "D",
+        "text": "APTs never involve any social engineering"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The 'persistent' in APT is the key differentiator — the attacker's goal is sustained, stealthy access over weeks or months (often for espionage or ongoing data exfiltration), which requires far more sophistication and patience than a quick opportunistic malware infection that grabs what it can and moves on.",
+    "topic": "threats-and-attacks",
+    "domain": 1,
+    "id": "2c184f2c2c55"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>A well-crafted phishing email successfully tricks an employee into entering their password on a fake login page. What is the underlying vulnerability being exploited here?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "A software bug in the email client"
+      },
+      {
+        "letter": "B",
+        "text": "Human trust and judgment — the attack targets the person's willingness to believe a deceptive message, not a technical flaw in a system"
+      },
+      {
+        "letter": "C",
+        "text": "A misconfigured firewall"
+      },
+      {
+        "letter": "D",
+        "text": "An expired SSL certificate"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Phishing is a social-engineering technique — it exploits human psychology (trust, urgency, authority) rather than a code-level or configuration flaw. That's exactly why technical controls alone (firewalls, patching) don't fully stop phishing; user awareness and verification habits are the actual mitigating control.",
+    "topic": "threats-and-attacks",
+    "domain": 1,
+    "id": "16f7b6158ff3"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "text": "A {{c1::zero-day}} vulnerability is a flaw that is unknown to the vendor (and thus unpatched) at the time it is discovered or exploited by an attacker.",
+    "extra": "No patch exists yet, so signature/patch-based defenses offer no protection until it's discovered.",
+    "topic": "attacker-landscape",
+    "domain": 1,
+    "id": "89a684096e4b"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "text": "{{c1::Privilege escalation}} is the act of exploiting a bug or design flaw to gain elevated access (e.g. from a normal user to an administrator) beyond what was originally granted.",
+    "extra": "This is exactly what the STRIDE 'Elevation of privilege' category (covered later) describes.",
+    "topic": "attacker-landscape",
+    "domain": 1,
+    "id": "45b7c0c42a5b"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "text": "{{c1::SQL injection}} and {{c2::cross-site scripting (XSS)}} are both attacks that work by injecting malicious input into an application that fails to properly validate or sanitize it.",
+    "extra": "SQLi targets database queries; XSS targets output rendered in a browser — same root cause (unsanitized input), different target.",
+    "topic": "attacker-landscape",
+    "domain": 1,
+    "id": "189184d76b78"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Why is a zero-day vulnerability especially dangerous compared to a known, published vulnerability?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Zero-days are always harder to exploit technically"
+      },
+      {
+        "letter": "B",
+        "text": "Since the vendor doesn't yet know about it, no patch is available, so defenses relying on updated signatures or patches offer no protection until it's discovered and fixed"
+      },
+      {
+        "letter": "C",
+        "text": "Zero-days only affect obsolete software"
+      },
+      {
+        "letter": "D",
+        "text": "Zero-days can only be used once, ever"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The entire patch/signature-based defense ecosystem depends on a vulnerability being known — antivirus signatures, patch releases, and intrusion detection rules all require prior knowledge of the flaw. A zero-day, by definition, predates that knowledge, so defenders have no targeted countermeasure ready, which is exactly why zero-days command a premium on exploit markets.",
+    "topic": "attacker-landscape",
+    "domain": 1,
+    "id": "ccb1dc2835d2"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>An attacker profile is typically assessed along dimensions like motive, knowledge, and resources. Why does knowing an attacker's likely motive matter for defense, beyond just their technical skill?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Motive is irrelevant to security planning"
+      },
+      {
+        "letter": "B",
+        "text": "Motive shapes what an attacker will target and how persistent they'll be — a financially-motivated attacker behaves very differently from a state-sponsored espionage actor, even with similar technical capability"
+      },
+      {
+        "letter": "C",
+        "text": "All attackers have identical motives regardless of context"
+      },
+      {
+        "letter": "D",
+        "text": "Only technical knowledge matters; resources and motive don't affect outcomes"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Two attackers with identical skill sets can pose very different risks depending on what they're after — a financially-motivated criminal will likely take the path of least resistance to any monetizable target, while a targeted, well-resourced adversary will persist against a specific target regardless of difficulty. Profiling motive helps predict behavior and prioritize defenses accordingly, not just raw capability.",
+    "topic": "attacker-landscape",
+    "domain": 1,
+    "id": "e21d912a03de"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>An application takes user input directly into a database query without sanitizing it, allowing an attacker to manipulate the query itself. What class of attack does this describe?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Cross-site scripting (XSS)"
+      },
+      {
+        "letter": "B",
+        "text": "SQL injection"
+      },
+      {
+        "letter": "C",
+        "text": "Privilege escalation"
+      },
+      {
+        "letter": "D",
+        "text": "Zero-day exploitation"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "SQL injection specifically occurs when unsanitized user input is concatenated directly into a database query, letting an attacker alter the query's logic (e.g. to bypass authentication or dump data). XSS is the analogous problem but for injecting script into web page output rather than a database query.",
+    "topic": "attacker-landscape",
+    "domain": 1,
+    "id": "1dcb75746bdc"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "text": "A {{c1::security policy}} is a formal, documented set of rules and practices that specifies how an organization manages, protects, and distributes sensitive information.",
+    "extra": "It defines the WHAT and WHY; technical mechanisms implement the HOW.",
+    "topic": "security-mechanisms-policy",
+    "domain": 1,
+    "id": "64b5ab454620"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "text": "{{c1::Security mechanisms}} (or services) are the specific technical or procedural controls — like encryption, access control, or auditing — implemented to enforce a security policy's goals.",
+    "extra": "The same policy goal can be enforced by different mechanisms as technology evolves.",
+    "topic": "security-mechanisms-policy",
+    "domain": 1,
+    "id": "5abe26eea02e"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Why must a security policy exist as a separate concept from the technical security mechanisms (firewalls, encryption, etc.) that enforce it?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "They don't need to be separate; mechanisms ARE the policy"
+      },
+      {
+        "letter": "B",
+        "text": "The policy defines WHAT must be protected and WHY, while mechanisms are the HOW — the same policy goal can be enforced by different mechanisms as technology changes"
+      },
+      {
+        "letter": "C",
+        "text": "Policies are only needed for organizations without any technical controls"
+      },
+      {
+        "letter": "D",
+        "text": "Mechanisms always come first, and policy is written afterward to match whatever tools were already bought"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Separating policy (intent/rules) from mechanism (implementation) lets an organization change its technical tools over time without rewriting its underlying rules, and lets it verify whether current mechanisms actually satisfy policy — conflating the two would make it impossible to tell if a control gap exists.",
+    "topic": "security-mechanisms-policy",
+    "domain": 1,
+    "id": "1c2c2988cc92"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "text": "Threat modeling is a structured process used to identify, understand, and address potential {{c1::threats}} to a system before or during its design.",
+    "extra": "Doing this before or during design (not just after deployment) is what makes it a proactive rather than reactive practice.",
+    "topic": "threat-modeling-process",
+    "domain": 2,
+    "id": "d861ab7755c0"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The threat modeling process begins by defining {{c1::objectives and scope}} — deciding what asset or system is being analyzed and what the analysis is meant to achieve.",
+    "extra": "Without a defined scope, later steps have no boundary to work within.",
+    "topic": "threat-modeling-process",
+    "domain": 2,
+    "id": "d561ef152398"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "text": "A key step in threat modeling is creating a {{c1::Data Flow Diagram (DFD)}} or Process Flow Diagram (PFD) to visualize how data moves through the system and where trust boundaries lie.",
+    "extra": "This diagram is what STRIDE is later applied against, element by element.",
+    "topic": "threat-modeling-process",
+    "domain": 2,
+    "id": "e8fc0888b915"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "text": "After identifying threats, the threat modeling process moves to {{c1::risk assessment and mitigation}}, deciding how to respond to each identified threat.",
+    "extra": "This is where quantitative measures like ALE come into play, to prioritize which threats get addressed first.",
+    "topic": "threat-modeling-process",
+    "domain": 2,
+    "id": "6f774f375198"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The final step of the threat modeling process is to {{c1::validate and iterate}} — the model should be revisited as the system evolves, not treated as a one-time exercise.",
+    "extra": "A threat model is a living document, not a one-off deliverable.",
+    "topic": "threat-modeling-process",
+    "domain": 2,
+    "id": "6f4577b25696"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Why does the threat modeling process explicitly include a 'validate and iterate' step rather than ending once threats are identified and mitigated?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because threat models are legally required to be redone every year regardless of changes"
+      },
+      {
+        "letter": "B",
+        "text": "Systems change over time (new features, new integrations), and a model based on an old design can miss new attack surfaces introduced later — it needs to stay a living document"
+      },
+      {
+        "letter": "C",
+        "text": "Because the first pass of threat modeling is always wrong"
+      },
+      {
+        "letter": "D",
+        "text": "Validation is only needed if the initial model found zero threats"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "A threat model is a snapshot of a system's design and its risks at a point in time. As soon as the system changes — a new feature, a new third-party integration, a new data flow — the original model's coverage becomes stale, potentially missing genuinely new threats. Treating it as an ongoing process rather than a one-off document is what keeps it useful.",
+    "topic": "threat-modeling-process",
+    "domain": 2,
+    "id": "0c896ac93f37"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Why is creating a Data Flow Diagram (DFD) a foundational early step in threat modeling, before threats are even identified?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "DFDs are purely a documentation formality with no analytical value"
+      },
+      {
+        "letter": "B",
+        "text": "You can't systematically identify where threats might occur until you understand how data actually moves through the system and where it crosses trust boundaries — the DFD gives you that map to analyze"
+      },
+      {
+        "letter": "C",
+        "text": "DFDs replace the need for any further threat analysis"
+      },
+      {
+        "letter": "D",
+        "text": "DFDs are only used for auditing purposes after an incident"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Threat identification techniques like STRIDE are typically applied per-element of a system diagram (per data flow, per process, per trust boundary) — without first mapping out those elements and boundaries via a DFD, there's no structured way to systematically walk through 'what could go wrong here' for each part of the system.",
+    "topic": "threat-modeling-process",
+    "domain": 2,
+    "id": "7b22150e739a"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "text": "STRIDE is a threat-categorization framework whose six categories are {{c1::Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, and Elevation of privilege}}.",
+    "extra": "Each letter of STRIDE maps to the violation of one specific security property.",
+    "topic": "stride-framework",
+    "domain": 2,
+    "id": "ab7f8f0bbc32"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "text": "In STRIDE, {{c1::Spoofing}} threatens authenticity (pretending to be something/someone you're not), while {{c2::Tampering}} threatens integrity (unauthorized modification of data).",
+    "extra": "These are the first two letters of STRIDE, each mapping to a distinct extended security property.",
+    "topic": "stride-framework",
+    "domain": 2,
+    "id": "6b3c45e91560"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "text": "In STRIDE, {{c1::Repudiation}} threatens accountability (denying having performed an action), while {{c2::Information disclosure}} threatens confidentiality (exposing information to unauthorized parties).",
+    "extra": "These are the middle two letters of STRIDE.",
+    "topic": "stride-framework",
+    "domain": 2,
+    "id": "dad87c9476a6"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "text": "In STRIDE, {{c1::Denial of service}} threatens availability (degrading or blocking legitimate access), while {{c2::Elevation of privilege}} threatens authorization (gaining capabilities beyond what was granted).",
+    "extra": "These are the final two letters of STRIDE.",
+    "topic": "stride-framework",
+    "domain": 2,
+    "id": "1250d0a3c26a"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>STRIDE's six categories map directly onto extended security properties (confidentiality, integrity, availability, authenticity, accountability, authorization). Why is this mapping useful for a threat modeler?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "It isn't useful — STRIDE and security properties are unrelated concepts"
+      },
+      {
+        "letter": "B",
+        "text": "It gives a systematic checklist: for each element of a system diagram, you can ask 'could this be spoofed / tampered / repudiated / disclosed / denied / escalated,' ensuring no category of harm is overlooked"
+      },
+      {
+        "letter": "C",
+        "text": "It only applies to web applications, not other systems"
+      },
+      {
+        "letter": "D",
+        "text": "It replaces the need to build a data flow diagram"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Because each STRIDE letter corresponds to a violation of a specific security property, working through all six letters against every element of a system diagram becomes a structured, repeatable checklist — rather than relying on ad hoc brainstorming, the modeler is prompted to consider each category of harm systematically.",
+    "topic": "stride-framework",
+    "domain": 2,
+    "id": "b18bb46424a9"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>A user successfully denies having authorized a financial transaction, even though system logs show their credentials were used, because the system kept no tamper-evident record tying the action to them. Which STRIDE category does this gap fall under?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Spoofing"
+      },
+      {
+        "letter": "B",
+        "text": "Tampering"
+      },
+      {
+        "letter": "C",
+        "text": "Repudiation"
+      },
+      {
+        "letter": "D",
+        "text": "Elevation of privilege"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Repudiation is specifically about a system's inability to prove an action was actually performed by the claimed party — the user 'repudiates' (denies) responsibility, and without accountability mechanisms like non-repudiable signed logs, the system can't refute the denial.",
+    "topic": "stride-framework",
+    "domain": 2,
+    "id": "73281591a574"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>An attacker finds a bug that lets a regular authenticated user execute admin-only functions. Which STRIDE category best describes this?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Information disclosure"
+      },
+      {
+        "letter": "B",
+        "text": "Denial of service"
+      },
+      {
+        "letter": "C",
+        "text": "Elevation of privilege"
+      },
+      {
+        "letter": "D",
+        "text": "Spoofing"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Elevation of privilege is exactly the category for gaining capabilities beyond what was originally authorized — going from 'regular user' access to 'admin' access without proper authorization is the textbook example.",
+    "topic": "stride-framework",
+    "domain": 2,
+    "id": "81ae0ecd5a12"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "text": "Besides STRIDE, other named threat modeling methods include {{c1::PASTA}} (Process for Attack Simulation and Threat Analysis), {{c2::TRIKE}}, {{c3::VAST}}, and {{c4::Attack Trees}}.",
+    "extra": "Different methods emphasize different lenses — design-completeness, attacker-realism, or scalability across an organization.",
+    "topic": "threat-modeling-methods",
+    "domain": 2,
+    "id": "8d08b2e05ec1"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "text": "{{c1::CVSS (Common Vulnerability Scoring System)}} is a standardized scoring system used to rate the severity of vulnerabilities, often used alongside threat modeling methods to prioritize risk.",
+    "extra": "CVSS gives a comparable numeric score across otherwise very different vulnerabilities.",
+    "topic": "threat-modeling-methods",
+    "domain": 2,
+    "id": "acce04b9f9b5"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>PASTA (Process for Attack Simulation and Threat Analysis) is described as risk-centric and attacker-focused, simulating real attack scenarios. How does this differ in emphasis from STRIDE's approach?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "There is no meaningful difference between the two methods"
+      },
+      {
+        "letter": "B",
+        "text": "STRIDE is primarily a systematic categorization checklist applied to a system's design elements, while PASTA emphasizes simulating the attacker's actual perspective and business-risk impact across the full attack lifecycle"
+      },
+      {
+        "letter": "C",
+        "text": "PASTA only works for organizations with no existing system diagrams"
+      },
+      {
+        "letter": "D",
+        "text": "STRIDE can only be used after PASTA is complete"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "STRIDE's strength is its structured, repeatable coverage of design-level threat categories; PASTA's stated focus is risk-centric attacker simulation tied to business impact — different methods emphasize different lenses, which is why organizations sometimes combine methods rather than picking just one.",
+    "topic": "threat-modeling-methods",
+    "domain": 2,
+    "id": "129fa5c28284"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>An attack tree represents an attacker's goal as a root node, with branching child nodes showing different ways to achieve sub-goals toward that root. What is the main analytical benefit of this structure?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "It hides the different ways an attack could unfold"
+      },
+      {
+        "letter": "B",
+        "text": "It visually decomposes a complex attack goal into concrete, combined smaller steps, making it easier to see which specific paths are feasible and where a single mitigation could block multiple paths"
+      },
+      {
+        "letter": "C",
+        "text": "Attack trees are purely decorative and have no analytical use"
+      },
+      {
+        "letter": "D",
+        "text": "Attack trees can only represent a single attack path, never alternatives"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "By breaking 'compromise the system' down into the concrete sub-steps that could achieve it (and how those sub-steps combine, e.g. needing both A AND B, or either A OR B), an attack tree makes the many different routes to the same goal explicit and comparable — which is exactly what lets defenders spot a mitigation that closes off several branches at once.",
+    "topic": "threat-modeling-methods",
+    "domain": 2,
+    "id": "a5d1ef96563b"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "text": "Annualized Loss Expectancy is calculated as {{c1::ALE = SLE × ARO}}, where SLE is the Single Loss Expectancy (cost of one incident) and ARO is the Annualized Rate of Occurrence (expected incidents per year).",
+    "extra": "ALE converts an irregular, occasional loss into a comparable yearly budget figure.",
+    "topic": "risk-assessment-scoring",
+    "domain": 2,
+    "id": "8c79d54275a1"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "text": "{{c1::Residual risk}} is the risk that remains after mitigation controls have been applied — no realistic set of controls reduces risk to exactly zero.",
+    "extra": "Organizations explicitly decide how much residual risk they're willing to accept.",
+    "topic": "risk-assessment-scoring",
+    "domain": 2,
+    "id": "cf0072260eae"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>A ransomware scenario has a Single Loss Expectancy (SLE) of $50,000 per incident and an Annualized Rate of Occurrence (ARO) of 0.4 (expected roughly once every 2.5 years). What is the Annualized Loss Expectancy (ALE)?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "$50,000"
+      },
+      {
+        "letter": "B",
+        "text": "$20,000"
+      },
+      {
+        "letter": "C",
+        "text": "$125,000"
+      },
+      {
+        "letter": "D",
+        "text": "$5,000"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "ALE = SLE × ARO = $50,000 × 0.4 = $20,000. This gives a single yearly-averaged figure that can be directly compared against the annual cost of a proposed control, which is exactly the point of the ALE calculation — turning an irregular, occasional loss into a comparable yearly budget line.",
+    "topic": "risk-assessment-scoring",
+    "domain": 2,
+    "id": "052c5f6cdd70"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>A company is deciding whether to buy a $15,000/year security control that would fully prevent a risk with an ALE of $20,000. Purely from a cost standpoint, does this control make financial sense?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "No — never spend money on security controls"
+      },
+      {
+        "letter": "B",
+        "text": "Yes — the annual cost of the control ($15,000) is less than the annualized loss it prevents ($20,000), so it reduces net expected cost"
+      },
+      {
+        "letter": "C",
+        "text": "It's impossible to compare these two numbers"
+      },
+      {
+        "letter": "D",
+        "text": "No — the control costs more than the SLE of a single incident"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "ALE gives a yearly-equivalent cost of the unmitigated risk; comparing it directly against the annual cost of a control is the standard cost-benefit framing in risk management — here $15,000 < $20,000, so the control is worth its cost on a purely financial basis (ignoring other factors like reputational risk).",
+    "topic": "risk-assessment-scoring",
+    "domain": 2,
+    "id": "53967e0d2ff7"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>After deploying every reasonable mitigation for a given threat, some risk still remains. What is this remaining risk called, and why does it always exist?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Zero risk — good mitigation eliminates risk entirely"
+      },
+      {
+        "letter": "B",
+        "text": "Residual risk — no realistic combination of controls can reduce probability and impact to exactly zero; some level of risk acceptance is always part of risk management"
+      },
+      {
+        "letter": "C",
+        "text": "Inherent risk — the same as the risk before any mitigation"
+      },
+      {
+        "letter": "D",
+        "text": "ALE — the annualized version of the original risk"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Residual risk is what's left after controls are applied. It's an inescapable concept in risk management because perfect security doesn't exist — organizations explicitly decide how much residual risk they're willing to accept, rather than pretending mitigation can drive risk to zero.",
+    "topic": "risk-assessment-scoring",
+    "domain": 2,
+    "id": "f49dc531d024"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "text": "In the IoT smart door lock threat modeling example, the system's assets, actors, and data flows are first mapped before threats are categorized using {{c1::STRIDE}}.",
+    "extra": "This worked example is a direct application of the threat modeling process's steps end-to-end.",
+    "topic": "threat-model-worked-example",
+    "domain": 2,
+    "id": "08f8ee5c921e"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>In a threat model for a smart door lock that communicates wirelessly with a mobile app, why would 'spoofing the mobile app's identity to the lock' be flagged as a specific threat, rather than being treated as a generic catch-all risk?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Naming the specific threat (spoofing the app's identity over the wireless channel) points directly at a concrete mitigation (e.g. mutual authentication/pairing), which a vague 'the lock might be hacked' statement doesn't"
+      },
+      {
+        "letter": "B",
+        "text": "Because spoofing isn't a real risk for physical devices"
+      },
+      {
+        "letter": "C",
+        "text": "Because IoT devices are immune to STRIDE-style threats"
+      },
+      {
+        "letter": "D",
+        "text": "Because door locks don't have any data flows to analyze"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The entire value of walking through STRIDE against a concrete DFD is that it converts vague worry ('this could get hacked') into specific, actionable findings tied to a particular data flow or trust boundary — 'spoofing the app's identity over the BLE channel' immediately suggests the mitigation (mutual authentication), whereas a generic risk statement doesn't point anywhere useful.",
+    "topic": "threat-model-worked-example",
+    "domain": 2,
+    "id": "6981bc12087a"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "{{c1::Plaintext}} is the original, readable message; {{c2::ciphertext}} is the scrambled, unreadable result after encryption.",
+    "extra": "Every cipher's job is defined as the transformation between these two forms and back.",
+    "topic": "crypto-terminology",
+    "domain": 3,
+    "id": "43ee9e4c9964"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "{{c1::Cryptanalysis}} is the study of methods for breaking cryptographic systems, i.e. recovering plaintext or the key without authorized access.",
+    "extra": "Frequency analysis, brute force, and chosen-plaintext attacks are all cryptanalysis techniques.",
+    "topic": "crypto-terminology",
+    "domain": 3,
+    "id": "d1c2daa69c6b"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "{{c1::Steganography}} hides the very existence of a message (e.g. inside an image), while {{c2::cryptography}} scrambles a message's content but does not hide that a message exists.",
+    "extra": "The two techniques can be combined: hide an encrypted message inside an image for layered protection.",
+    "topic": "crypto-terminology",
+    "domain": 3,
+    "id": "2b97585a5643"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Why might a steganographic message be more dangerous to defenders than an obviously-encrypted ciphertext message, when both are intercepted?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Steganography is always weaker cryptographically than encryption"
+      },
+      {
+        "letter": "B",
+        "text": "An encrypted message is visibly suspicious (clearly a secret is being sent), whereas a well-hidden steganographic message can pass entirely unnoticed as ordinary content"
+      },
+      {
+        "letter": "C",
+        "text": "Steganography and cryptography are exactly the same technique"
+      },
+      {
+        "letter": "D",
+        "text": "Ciphertext cannot be intercepted at all"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Encryption protects confidentiality of content but announces 'something secret is here,' which can itself draw scrutiny. Steganography's goal is concealment of the fact that any hidden communication is happening at all, which is precisely why it's valuable in contexts where merely being suspected of secret communication is itself risky.",
+    "topic": "crypto-terminology",
+    "domain": 3,
+    "id": "93a994009200"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "The Caesar cipher, used by Julius Caesar for military affairs around 50 BC, is considered the {{c1::earliest known}} encryption algorithm.",
+    "extra": "It's a monoalphabetic substitution cipher with a fixed three-letter shift.",
+    "topic": "crypto-evolution",
+    "domain": 3,
+    "id": "74fa30ea732f"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "The {{c1::Enigma}} machine was a rotor-based cipher device used by Germany during {{c2::World War II}}.",
+    "extra": "Its complexity, compared to hand ciphers, represented the mechanization era of cryptography.",
+    "topic": "crypto-evolution",
+    "domain": 3,
+    "id": "a9c9b1c197c7"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "DES and RSA both emerged around {{c1::1978}}, while AES was published in {{c2::2001}} as DES's eventual replacement, and quantum cryptography represents the frontier of the field today.",
+    "extra": "RSA's arrival in 1978 marked the shift from purely symmetric to public-key cryptography.",
+    "topic": "crypto-evolution",
+    "domain": 3,
+    "id": "cb8e3a168032"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Why does the historical progression from Caesar cipher → Enigma → DES/RSA → AES represent a meaningful evolution, rather than just newer versions of the same idea?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Each step is purely cosmetic with no real difference in security"
+      },
+      {
+        "letter": "B",
+        "text": "Each stage represents a fundamental shift: manual substitution, then mechanical rotor-based substitution, then computer-based symmetric ciphers, then asymmetric public-key cryptography solving key distribution, then a rigorously vetted modern symmetric standard"
+      },
+      {
+        "letter": "C",
+        "text": "The progression is purely chronological with no technical distinction"
+      },
+      {
+        "letter": "D",
+        "text": "Caesar cipher is still considered secure enough for modern banking"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Each historical jump solved a real limitation of what came before — mechanization scaled up substitution complexity beyond hand ciphers, computerization enabled formally-analyzed block ciphers, and public-key cryptography (RSA) solved the fundamental problem of how to securely share a secret key in the first place, which none of the earlier symmetric-only schemes addressed.",
+    "topic": "crypto-evolution",
+    "domain": 3,
+    "id": "82a1e10a6182"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "The Caesar cipher is formulated mathematically as {{c1::c = E(p,k) = (p + k) mod 26}} for encryption and {{c2::p = D(c,k) = (c − k) mod 26}} for decryption, where k is the shift key.",
+    "extra": "Letters are mapped to numeric values 0-25 before applying this arithmetic.",
+    "topic": "classical-ciphers",
+    "domain": 3,
+    "id": "3e55cb01bb57"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "The Caesar cipher is a {{c1::monoalphabetic}} substitution cipher, meaning each plaintext letter always maps to the same ciphertext letter throughout the message.",
+    "extra": "This fixed one-to-one mapping is exactly what makes frequency analysis effective against it.",
+    "topic": "classical-ciphers",
+    "domain": 3,
+    "id": "6e8b996db972"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "A key weakness of monoalphabetic ciphers is their vulnerability to {{c1::frequency analysis}}, since patterns in ciphertext letter frequency mirror patterns in the underlying language.",
+    "extra": "This holds even though the key space (26! for full substitution) is astronomically large.",
+    "topic": "classical-ciphers",
+    "domain": 3,
+    "id": "08c2db97a597"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "A {{c1::polyalphabetic}} cipher improves on monoalphabetic substitution by changing the substitution alphabet during the encryption process, rather than using one fixed mapping throughout.",
+    "extra": "This breaks the fixed correspondence that frequency analysis depends on.",
+    "topic": "classical-ciphers",
+    "domain": 3,
+    "id": "924245ef9606"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Using the Caesar cipher formula c = (p + k) mod 26 with key k = 5, what does the plaintext letter 'h' (numeric value 7) encrypt to?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "m (value 12)"
+      },
+      {
+        "letter": "B",
+        "text": "c (value 2)"
+      },
+      {
+        "letter": "C",
+        "text": "l (value 11)"
+      },
+      {
+        "letter": "D",
+        "text": "a (value 0)"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "c = (7 + 5) mod 26 = 12 mod 26 = 12, and value 12 corresponds to the letter 'm' in the 0-indexed alphabet (a=0, b=1, ... m=12). This matches the same worked-example pattern shown in lecture for encrypting 'howdy' with k=5.",
+    "topic": "classical-ciphers",
+    "domain": 3,
+    "id": "12c64198c3c2"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Why does a full monoalphabetic substitution (26! possible keys, roughly 4×10²⁶) still fail to protect against cryptanalysis, despite the astronomically large key space defeating brute force?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "26! is actually a very small number"
+      },
+      {
+        "letter": "B",
+        "text": "The cipher preserves the statistical frequency pattern of each plaintext letter into a corresponding ciphertext letter, so frequency analysis can recover the mapping without trying every key"
+      },
+      {
+        "letter": "C",
+        "text": "Monoalphabetic ciphers are actually unbreakable and this is a trick question"
+      },
+      {
+        "letter": "D",
+        "text": "The key space size is irrelevant to cipher strength"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Brute force isn't the only attack strategy — because each plaintext letter always maps to the exact same ciphertext letter, the ciphertext's letter-frequency distribution still mirrors the plaintext language's natural frequency distribution (e.g. 'e' is common in English). An analyst can match frequency patterns to guess the mapping directly, sidestepping the huge key space entirely.",
+    "topic": "classical-ciphers",
+    "domain": 3,
+    "id": "ae860adcc9a6"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>What specific problem does a polyalphabetic cipher solve that a monoalphabetic cipher cannot?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "It makes the ciphertext shorter than the plaintext"
+      },
+      {
+        "letter": "B",
+        "text": "By changing the substitution mapping as encryption proceeds, it breaks the fixed one-to-one letter correspondence that frequency analysis relies on"
+      },
+      {
+        "letter": "C",
+        "text": "It eliminates the need for any key at all"
+      },
+      {
+        "letter": "D",
+        "text": "It only works for numeric messages, not text"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Frequency analysis works against monoalphabetic ciphers because the mapping never changes. A polyalphabetic cipher deliberately varies the substitution rule through the message, so a given plaintext letter no longer always produces the same ciphertext letter — flattening out the frequency signature that made the monoalphabetic version crackable.",
+    "topic": "classical-ciphers",
+    "domain": 3,
+    "id": "df632afafb9c"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "In a {{c1::stream cipher}}, each bit (or byte) of plaintext is encrypted individually by combining it with a corresponding bit of a pseudorandom key stream, typically via {{c2::XOR}}.",
+    "extra": "XOR's self-inverse property is what makes the same operation work for both encryption and decryption.",
+    "topic": "stream-vs-block-ciphers",
+    "domain": 3,
+    "id": "12f711313156"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "In a {{c1::block cipher}}, the plaintext is divided into fixed-size blocks, and each block is encrypted as a unit — the encryption of any bit in a block depends on every other bit in that same block.",
+    "extra": "This whole-block interdependency is what produces the avalanche effect central to block cipher security.",
+    "topic": "stream-vs-block-ciphers",
+    "domain": 3,
+    "id": "906389b3cd8d"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "Common fixed block sizes are {{c1::64 bits}} (as in DES/3DES) and {{c2::128 bits}} (as in AES).",
+    "extra": "Larger block sizes generally improve security but slow down the cipher.",
+    "topic": "stream-vs-block-ciphers",
+    "domain": 3,
+    "id": "73f37c788cc2"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "A fundamental weakness of naive block cipher encryption is that repeating plaintext blocks produce {{c1::identical ciphertext blocks}}, giving attackers clues about the underlying structure of the message.",
+    "extra": "This is exactly what NIST's modes of encryption (like CBC) exist to fix.",
+    "topic": "stream-vs-block-ciphers",
+    "domain": 3,
+    "id": "25f376982f3f"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Using stream-cipher XOR encryption, plaintext bits x = 1000001 are combined with key stream bits s = 0101100. What is the resulting ciphertext y = x XOR s?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "1101101"
+      },
+      {
+        "letter": "B",
+        "text": "1100101"
+      },
+      {
+        "letter": "C",
+        "text": "0101101"
+      },
+      {
+        "letter": "D",
+        "text": "1000001"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "XOR each corresponding bit: 1⊕0=1, 0⊕1=1, 0⊕0=0, 0⊕1=1, 0⊕1=1, 0⊕0=0, 1⊕0=1 → 1101101. This matches the lecture's own worked example encrypting the ASCII letter 'A' with the given key stream.",
+    "topic": "stream-vs-block-ciphers",
+    "domain": 3,
+    "id": "11392782d81f"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Why is decryption of an XOR stream cipher performed with the exact same operation (XOR with the same key stream) as encryption, rather than a different inverse operation?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "XOR is a coincidence and any operation would work"
+      },
+      {
+        "letter": "B",
+        "text": "XOR is its own inverse: (x XOR s) XOR s = x, so applying the identical key stream a second time via XOR exactly undoes the first XOR"
+      },
+      {
+        "letter": "C",
+        "text": "Stream ciphers don't actually support decryption"
+      },
+      {
+        "letter": "D",
+        "text": "The receiver must use a completely different key stream to decrypt"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "XOR has the self-inverse property — XORing twice with the same value cancels out. That algebraic property is exactly why stream ciphers built on XOR can use one symmetric operation for both directions: encrypt with y = x XOR s, decrypt with x = y XOR s, using the identical key stream both times.",
+    "topic": "stream-vs-block-ciphers",
+    "domain": 3,
+    "id": "93f99b2a93c3"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Why do block ciphers make the encryption of any single bit depend on every other bit within the same block, rather than encrypting each bit independently (as stream ciphers effectively do)?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "It doesn't actually matter; block ciphers could encrypt bits independently too"
+      },
+      {
+        "letter": "B",
+        "text": "Making every output bit depend on the whole block input is what gives block ciphers strong diffusion, so a single changed input bit scrambles roughly half the output bits"
+      },
+      {
+        "letter": "C",
+        "text": "It slows down encryption for no security benefit"
+      },
+      {
+        "letter": "D",
+        "text": "This dependency exists only in stream ciphers, not block ciphers"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "This whole-block interdependency is the mechanism behind the 'avalanche effect' — a well-designed block cipher ensures a tiny input change cascades into a large, unpredictable output change. Without this property, the cipher would leak much more structural information about the plaintext, similar to the frequency-analysis weaknesses of classical ciphers.",
+    "topic": "stream-vs-block-ciphers",
+    "domain": 3,
+    "id": "55f25bda7857"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "AES (Advanced Encryption Standard), published in {{c1::2001}}, was selected by NIST as the algorithm {{c2::Rijndael}}, created by researchers {{c3::Vincent Rijmen and Joan Daemen}}.",
+    "extra": "AES was issued as the FIPS PUB 197 standard.",
+    "topic": "aes-algorithm",
+    "domain": 3,
+    "id": "d38235fd75c3"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "NIST's AES selection process narrowed 15 candidate algorithms down to 5 finalists: {{c1::MARS, RC6, Rijndael, Serpent, and Twofish}}, before ultimately choosing Rijndael.",
+    "extra": "The choice balanced speed, security margin, and flexibility across the finalists.",
+    "topic": "aes-algorithm",
+    "domain": 3,
+    "id": "8765c090c069"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "AES supports key lengths of {{c1::128, 192, and 256 bits}}, with corresponding round counts of {{c2::10, 12, and 14}} respectively.",
+    "extra": "Longer keys require more rounds to maintain the same security margin per bit of key material.",
+    "topic": "aes-algorithm",
+    "domain": 3,
+    "id": "40809e4b199e"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "AES's four main round functions are {{c1::SubBytes}} (non-linear byte substitution via an S-box), {{c2::ShiftRows}} (cyclic row shifting), {{c3::MixColumns}} (column-mixing diffusion via Galois Field arithmetic), and {{c4::AddRoundKey}} (bitwise XOR with the round's subkey).",
+    "extra": "SubBytes/MixColumns give confusion and diffusion respectively; AddRoundKey is the only step that touches the secret key.",
+    "topic": "aes-algorithm",
+    "domain": 3,
+    "id": "66fd37aaef1d"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "In AES's ShiftRows operation, row 0 of the state matrix is left unchanged, while rows 1, 2, and 3 undergo a circular left shift of {{c1::1, 2, and 3 bytes}} respectively.",
+    "extra": "Decryption inverts this with shifts to the right instead.",
+    "topic": "aes-algorithm",
+    "domain": 3,
+    "id": "a7f378d5ff30"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "AES's AddRoundKey step is the only step that actually incorporates the {{c1::key}} material into the transformation, via a bitwise {{c2::XOR}} between the state and a round subkey.",
+    "extra": "This is why AddRoundKey must be applied at the start and end of every round — it's the sole key-dependent step.",
+    "topic": "aes-algorithm",
+    "domain": 3,
+    "id": "e9e65d18931e"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>AES was designed to replace DES/3DES. Why was 3DES, despite being considered secure, still viewed as inadequate going forward?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "3DES had no known security weaknesses at all"
+      },
+      {
+        "letter": "B",
+        "text": "3DES was slow, especially in software, and NIST's AES requirements explicitly called for an algorithm stronger AND faster, suitable for smart-card implementation with a 20-30 year active lifespan"
+      },
+      {
+        "letter": "C",
+        "text": "3DES used a larger block size than AES"
+      },
+      {
+        "letter": "D",
+        "text": "3DES was never actually implemented anywhere"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The lecture explicitly notes 3DES is 'regarded by the industry as secure... but it is slow, especially in software' — performance, not just security margin, was a driving requirement for AES's replacement, since NIST needed something both strong and fast enough for decades of future use across many platforms including constrained smart cards.",
+    "topic": "aes-algorithm",
+    "domain": 3,
+    "id": "d210aac09d66"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Why does the AES SubBytes step use a fixed 16×16 lookup table (the S-box) rather than a simple mathematical formula applied directly to each byte?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Lookup tables are always faster regardless of security"
+      },
+      {
+        "letter": "B",
+        "text": "The S-box is specifically constructed to be a highly non-linear substitution, essential for the 'confusion' property — a simple linear formula would be far easier for cryptanalysts to reverse-engineer algebraically"
+      },
+      {
+        "letter": "C",
+        "text": "AES doesn't actually use any lookup table"
+      },
+      {
+        "letter": "D",
+        "text": "The S-box only matters for decryption, not encryption"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Confusion (per Shannon's classic cipher design principles) requires the relationship between key/plaintext and ciphertext to be as complex and non-linear as possible. A carefully constructed non-linear S-box achieves this far better than any simple linear substitution formula would, which is exactly why AES uses a pre-computed non-linear lookup table rather than computing substitution on the fly with simple arithmetic.",
+    "topic": "aes-algorithm",
+    "domain": 3,
+    "id": "e78bd013d1d5"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>In AES, why is the ShiftRows step (a simple permutation) necessary at all, when SubBytes already provides strong non-linear substitution?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "ShiftRows is redundant and could be removed with no security loss"
+      },
+      {
+        "letter": "B",
+        "text": "SubBytes alone only mixes bytes within their own position; ShiftRows spreads bytes across different columns, which is required to achieve diffusion — ensuring changes in one part of the state eventually affect the entire block"
+      },
+      {
+        "letter": "C",
+        "text": "ShiftRows performs the actual key mixing, not AddRoundKey"
+      },
+      {
+        "letter": "D",
+        "text": "ShiftRows is only used during decryption, never encryption"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "SubBytes provides confusion (non-linear substitution) but operates byte-by-byte in place — without something to move bytes between columns, the cipher wouldn't achieve diffusion (spreading a single input bit's influence across the whole block over multiple rounds). ShiftRows (plus MixColumns) is precisely the mechanism that provides that spreading.",
+    "topic": "aes-algorithm",
+    "domain": 3,
+    "id": "f829fe647434"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Why must the AddRoundKey step be applied both at the start (round 0) and at the end of every subsequent round, rather than just once at the beginning?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "It's not actually required more than once; this is a common misconception"
+      },
+      {
+        "letter": "B",
+        "text": "AddRoundKey is the only step that mixes in secret key material at all — applying it every round ties each round's transformation to a different piece of the expanded key, so an attacker can't strip off the unkeyed steps to work backward without also guessing key-dependent XORs at every stage"
+      },
+      {
+        "letter": "C",
+        "text": "AddRoundKey provides the diffusion property, which must happen every round"
+      },
+      {
+        "letter": "D",
+        "text": "It's applied every round purely for historical/legacy compatibility reasons"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "SubBytes, ShiftRows, and MixColumns are all fixed, public, key-independent transformations — anyone can compute or invert them without knowing the key. AddRoundKey is the sole point where the secret key enters the computation, so it has to recur every round (using a distinct derived subkey each time) to keep every round's output genuinely dependent on the secret key, not just the first one.",
+    "topic": "aes-algorithm",
+    "domain": 3,
+    "id": "2465c86b307e"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "NIST defines five block cipher modes of operation: {{c1::Electronic Code Book (ECB), Cipher Block Chaining (CBC), Cipher Feedback (CFB), Output Feedback (OFB), and Counter (CTR)}}.",
+    "extra": "CFB and OFB are block-cipher modes that act like stream ciphers.",
+    "topic": "encryption-modes",
+    "domain": 3,
+    "id": "ca4d06e99d73"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "In ECB mode, each plaintext block is encrypted independently with the same key: {{c1::Cᵢ = E_K1(Pᵢ)}}, with no dependency between blocks.",
+    "extra": "This independence is exactly what causes ECB's pattern-leakage weakness.",
+    "topic": "encryption-modes",
+    "domain": 3,
+    "id": "3ab45cbb78df"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "In CBC mode, each block is XORed with the previous ciphertext block before encryption: {{c1::Cᵢ = E_K1(Pᵢ XOR Cᵢ₋₁)}}, with an {{c2::initialization vector (IV)}} standing in for C₋₁ on the first block.",
+    "extra": "The IV must never repeat across messages encrypted under the same key.",
+    "topic": "encryption-modes",
+    "domain": 3,
+    "id": "ccdfff569340"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "text": "CTR mode encrypts a {{c1::counter value}} (rather than feeding back previous ciphertext or output) and XORs the result with the plaintext block: {{c2::Cᵢ = Pᵢ XOR E_K1(counter_i)}}.",
+    "extra": "Because each block's keystream only depends on the counter, CTR naturally supports random access and parallel processing.",
+    "topic": "encryption-modes",
+    "domain": 3,
+    "id": "e8b23e03c72b"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>ECB mode's main weakness is that identical plaintext blocks always produce identical ciphertext blocks. Why does CBC mode not have this problem?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "CBC uses a completely different, stronger encryption algorithm than ECB"
+      },
+      {
+        "letter": "B",
+        "text": "CBC XORs each plaintext block with the PREVIOUS ciphertext block before encrypting, so even identical plaintext blocks produce different ciphertext once the preceding context differs"
+      },
+      {
+        "letter": "C",
+        "text": "CBC mode doesn't actually encrypt every block"
+      },
+      {
+        "letter": "D",
+        "text": "CBC always uses a longer key than ECB"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "ECB's flaw is that each block is encrypted in total isolation — same input, same key, same output, every time. CBC deliberately chains blocks together (XORing with the prior ciphertext first) so that a block's output depends on everything that came before it in the message, breaking the direct plaintext-to-ciphertext correspondence that made ECB leak patterns.",
+    "topic": "encryption-modes",
+    "domain": 3,
+    "id": "965b98a1411e"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>Why is it critical that the Initialization Vector (IV) used in CBC mode never repeat across different messages encrypted under the same key?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "IV reuse has no security consequence as long as the key itself is secret"
+      },
+      {
+        "letter": "B",
+        "text": "Reusing the same IV and key across two messages makes the encryption of their first blocks directly comparable, potentially leaking whether the two messages start with the same plaintext"
+      },
+      {
+        "letter": "C",
+        "text": "IVs are only used for decryption, not encryption, so reuse is harmless"
+      },
+      {
+        "letter": "D",
+        "text": "CBC mode doesn't actually use an IV; this is a misconception"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The IV's whole job is to make C₋₁ (the 'previous ciphertext' fed into the first real block) different every time, so that even identical messages encrypt to different ciphertext. Reusing an IV under the same key defeats that purpose for the first block onward, reintroducing exactly the kind of pattern-leakage CBC was designed to eliminate.",
+    "topic": "encryption-modes",
+    "domain": 3,
+    "id": "b3f6bc0776c2"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>What key structural difference makes CTR mode able to support random access to encrypted data blocks (decrypt block 500 without first decrypting blocks 1-499), unlike CBC mode?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "CTR mode doesn't actually support random access either"
+      },
+      {
+        "letter": "B",
+        "text": "In CTR mode, block i's keystream is generated purely from encrypting (counter + i), independent of any other ciphertext block, whereas CBC requires block i-1's ciphertext to decrypt block i"
+      },
+      {
+        "letter": "C",
+        "text": "CTR mode is slower than CBC, which is why it allows random access"
+      },
+      {
+        "letter": "D",
+        "text": "CBC mode also supports random access identically to CTR"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "CBC's chaining structure (each block depends on the previous ciphertext block) is exactly what makes it sequential — you need Cᵢ₋₁ to decrypt block i. CTR mode instead derives each block's keystream independently from a counter value, so any block can be encrypted or decrypted on its own, which is also why CTR naturally supports parallelization.",
+    "topic": "encryption-modes",
+    "domain": 3,
+    "id": "040e83e53c65"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec3"
+    ],
+    "question": "<p>In which scenario would ECB mode's simplicity actually be an acceptable (even preferred) choice, despite its well-known pattern-leakage weakness?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Encrypting a large database of similar customer records"
+      },
+      {
+        "letter": "B",
+        "text": "Encrypting a single, small, standalone block of information — such as one symmetric key being wrapped for transport — where there's no sequence of repeating blocks for the weakness to manifest in"
+      },
+      {
+        "letter": "C",
+        "text": "Encrypting a video file with many repeating frames"
+      },
+      {
+        "letter": "D",
+        "text": "ECB should never be used under any circumstances"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "ECB's core weakness only shows up as a problem when there are multiple blocks, some of which repeat — the resulting identical ciphertext blocks are what leak structural information. For a single, isolated block (like wrapping one key), there's no sequence for a pattern to appear in, which is exactly the scenario the lecture calls out ECB as suitable for.",
+    "topic": "encryption-modes",
+    "domain": 3,
+    "id": "6b552861da08"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "RSA key generation begins by selecting two large prime numbers {{c1::p and q}}, then computing {{c2::n = p × q}} and the totient {{c3::φ(n) = (p−1)(q−1)}}.",
+    "extra": "n becomes the modulus for both encryption and decryption.",
+    "topic": "rsa-algorithm",
+    "domain": 4,
+    "id": "91b4f85d9d20"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "The RSA public key exponent {{c1::k}} must satisfy 1 < k < φ(n) and {{c2::gcd(k, φ(n)) = 1}} (k and φ(n) must be coprime).",
+    "extra": "Without this coprimality, no valid modular inverse (the private key) could be computed.",
+    "topic": "rsa-algorithm",
+    "domain": 4,
+    "id": "9a3bd5b57184"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "The RSA private key {{c1::d}} is computed so that {{c2::k·d ≡ 1 (mod φ(n))}} — i.e. d is the modular multiplicative inverse of k.",
+    "extra": "d is kept secret; k and n are published.",
+    "topic": "rsa-algorithm",
+    "domain": 4,
+    "id": "b98d74a7b578"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "RSA encryption is computed as {{c1::C = Mᵏ mod n}}, and decryption as {{c2::M = C^d mod n}}, using the public exponent k and private exponent d respectively.",
+    "extra": "These two operations are exact inverses of each other by construction.",
+    "topic": "rsa-algorithm",
+    "domain": 4,
+    "id": "9e988e4aa0f0"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "The RSA key pair is published/kept as {{c1::public key PU = (k, n)}} and {{c2::private key PR = (d, p, q)}}.",
+    "extra": "p and q are kept secret with the private key, never published — publishing them would let anyone recompute d.",
+    "topic": "rsa-algorithm",
+    "domain": 4,
+    "id": "b374d4d4323b"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "question": "<p>Given RSA parameters p=11, q=3, so n=33 and φ(n)=(11-1)(3-1)=20, with public key k=3. Which value of private key d satisfies k·d ≡ 1 (mod 20)?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "d = 3"
+      },
+      {
+        "letter": "B",
+        "text": "d = 7"
+      },
+      {
+        "letter": "C",
+        "text": "d = 11"
+      },
+      {
+        "letter": "D",
+        "text": "d = 20"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "We need 3d ≡ 1 (mod 20), i.e. (3d − 1) divisible by 20. Testing d=7: 3×7=21, and 21−1=20, which is exactly divisible by 20. So d=7 — this matches the lecture's own worked example, giving public key PU=(3,33) and private key PR=(7,11,3).",
+    "topic": "rsa-algorithm",
+    "domain": 4,
+    "id": "511335cd88ee"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "question": "<p>Using RSA with public key (k=3, n=33), encrypt the plaintext value M=7 (the letter H). What is the resulting ciphertext C = Mᵏ mod n?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "C = 13"
+      },
+      {
+        "letter": "B",
+        "text": "C = 21"
+      },
+      {
+        "letter": "C",
+        "text": "C = 7"
+      },
+      {
+        "letter": "D",
+        "text": "C = 33"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "C = 7³ mod 33 = 343 mod 33 = 13 (since 33×10=330, 343−330=13). This exactly matches the lecture's worked example, where ciphertext 13 corresponds to the letter N in the monoalphabetic scheme.",
+    "topic": "rsa-algorithm",
+    "domain": 4,
+    "id": "29d264523106"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "question": "<p>Continuing the previous example, decrypt ciphertext C=13 using private key d=7 and n=33 with the formula M = C^d mod n. What plaintext value results?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "M = 13"
+      },
+      {
+        "letter": "B",
+        "text": "M = 3"
+      },
+      {
+        "letter": "C",
+        "text": "M = 7"
+      },
+      {
+        "letter": "D",
+        "text": "M = 33"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "M = 13⁷ mod 33 = 7, recovering the original plaintext value 7 (letter H) — this confirms RSA's core property: (Mᵏ)^d mod n = M, decryption exactly undoes encryption using the matched private exponent.",
+    "topic": "rsa-algorithm",
+    "domain": 4,
+    "id": "799a1d9ff597"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "question": "<p>Why does RSA's security fundamentally rely on p and q being large primes, rather than just making n itself an arbitrarily large number?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Large numbers are inherently secure regardless of their factorization"
+      },
+      {
+        "letter": "B",
+        "text": "An attacker who can factor n back into p and q can directly recompute φ(n) and then the private key d — RSA's security rests on the practical difficulty of factoring the product of two large primes"
+      },
+      {
+        "letter": "C",
+        "text": "n doesn't actually need to be related to p and q at all"
+      },
+      {
+        "letter": "D",
+        "text": "RSA security depends only on the size of the public exponent k"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The entire security argument for RSA is the integer factorization problem — given n=p×q for two large primes, finding p and q back from n is believed to be computationally infeasible for sufficiently large primes. If n had many small factors instead, factoring would be comparatively easy, immediately exposing φ(n) and thus the private key.",
+    "topic": "rsa-algorithm",
+    "domain": 4,
+    "id": "209ee9556eb5"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "question": "<p>Why must the RSA public exponent k satisfy gcd(k, φ(n)) = 1 (k and φ(n) must be coprime)?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "This condition is arbitrary and not actually required"
+      },
+      {
+        "letter": "B",
+        "text": "The private key d is defined as the modular multiplicative inverse of k modulo φ(n); a modular inverse only exists when k and φ(n) share no common factors"
+      },
+      {
+        "letter": "C",
+        "text": "gcd(k, φ(n))=1 is only needed for decryption speed, not correctness"
+      },
+      {
+        "letter": "D",
+        "text": "This condition ensures n is prime"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Finding d such that k·d ≡ 1 (mod φ(n)) is exactly the problem of finding a modular multiplicative inverse, which is only solvable when k and φ(n) are coprime (gcd=1) — this is a hard mathematical requirement for the key generation to even produce a valid private key, not a stylistic choice.",
+    "topic": "rsa-algorithm",
+    "domain": 4,
+    "id": "e649aa37ca74"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "Elliptic Curve Cryptography (ECC) is based on the curve equation {{c1::y² = x³ + ax + b (mod p)}} over a finite field, where p is a large prime and a, b are curve coefficients.",
+    "extra": "This replaces RSA's reliance on large-prime exponentiation with the algebra of points on a curve.",
+    "topic": "ecc-algorithm",
+    "domain": 4,
+    "id": "441c0a2f67f1"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "In ECC key generation, each party selects a random private key d and computes their public key as {{c1::Q = d × G}}, where G is the agreed-upon generator point on the curve.",
+    "extra": "Recovering d from Q and G is the elliptic-curve discrete logarithm problem, believed to be computationally infeasible.",
+    "topic": "ecc-algorithm",
+    "domain": 4,
+    "id": "e12978877cbb"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "ECC's two core point operations are {{c1::point doubling}} (adding a point to itself) and {{c2::point addition}} (adding two distinct points), both defined by specific geometric/algebraic rules on the curve.",
+    "extra": "Repeated doubling and addition is how the scalar multiplication d×G is efficiently computed.",
+    "topic": "ecc-algorithm",
+    "domain": 4,
+    "id": "797162f6b6d4"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "question": "<p>ECC with a 256-bit key provides security roughly equivalent to RSA with a 3072-bit key. What is the practical significance of this for constrained devices (e.g. smart cards, IoT sensors)?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "There is no practical difference; key size doesn't affect device requirements"
+      },
+      {
+        "letter": "B",
+        "text": "ECC can deliver the same security level with dramatically smaller keys, meaning less computation, memory, and bandwidth — a major advantage for resource-constrained devices"
+      },
+      {
+        "letter": "C",
+        "text": "RSA is always faster than ECC regardless of key size"
+      },
+      {
+        "letter": "D",
+        "text": "ECC can only be used for encryption, never for key exchange"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The lecture's comparison table (e.g. ECC 256-bit ≈ RSA 3072-bit) shows ECC achieving equivalent security at a small fraction of RSA's key size — for devices with limited processing power, memory, or bandwidth, that reduction translates directly into lower computational cost and faster operations, which is why ECC is popular in mobile and embedded/IoT contexts.",
+    "topic": "ecc-algorithm",
+    "domain": 4,
+    "id": "7c0bf338ab73"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "question": "<p>Why does the ECC key exchange process (Alice and Bob each computing k = private_key × other_party's_public_key) produce the same shared secret value on both sides?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "It's a coincidence specific to the numbers chosen"
+      },
+      {
+        "letter": "B",
+        "text": "Both computations algebraically reduce to the same point (dA×dB)×G on the curve, since QB = dB×G and QA = dA×G, and scalar multiplication commutes in the relevant sense"
+      },
+      {
+        "letter": "C",
+        "text": "Both parties must manually agree on the shared secret beforehand"
+      },
+      {
+        "letter": "D",
+        "text": "The shared secret is actually different for each party, which is the point of asymmetric encryption"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "This is the elliptic-curve analogue of Diffie-Hellman: computing dA×QB gives dA×dB×G, and computing dB×QA gives dB×dA×G — algebraically identical, so both parties independently arrive at the same point on the curve without ever transmitting the shared secret itself.",
+    "topic": "ecc-algorithm",
+    "domain": 4,
+    "id": "619c98b8cdd3"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "{{c1::Pre-image resistance}} (the one-way property) means that given a hash output y, it should be computationally infeasible to find any input m such that hash(m) = y.",
+    "extra": "This property is what makes password hashing meaningful — an attacker with only the stored hash shouldn't be able to recover the password.",
+    "topic": "cryptographic-hashing",
+    "domain": 4,
+    "id": "2960d7c0ebeb"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "{{c1::Second pre-image resistance}} (weak collision resistance) means that given a specific input m₁, it should be infeasible to find a different input m₂ with the same hash value.",
+    "extra": "This is what stops an attacker from swapping in a forged document that hashes identically to a legitimate, already-signed one.",
+    "topic": "cryptographic-hashing",
+    "domain": 4,
+    "id": "05d1aabd763e"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "{{c1::Collision resistance}} (strong collision resistance) means it should be infeasible to find ANY two different inputs m₁, m₂ that produce the same hash — a stronger guarantee than second pre-image resistance.",
+    "extra": "Strong because the attacker gets to choose both inputs freely, rather than being handed one fixed input to match.",
+    "topic": "cryptographic-hashing",
+    "domain": 4,
+    "id": "da9f9f25f556"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "MD5 produces a {{c1::128-bit}} digest, SHA-1 produces a {{c2::160-bit}} digest, and SHA-256 produces a {{c3::256-bit}} digest.",
+    "extra": "Larger digests generally correspond to stronger collision resistance.",
+    "topic": "cryptographic-hashing",
+    "domain": 4,
+    "id": "e72891b25f57"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "{{c1::Non-malleability}} means it should be computationally infeasible to compute hash(m') from hash(m) for a related message m', without knowing m itself.",
+    "extra": "This closes off attacks where an adversary tries to derive a valid hash for a modified message just by manipulating the original hash value directly.",
+    "topic": "cryptographic-hashing",
+    "domain": 4,
+    "id": "532caca38c4e"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "question": "<p>Why does collision resistance require a hash value 'at least twice as long' as what's needed for pre-image resistance, per the lecture?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "This is an arbitrary design choice with no mathematical basis"
+      },
+      {
+        "letter": "B",
+        "text": "Finding ANY colliding pair is subject to the birthday paradox, making collisions findable with roughly √(2ⁿ) work rather than 2ⁿ, so the digest needs roughly double the bit-length to keep collision-search as hard as pre-image search"
+      },
+      {
+        "letter": "C",
+        "text": "Longer hashes are always slower to compute, which is the only reason"
+      },
+      {
+        "letter": "D",
+        "text": "Collision resistance and pre-image resistance require exactly the same digest length"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The birthday paradox means that finding any two matching outputs among many hashes is dramatically easier than finding one specific pre-image — the search cost for collisions scales roughly with the square root of the space (√2ⁿ) rather than the full space (2ⁿ). To keep collision-finding as hard as pre-image-finding, the hash output needs roughly double the bits.",
+    "topic": "cryptographic-hashing",
+    "domain": 4,
+    "id": "c2bf8549e79f"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "question": "<p>A hash function lacks second pre-image resistance. What specific attack does this expose a system to, that pre-image resistance alone would NOT prevent?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "An attacker being able to guess a random hash value without any input"
+      },
+      {
+        "letter": "B",
+        "text": "Given a legitimate message m1 and its hash, an attacker being able to craft a DIFFERENT message m2 with the identical hash — enabling substitution of a malicious document for a legitimately hashed/signed one"
+      },
+      {
+        "letter": "C",
+        "text": "An attacker being able to slow down the hashing computation"
+      },
+      {
+        "letter": "D",
+        "text": "An attacker recovering the original hash algorithm's source code"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Second pre-image resistance specifically defends against 'given a known, real message, can an attacker forge a different message with the same digest' — exactly the scenario needed to substitute a fraudulent contract or file for a genuine one that was already hashed/signed, without the substitution being detectable via the hash check.",
+    "topic": "cryptographic-hashing",
+    "domain": 4,
+    "id": "014ad1545652"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "question": "<p>Why is a hash function's 'pseudorandomness' property considered essential even beyond the pre-image/collision resistance properties?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Pseudorandomness is not actually a real property of hash functions"
+      },
+      {
+        "letter": "B",
+        "text": "If a hash function's outputs showed any statistically detectable pattern or bias, an attacker could exploit that structure to narrow down candidate inputs, even without literally reversing the hash"
+      },
+      {
+        "letter": "C",
+        "text": "Pseudorandomness only matters for encryption, not hashing"
+      },
+      {
+        "letter": "D",
+        "text": "Pseudorandomness makes hash functions run faster"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Resistance to direct inversion isn't the whole story — if the hash's output distribution had exploitable statistical structure, that structure itself could leak information or narrow an attacker's search space, even short of a full break. Requiring indistinguishability from a truly random function closes off this entire class of subtler, structural attacks.",
+    "topic": "cryptographic-hashing",
+    "domain": 4,
+    "id": "bddb378b4af8"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "A digital signature is created by encrypting a message's {{c1::hash (digest)}} with the signer's {{c2::private key}}.",
+    "extra": "Signing the digest instead of the raw message is a major performance optimization.",
+    "topic": "digital-signatures",
+    "domain": 4,
+    "id": "a80c36383cf3"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "To verify an RSA digital signature, the receiver decrypts it using the sender's {{c1::public key}} and compares the result against an independently computed hash of the received message — a match confirms {{c2::integrity and authenticity}}.",
+    "extra": "If they don't match, either the message was altered, or it wasn't signed by the claimed sender.",
+    "topic": "digital-signatures",
+    "domain": 4,
+    "id": "c3d30e2847ad"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "In RSA digital signature creation, the signature is computed as {{c1::s = Mᵈ mod n}} using the signer's private exponent d, and verified as {{c2::sᵏ mod n = M}} using the signer's public exponent k.",
+    "extra": "Note this is the reverse role of encryption/decryption: here the private key signs and the public key verifies.",
+    "topic": "digital-signatures",
+    "domain": 4,
+    "id": "b37adbd173ec"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "DSA (Digital Signature Algorithm) signature creation produces two quantities, {{c1::r and s}}, computed using a randomly generated integer k that must be {{c2::unique and destroyed after use}} — never reused.",
+    "extra": "Reusing k across two signatures lets an attacker algebraically recover the private key.",
+    "topic": "digital-signatures",
+    "domain": 4,
+    "id": "0d209f59580f"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "question": "<p>Why does the digital signature process sign a HASH of the message rather than encrypting the entire raw message directly with the private key?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Hashing has nothing to do with efficiency; it's purely a legacy convention"
+      },
+      {
+        "letter": "B",
+        "text": "Public-key operations are computationally expensive; hashing first reduces an arbitrarily large message to a small, fixed-size digest, so the expensive private-key operation only needs to run on that small digest"
+      },
+      {
+        "letter": "C",
+        "text": "Signing the raw message is actually more secure than signing a hash"
+      },
+      {
+        "letter": "D",
+        "text": "Hash functions can only process messages shorter than the hash output itself"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Public-key cryptographic operations are orders of magnitude slower than symmetric operations or hashing, especially on large data. By hashing first, the expensive asymmetric signing operation is applied only to a small, fixed-size digest — regardless of whether the original message is a few bytes or gigabytes — which is exactly why 'sign the hash, not the message' became standard practice.",
+    "topic": "digital-signatures",
+    "domain": 4,
+    "id": "8fe5b13026bc"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "question": "<p>In DSA, why is it catastrophic if the random per-signature value k is ever reused across two different message signatures under the same private key?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Reusing k has no security impact as long as the messages are different"
+      },
+      {
+        "letter": "B",
+        "text": "Because k appears in both signature equations for both messages, an attacker who obtains two signatures sharing the same k can set up and solve a system of equations to directly recover k, and from k, the signer's private key"
+      },
+      {
+        "letter": "C",
+        "text": "Reusing k only slows down the signing process, with no security consequence"
+      },
+      {
+        "letter": "D",
+        "text": "DSA doesn't actually use a random value k during signing"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "DSA's s = k⁻¹·[H(m) + x·r] mod q formula means that if the same k (and thus the same r) is used for two different messages, the attacker has two equations in two unknowns (k and x) and can solve for both algebraically — exactly the kind of catastrophic key-reuse vulnerability that has led to real-world private key exposures.",
+    "topic": "digital-signatures",
+    "domain": 4,
+    "id": "df080c0ef77f"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "question": "<p>A recipient verifies a digital signature and the check fails (the computed digest doesn't match the decrypted signature). What are the two possible explanations the receiver must consider?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Only network latency could cause this"
+      },
+      {
+        "letter": "B",
+        "text": "Either the message was altered/corrupted in transit after being signed (an integrity failure), or the signature wasn't actually created by the claimed sender's private key (an authenticity failure) — verification can't distinguish which"
+      },
+      {
+        "letter": "C",
+        "text": "A failed verification always means the sender's private key was compromised"
+      },
+      {
+        "letter": "D",
+        "text": "Signature verification never fails for legitimate reasons"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Signature verification is a single combined test for BOTH integrity and authenticity — a mismatch could mean the content changed after signing OR that whoever signed it didn't actually hold the claimed private key. The verification alone can't tell these apart; it only tells you 'something is wrong.'",
+    "topic": "digital-signatures",
+    "domain": 4,
+    "id": "d7c5f2644b0c"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "A {{c1::Message Authentication Code (MAC)}} is computed as auth_code = MAC(key, message), using a {{c2::shared secret key}} known to both sender and receiver.",
+    "extra": "Unlike a plain hash, this shared key is what lets a MAC prove message origin, not just integrity.",
+    "topic": "mac-and-hmac",
+    "domain": 4,
+    "id": "344c4257d34d"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "Unlike a plain hash function, a MAC is {{c1::keyed}} — this is what lets it prove the message came from someone who possesses the shared secret, not just that the message is unaltered.",
+    "extra": "A plain hash proves integrity alone; a MAC proves integrity plus authenticity relative to whoever holds the key.",
+    "topic": "mac-and-hmac",
+    "domain": 4,
+    "id": "f1e408784543"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "{{c1::HMAC}} is a widely used MAC construction that combines a hash function with a key-derivation process.",
+    "extra": "HMAC is one of the most common practical ways MACs are implemented in real protocols.",
+    "topic": "mac-and-hmac",
+    "domain": 4,
+    "id": "fdabfa37dedd"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "question": "<p>Why can a plain (unkeyed) hash function alone NOT provide message authentication, even though it perfectly detects any tampering with the message?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Plain hash functions can't detect tampering at all"
+      },
+      {
+        "letter": "B",
+        "text": "Anyone, including an attacker, can compute the hash of any message they want, including a forged one, and send the forged message with its own matching hash — without a shared secret, the receiver can't verify the hash actually came from the legitimate sender"
+      },
+      {
+        "letter": "C",
+        "text": "Hash functions are too slow to be used for authentication"
+      },
+      {
+        "letter": "D",
+        "text": "Hash functions only work on numeric data, not text messages"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "A plain hash proves 'this hash matches this message' but says nothing about WHO produced that pairing — an attacker can trivially compute hash(forged_message) themselves. A MAC fixes this by requiring a secret key in the computation: only someone holding that shared secret can produce a valid auth_code for a given message.",
+    "topic": "mac-and-hmac",
+    "domain": 4,
+    "id": "5d4a5bb5619a"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "question": "<p>Both a digital signature and a MAC can verify message integrity and authenticity. What is the key structural difference in HOW they achieve authenticity?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "They are functionally and structurally identical"
+      },
+      {
+        "letter": "B",
+        "text": "A digital signature uses asymmetric keys enabling non-repudiation and verification by anyone; a MAC uses a single SHARED secret key, so it doesn't provide non-repudiation — either party could have generated a valid MAC"
+      },
+      {
+        "letter": "C",
+        "text": "A MAC can only be used once, while signatures can be reused"
+      },
+      {
+        "letter": "D",
+        "text": "MACs use no key at all, unlike signatures"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Because a MAC's verification key is the same as its generation key (a shared secret), the receiver technically could have forged the same MAC themselves — so a MAC can't prove to a third party which of the two parties created it. A digital signature's asymmetry is exactly what gives it the non-repudiation property a MAC lacks.",
+    "topic": "mac-and-hmac",
+    "domain": 4,
+    "id": "8b5050e61b94"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "Public Key Infrastructure (PKI) is a framework that uses {{c1::digital certificates}} to manage, distribute, and verify public keys for secure communication and authentication.",
+    "extra": "It's the trust layer that makes public-key cryptography usable at internet scale between strangers.",
+    "topic": "public-key-infrastructure",
+    "domain": 4,
+    "id": "86d865fb6826"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "A {{c1::Certificate Authority (CA)}} is a trusted entity that issues and manages digital certificates, verifying requests before issuance.",
+    "extra": "The CA's signature on a certificate is what gives it its trustworthiness.",
+    "topic": "public-key-infrastructure",
+    "domain": 4,
+    "id": "ac2e26bf7f01"
+  },
+  {
+    "type": "cloze",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "text": "A {{c1::digital certificate}} is a document that binds a public key to a specific identified entity (user, device, or service), confirming that identity.",
+    "extra": "This binding is exactly what lets someone else safely use that public key, trusting it really belongs to who it claims.",
+    "topic": "public-key-infrastructure",
+    "domain": 4,
+    "id": "d297b46acaba"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "question": "<p>Why does PKI require a trusted third party (the Certificate Authority) at all, rather than simply having each party publish their own public key directly?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "CAs are purely a bureaucratic requirement with no security function"
+      },
+      {
+        "letter": "B",
+        "text": "Without a trusted third party vouching for the binding between a public key and an identity, an attacker could publish their OWN public key while falsely claiming to be a legitimate party — the CA's signed certificate is what lets a stranger verify that binding"
+      },
+      {
+        "letter": "C",
+        "text": "CAs are only needed for encrypting data, not for identity verification"
+      },
+      {
+        "letter": "D",
+        "text": "Every user could just verify keys in person, making CAs unnecessary at internet scale"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Public-key cryptography alone solves how to encrypt/sign given a key, but not the separate problem of trusting WHOSE key it actually is — anyone can generate a keypair and claim any identity. The CA's role is to independently verify identity claims and vouch for the public-key-to-identity binding via a signed certificate.",
+    "topic": "public-key-infrastructure",
+    "domain": 4,
+    "id": "a8d0a6504ea3"
+  },
+  {
+    "type": "mcq",
+    "deck": "CPEN 426 — Computer & Network Security",
+    "tags": [
+      "lec4"
+    ],
+    "question": "<p>PKI is listed as one of the mechanisms (alongside digital signatures and time-stamping) that provides non-repudiation. How does it contribute to non-repudiation specifically?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "PKI has no relationship to non-repudiation"
+      },
+      {
+        "letter": "B",
+        "text": "By having a trusted CA cryptographically bind a public key to a verified identity, PKI ensures a valid signature made with the corresponding private key can be reliably traced back to a specific, verified party"
+      },
+      {
+        "letter": "C",
+        "text": "PKI only encrypts messages and has nothing to do with proving identity"
+      },
+      {
+        "letter": "D",
+        "text": "Non-repudiation is achieved purely through time-stamping, with PKI playing no role"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Non-repudiation ultimately depends on being able to say 'this signature could only have come from party X.' That claim is only meaningful if the public key used to verify the signature is reliably known to belong to party X in the first place — which is precisely the identity-binding service that PKI provides.",
+    "topic": "public-key-infrastructure",
+    "domain": 4,
+    "id": "a6ae5f9207cb"
+  }
+]

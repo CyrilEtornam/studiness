@@ -8,5 +8,10 @@
     "slug": "wireless-comm",
     "title": "Wireless Communication Systems",
     "shortLabel": "Wireless Comm"
+  },
+  {
+    "slug": "network-security",
+    "title": "CPEN 426 — Computer & Network Security",
+    "shortLabel": "CPEN 426"
   }
 ]

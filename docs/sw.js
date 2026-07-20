@@ -1,7 +1,7 @@
 // Bump this on every deploy that changes cached files, so clients pick up
 // the new version instead of serving stale cache-first responses forever.
 // scripts/merge_cards.py bumps this automatically whenever a course's data changes.
-var CACHE_VERSION = 'studiness-v3';
+var CACHE_VERSION = 'studiness-v4';
 
 var CORE_ASSETS = [
   './',
