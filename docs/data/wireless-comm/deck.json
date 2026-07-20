@@ -1,0 +1,2072 @@
+[
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "Guglielmo Marconi first demonstrated a radio's ability to provide continuous contact with ships sailing the English Channel in {{c1::1897}}.",
+    "extra": "This is the lecture's starting point for the evolution of mobile radio communications.",
+    "topic": "history-evolution-wireless",
+    "domain": 1,
+    "id": "5433b5607db8"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "Bell Laboratories developed the {{c1::cellular concept}} in the 1960s and 1970s, making it conceivable to provide wireless communication to an entire population.",
+    "extra": "Before this, mass-market wireless service wasn't practical — a handful of high-power transmitters simply couldn't serve everyone.",
+    "topic": "history-evolution-wireless",
+    "domain": 1,
+    "id": "f6f081493d7a"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>What development made wireless communication to an entire population conceivable, rather than serving only a small number of users with a few high-power transmitters?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Edwin Armstrong's demonstration of FM in 1935"
+      },
+      {
+        "letter": "B",
+        "text": "Bell Laboratories' development of the cellular concept in the 1960s–70s"
+      },
+      {
+        "letter": "C",
+        "text": "The introduction of AMPS in 1979"
+      },
+      {
+        "letter": "D",
+        "text": "The rise of citizens band (CB) radio"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "A single high-power transmitter can't be reused, which caps the number of simultaneous users. The cellular concept — many low-power transmitters reusing frequencies across small cells — is what removed that ceiling and made mass-market wireless service possible.",
+    "topic": "history-evolution-wireless",
+    "domain": 1,
+    "id": "8d25af8756c7"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "The medium for wireless communication is open space; information travels via {{c1::electromagnetic waves}}, and the spectrum is divided into frequency bands to separate different wireless systems.",
+    "extra": "This is why spectrum allocation/licensing exists at all — without band separation, systems would interfere with each other.",
+    "topic": "radio-frequency-spectrum",
+    "domain": 1,
+    "id": "82fbc10113f7"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "The low frequency (LF) range is used by submarines because these waves can {{c1::penetrate water}} and follow the earth's surface.",
+    "extra": "This penetration property is a direct consequence of using very long wavelengths at low frequencies.",
+    "topic": "radio-frequency-spectrum",
+    "domain": 1,
+    "id": "c4ccdff28548"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "Standard AM radio broadcasts between {{c1::520 kHz and 1605.5 kHz}}, while FM radio broadcasts between {{c2::87.5 MHz and 108 MHz}}.",
+    "extra": "AM sits in the medium frequency (MF) range; FM sits much higher, in the very high frequency (VHF) range.",
+    "topic": "radio-frequency-spectrum",
+    "domain": 1,
+    "id": "95973f1a8808"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Why do VHF/UHF bands allow for small antennas and relatively reliable mobile telephony connections, compared to lower HF/MF bands?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Higher frequency means shorter wavelength, and antenna size scales with wavelength, so higher-frequency bands need smaller antennas"
+      },
+      {
+        "letter": "B",
+        "text": "VHF/UHF signals travel further than HF signals"
+      },
+      {
+        "letter": "C",
+        "text": "VHF/UHF is immune to interference"
+      },
+      {
+        "letter": "D",
+        "text": "VHF/UHF requires no licensing"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Antenna dimensions are tied to signal wavelength (λ = c/f) — as frequency rises, wavelength shrinks, so a resonant antenna can be physically smaller. This is exactly why mobile handsets, which need small antennas, operate in the VHF/UHF range and above.",
+    "topic": "radio-frequency-spectrum",
+    "domain": 1,
+    "id": "f6d801d1d058"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>A designer needs a directed wireless link between two buildings using a laser. Which part of the spectrum, as discussed in the lecture, is best suited?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "VLF"
+      },
+      {
+        "letter": "B",
+        "text": "Infrared (IR)"
+      },
+      {
+        "letter": "C",
+        "text": "MF"
+      },
+      {
+        "letter": "D",
+        "text": "SHF satellite band"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The lecture specifically calls out infrared transmission for directed point-to-point links, e.g. connecting buildings via laser links — its short wavelength allows tight beam directionality, unlike the long, spreading VLF/MF waves.",
+    "topic": "radio-frequency-spectrum",
+    "domain": 1,
+    "id": "a2a70eca9391"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "In a basic communication system, the {{c1::source encoder}} generates binary data from the source, and the {{c2::channel encoder}} adds redundancy so the data can be reliably reproduced at the receiver.",
+    "extra": "Source coding removes redundancy to compress; channel coding adds a different kind of redundancy back in, deliberately, for error protection.",
+    "topic": "wireless-system-elements",
+    "domain": 1,
+    "id": "558719791334"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "The channel-encoded data stream is {{c1::modulated}} to generate waveforms suitable for transmission over the physical channel.",
+    "extra": "Modulation is the last step before the signal actually leaves the transmitter over the physical channel.",
+    "topic": "wireless-system-elements",
+    "domain": 1,
+    "id": "091992d4a7de"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Why is a channel encoder inserted between the source encoder and the modulator, rather than modulating the raw source-encoded bits directly?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "To compress the data further"
+      },
+      {
+        "letter": "B",
+        "text": "To add controlled redundancy so errors introduced by channel noise can be detected/corrected at the receiver"
+      },
+      {
+        "letter": "C",
+        "text": "To convert digital data to analog"
+      },
+      {
+        "letter": "D",
+        "text": "To encrypt the data for security"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The channel is always subject to noise; channel coding deliberately adds redundancy (not compression) so the receiver can detect and correct the errors that noise introduces — a separate job from source coding, which instead removes redundancy to shrink the data.",
+    "topic": "wireless-system-elements",
+    "domain": 1,
+    "id": "aca0fee8a9a0"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "{{c1::Simplex}} communication is one-way only; {{c2::half duplex}} is two-way but not simultaneous over a shared channel; {{c3::full duplex}} is two-way and simultaneous.",
+    "extra": "Paging is simplex, walkie-talkie is half duplex, mobile phones are full duplex — one canonical example per mode.",
+    "topic": "duplexing-modes",
+    "domain": 1,
+    "id": "97903d1b9d42"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>A walkie-talkie lets you either talk or listen at any given moment, but not both, over the same radio channel. Which duplexing mode is this?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Simplex"
+      },
+      {
+        "letter": "B",
+        "text": "Half duplex"
+      },
+      {
+        "letter": "C",
+        "text": "Full duplex"
+      },
+      {
+        "letter": "D",
+        "text": "Frequency division duplex only"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Half duplex is defined exactly by this constraint: two-way communication is possible, but not simultaneously, because both directions share the same channel — you must take turns.",
+    "topic": "duplexing-modes",
+    "domain": 1,
+    "id": "05adbf115fa5"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Why can a paging system get away with being simplex (one-way), while a mobile phone call requires full duplex?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Paging only needs to deliver a short message, with no need for the subscriber to respond in real time over the system; a phone call is a live two-way conversation"
+      },
+      {
+        "letter": "B",
+        "text": "Paging systems use higher frequencies"
+      },
+      {
+        "letter": "C",
+        "text": "Full duplex is always cheaper to implement"
+      },
+      {
+        "letter": "D",
+        "text": "Simplex systems cannot use radio waves"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The duplexing mode should match the application's actual interaction pattern — paging is a one-way notification service, so there's no reason to pay for two-way, simultaneous capacity; a live phone conversation fundamentally needs both parties talking/listening at once.",
+    "topic": "duplexing-modes",
+    "domain": 1,
+    "id": "1a9446bda340"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "In a wide-area paging system, multiple base stations broadcast the same page simultaneously across a service area — a technique called {{c1::simulcasting}}.",
+    "extra": "This is what lets a wide-area pager receive its page no matter which base station's coverage it happens to be under at that moment.",
+    "topic": "paging-systems",
+    "domain": 1,
+    "id": "33508a563c13"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Why are paging receivers simple and inexpensive while the transmission infrastructure behind a wide-area paging system is quite sophisticated?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Pagers only need to receive and decode a short message on one channel, while the network must simulcast that message reliably from many base stations across a wide area so any pager anywhere picks it up"
+      },
+      {
+        "letter": "B",
+        "text": "Paging systems don't use radio at all"
+      },
+      {
+        "letter": "C",
+        "text": "Pagers use far more processing power than the network"
+      },
+      {
+        "letter": "D",
+        "text": "There is no real asymmetry — both are equally complex"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "All the hard work — deciding where the subscriber might be, and broadcasting the page redundantly across a wide simulcast network of base stations and towers — happens on the network side; the pager itself just listens on a fixed channel and displays what it's given, which is why it can stay cheap and simple.",
+    "topic": "paging-systems",
+    "domain": 1,
+    "id": "7441cb710700"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "GPS is described as a subcategory of {{c1::satellite communication}}, providing navigation, positioning, location, and speed services.",
+    "extra": "It relies on dedicated GPS receivers and a constellation of satellites.",
+    "topic": "applications-overview",
+    "domain": 1,
+    "id": "106cf61f2d2f"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Bluetooth is described as a low-range wireless system with roughly what transmission range?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "10 meters"
+      },
+      {
+        "letter": "B",
+        "text": "1 kilometer"
+      },
+      {
+        "letter": "C",
+        "text": "100 meters"
+      },
+      {
+        "letter": "D",
+        "text": "Unlimited, with repeaters"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The lecture states Bluetooth's transmission range is about 10 meters, which is why it's positioned for personal-area connections (headsets, keyboards, nearby audio gear) rather than room- or building-scale coverage like Wi-Fi.",
+    "topic": "applications-overview",
+    "domain": 1,
+    "id": "4e5116c9cde0"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Which application is explicitly framed in the lecture as a simplex system where all users receive the same data in one direction?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Mobile telephone communication"
+      },
+      {
+        "letter": "B",
+        "text": "Television and radio broadcasting"
+      },
+      {
+        "letter": "C",
+        "text": "Bluetooth"
+      },
+      {
+        "letter": "D",
+        "text": "WLAN (Wi-Fi)"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Broadcasting is the canonical simplex example given: the transmitter sends and every receiver in range gets the identical one-way feed — no return channel is needed or used, unlike phone calls or Wi-Fi, which are inherently two-way.",
+    "topic": "applications-overview",
+    "domain": 1,
+    "id": "07add241de19"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "The first public cellular telephone system, {{c1::Advanced Mobile Phone System (AMPS)}}, was introduced in 1979 and used analog {{c2::FM}} technology designed for voice-only applications.",
+    "extra": "It's the reference point for '1G' in the generation numbering (1G, 2G, 3G, 4G).",
+    "topic": "cellular-generations",
+    "domain": 1,
+    "id": "aaa3661a9a94"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "GSM 900/1800/1900 belong to the {{c1::second generation (2G)}} of cellular systems.",
+    "extra": "Cordless Telephony 2 (CT2) is also mentioned as a 2G system, used in Europe for low-mobility service.",
+    "topic": "cellular-generations",
+    "domain": 1,
+    "id": "c96030dc543e"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Why did incompatible cellular systems (TACS, NMT, C450, etc.) deployed across Western Europe in the early 1980s prevent roaming between countries?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because each country used a different currency for billing"
+      },
+      {
+        "letter": "B",
+        "text": "Because mobile phones were built for one specific system's standard and couldn't operate on another country's incompatible system"
+      },
+      {
+        "letter": "C",
+        "text": "Because only one country was allowed to use cellular technology at a time"
+      },
+      {
+        "letter": "D",
+        "text": "Because roaming hadn't been invented yet as a concept"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Roaming requires a mobile that speaks the same air-interface standard as the visited network. When neighboring countries deployed mutually incompatible first-generation standards, a phone built for one simply couldn't register on another — this fragmentation is exactly the problem GSM was later designed to solve across Europe.",
+    "topic": "cellular-generations",
+    "domain": 1,
+    "id": "a1affa1841fe"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "An antenna is an electrical conductor (or system of conductors) that {{c1::radiates or collects electromagnetic energy}} into or from space, converting guided waves in a transmission line into radiating free-space waves, or vice versa.",
+    "extra": "This dual role (converting guided ↔ radiating waves) is why the same antenna works for both transmit and receive.",
+    "topic": "antenna-basics",
+    "domain": 2,
+    "id": "1b022add36e4"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "Only {{c1::accelerated (or decelerated) charges}} radiate electromagnetic waves — a time-harmonic (AC) current satisfies this requirement.",
+    "extra": "This is the fundamental physical reason antennas must be driven with AC, not DC.",
+    "topic": "antenna-basics",
+    "domain": 2,
+    "id": "a313f9b252bc"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Why must the current driving an antenna be time-varying (AC), rather than a constant DC current, for the antenna to radiate?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "DC current draws too much power"
+      },
+      {
+        "letter": "B",
+        "text": "Only accelerating/decelerating charges radiate EM waves, and DC current has charges moving at constant velocity — zero acceleration, so no radiation"
+      },
+      {
+        "letter": "C",
+        "text": "AC is required only for licensing reasons"
+      },
+      {
+        "letter": "D",
+        "text": "DC antennas radiate more efficiently than AC"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Static or constant-velocity charge motion produces no radiated field — radiation specifically requires charge acceleration. A time-harmonic AC current continuously accelerates and decelerates the charges in the antenna, which is exactly what generates propagating EM waves.",
+    "topic": "antenna-basics",
+    "domain": 2,
+    "id": "31e1aa4e6b27"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "A {{c1::radiation pattern}} is a graphical representation of the relative distribution of an antenna's radiated power in space.",
+    "extra": "Understanding an antenna's radiation pattern is equivalent to knowing its receiving pattern, by reciprocity.",
+    "topic": "radiation-patterns",
+    "domain": 2,
+    "id": "a05980ef01a4"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "An idealized {{c1::isotropic}} antenna radiates equally in all directions and is used as a theoretical reference antenna, even though it doesn't physically exist.",
+    "extra": "Gain is always defined relative to this hypothetical isotropic radiator (hence the unit dBi).",
+    "topic": "radiation-patterns",
+    "domain": 2,
+    "id": "5d11c796d536"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Beam width is the angle within which radiated power is at least half of the power in the peak direction. What does a narrow beam width indicate about an antenna's directivity?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Low directivity — power is spread over a wide angle"
+      },
+      {
+        "letter": "B",
+        "text": "High directivity — power is tightly focused into a narrow angular range"
+      },
+      {
+        "letter": "C",
+        "text": "Beam width has no relationship to directivity"
+      },
+      {
+        "letter": "D",
+        "text": "A narrow beam width means the antenna is isotropic"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Directivity is about how tightly an antenna concentrates its radiated power. A narrow half-power beam width means most of the power is packed into a small angular range rather than spread out, which is the direct definition of high directivity.",
+    "topic": "radiation-patterns",
+    "domain": 2,
+    "id": "3678f255bec4"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "Wire antennas — {{c1::dipole, monopole, loop, and helix}} — are typically used in personal applications, automobiles, ships, and aircraft.",
+    "extra": "These are the simplest and most widespread antenna family.",
+    "topic": "antenna-types",
+    "domain": 2,
+    "id": "90eb349d02a5"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "{{c1::Reflector antennas}} (e.g. parabolic reflectors) are high-gain antennas typically used in radio astronomy, microwave communication, and satellite tracking.",
+    "extra": "Their large physical aperture is what gives them such high gain and narrow beam width.",
+    "topic": "antenna-types",
+    "domain": 2,
+    "id": "aa17a38bd0ef"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>An array antenna combines multiple connected individual antennas to act as one. What key advantage does this give beyond just very high gain?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "It removes the need for any power source"
+      },
+      {
+        "letter": "B",
+        "text": "A controllable radiation pattern — the array's beam shape/direction can be adjusted, unlike a single fixed-element antenna"
+      },
+      {
+        "letter": "C",
+        "text": "It automatically eliminates all interference"
+      },
+      {
+        "letter": "D",
+        "text": "It only works at a single fixed frequency"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Beyond raw gain, combining elements lets you control how their individual contributions add up in different directions, giving you a steerable/shapeable radiation pattern — a capability a lone antenna element doesn't have.",
+    "topic": "antenna-types",
+    "domain": 2,
+    "id": "4f658ca20f73"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "Because wavelength and frequency are inversely related through the speed of light, {{c1::low frequencies imply long wavelengths (large antennas)}} and {{c2::high frequencies imply short wavelengths (small antennas)}}.",
+    "extra": "This relationship (λ = c/f) is the single biggest driver of why antenna size varies so much across the spectrum.",
+    "topic": "wavelength-frequency-relation",
+    "domain": 2,
+    "id": "524b51c20702"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>A radio station broadcasts at 100 MHz. Using λ = c/f with c ≈ 3×10⁸ m/s, what is the wavelength?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "0.3 m"
+      },
+      {
+        "letter": "B",
+        "text": "3 m"
+      },
+      {
+        "letter": "C",
+        "text": "30 m"
+      },
+      {
+        "letter": "D",
+        "text": "300 m"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "λ = c/f = (3×10⁸ m/s) / (100×10⁶ Hz) = 3 m. This is exactly the wavelength-calculation exercise posed in the lecture, and it's why FM antennas (λ≈3 m, so a quarter-wave whip is ≈0.75 m) are a very different size from AM antennas (λ hundreds of meters).",
+    "topic": "wavelength-frequency-relation",
+    "domain": 2,
+    "id": "8d481e49d0a6"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "Antenna gain compares the power output in a particular direction to that of an idealized omnidirectional (isotropic) antenna; when expressed relative to an isotropic source it's given in units of {{c1::dBi}}.",
+    "extra": "This is the direct link between the isotropic-antenna concept and the practical gain figures quoted on real antenna datasheets.",
+    "topic": "antenna-gain",
+    "domain": 2,
+    "id": "6b2b164929d3"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Two antennas radiate the same total power, but Antenna X has a much higher gain in its main direction than Antenna Y. What does this tell you about Antenna X's radiation pattern?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Antenna X spreads its power more evenly in all directions than Antenna Y"
+      },
+      {
+        "letter": "B",
+        "text": "Antenna X concentrates more of its power toward the main direction rather than spreading it around, compared to an isotropic radiator"
+      },
+      {
+        "letter": "C",
+        "text": "Antenna X radiates less total power overall"
+      },
+      {
+        "letter": "D",
+        "text": "Gain has nothing to do with directionality"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Since gain measures directional power output relative to an isotropic (perfectly even) radiator, a higher gain — for the same total input power — necessarily means the antenna is redirecting more of that power toward its preferred direction instead of spreading it in all directions.",
+    "topic": "antenna-gain",
+    "domain": 2,
+    "id": "a11f646781a1"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "The effective aperture of a receiving antenna is defined as the ratio of {{c1::power received at the antenna's load terminal}} to the {{c2::Poynting vector (power density) of the incident wave}}.",
+    "extra": "This ratio has units of area (W ÷ W/m² = m²), which is why it's called an 'aperture.'",
+    "topic": "effective-aperture",
+    "domain": 2,
+    "id": "66421e01f1a8"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>Why is the concept of 'aperture' most naturally introduced using a receiving antenna rather than a transmitting one?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because transmitting antennas have no aperture at all"
+      },
+      {
+        "letter": "B",
+        "text": "Because effective aperture directly relates the antenna's captured power to the incident wave's power density landing on it — most intuitive to describe on the receive side"
+      },
+      {
+        "letter": "C",
+        "text": "Because receiving antennas are always physically larger"
+      },
+      {
+        "letter": "D",
+        "text": "Because aperture only applies to reflector-type antennas"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Effective aperture is defined as received power divided by incident power density (W/m²) — a ratio that's naturally framed in terms of a wave arriving at and being captured by the antenna, i.e. the receiving case, even though by reciprocity the same antenna behaves identically when transmitting.",
+    "topic": "effective-aperture",
+    "domain": 2,
+    "id": "f844537567a9"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "Antennas can be classified as {{c1::omnidirectional}}, {{c2::sectorial}}, or {{c3::directive}}, based on how narrowly they focus their radiated beam.",
+    "extra": "Omnidirectional covers 360°, sectorial covers a wedge (60°-180°), and directive is the narrowest and highest-gain of the three.",
+    "topic": "antenna-directivity",
+    "domain": 2,
+    "id": "9251deb2ed37"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>A base station needs a very long-distance link with the highest possible gain and a narrow beam. Which class of antenna, per the lecture's classification, fits best?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Omnidirectional (360° dipole-type)"
+      },
+      {
+        "letter": "B",
+        "text": "Sectorial (60°-180° beam)"
+      },
+      {
+        "letter": "C",
+        "text": "Directive (Yagi, horn, parabolic dish, etc.)"
+      },
+      {
+        "letter": "D",
+        "text": "None of these — long-distance links can't use directional antennas"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Directive antennas have the narrowest beam width of the three classes and correspondingly the highest gain, which is exactly why the lecture calls them out as the choice for long-distance links, versus omnidirectional (360° coverage, low gain) or sectorial (moderate coverage, moderate gain).",
+    "topic": "antenna-directivity",
+    "domain": 2,
+    "id": "26144a09502a"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "text": "Antenna power efficiency ηₐ is the ratio of {{c1::power radiated}} to {{c2::total power input}} to the antenna, and depends on the radiation resistance Rᵣ versus the loss resistance Rₗ.",
+    "extra": "Multiplying ηₐ by 100 gives the percentage antenna efficiency.",
+    "topic": "antenna-efficiency",
+    "domain": 2,
+    "id": "2320027de82d"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec1"
+    ],
+    "question": "<p>An antenna has a large loss resistance Rₗ relative to its radiation resistance Rᵣ. What does this imply about its efficiency?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "High efficiency, since more current flows"
+      },
+      {
+        "letter": "B",
+        "text": "Low efficiency, since a larger share of the input power is dissipated as resistive loss (heat) rather than being radiated"
+      },
+      {
+        "letter": "C",
+        "text": "Efficiency is unaffected by the ratio of Rᵣ to Rₗ"
+      },
+      {
+        "letter": "D",
+        "text": "The antenna will radiate more power than it receives"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Efficiency ηₐ is essentially Rᵣ/(Rᵣ+Rₗ) — power split between the radiation resistance (the 'useful' radiated power) and the loss resistance (wasted as heat). A large Rₗ relative to Rᵣ means most of the input power is lost rather than radiated, giving low efficiency.",
+    "topic": "antenna-efficiency",
+    "domain": 2,
+    "id": "490bc3146648"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "Before cellular radio, mobile service used a single {{c1::high-power transmitter}} covering a large area, which made frequency reuse impossible without interference.",
+    "extra": "This is exactly the capacity ceiling the cellular concept was invented to break.",
+    "topic": "cellular-concept-origins",
+    "domain": 3,
+    "id": "f7030c70f906"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The cellular concept replaces one high-power transmitter with many {{c1::low-power transmitters}}, each covering only a small cell, so the same frequencies can be reused at a safe distance elsewhere.",
+    "extra": "Smaller coverage per transmitter is a deliberate trade — it's what enables frequencies to be reused nearby instead of just once system-wide.",
+    "topic": "cellular-concept-origins",
+    "domain": 3,
+    "id": "321270e3df07"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Why couldn't the old single-high-power-transmitter approach reuse its frequencies anywhere else in the same market?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because regulations banned frequency reuse entirely"
+      },
+      {
+        "letter": "B",
+        "text": "Because the transmitter's coverage area was so large that reusing the same frequency elsewhere nearby would cause interference"
+      },
+      {
+        "letter": "C",
+        "text": "Because high-power transmitters could only ever use one frequency"
+      },
+      {
+        "letter": "D",
+        "text": "Because mobile users didn't want frequency reuse"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "A high-power transmitter's coverage footprint is large, so there's no 'far enough away' place nearby to reuse its frequency without the two signals colliding — this is precisely the capacity ceiling that low-power, small-cell reuse was invented to break.",
+    "topic": "cellular-concept-origins",
+    "domain": 3,
+    "id": "98e17b340965"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>What is the fundamental reason cell-based frequency reuse can serve an arbitrarily large number of subscribers with only a fixed number of channels?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because digital modulation compresses voice infinitely"
+      },
+      {
+        "letter": "B",
+        "text": "The same channel can be reused simultaneously in many geographically-separated cells, as long as interference between same-frequency cells stays below acceptable levels"
+      },
+      {
+        "letter": "C",
+        "text": "Cellular systems don't actually have a fixed channel limit"
+      },
+      {
+        "letter": "D",
+        "text": "Subscribers share channels only during off-peak hours"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The whole point of frequency reuse is spatial: the identical channel serves completely different, distant users at the same time in different cells. As the system adds more (sufficiently separated) cells, it keeps reusing the same finite channel set, scaling subscriber capacity without needing more spectrum.",
+    "topic": "cellular-concept-origins",
+    "domain": 3,
+    "id": "d59b7f35b91c"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The {{c1::Mobile Switching Center (MSC)}}, also called the Mobile Telephone Switching Office (MTSO), connects the cellular base stations and mobiles to the PSTN and coordinates call routing, handoffs, and billing.",
+    "extra": "It's the central coordination point of the whole cellular network, not just a single cell.",
+    "topic": "network-elements-definitions",
+    "domain": 3,
+    "id": "0ae146a12297"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "A {{c1::base station (BS)}} is a fixed transceiver station that communicates with mobile stations within its coverage area (cell) and connects them into the network.",
+    "extra": "Each BS only serves its own cell — coordination across cells is the MSC's job.",
+    "topic": "network-elements-definitions",
+    "domain": 3,
+    "id": "6ba5bed9a3b2"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "A {{c1::roamer}} is a mobile subscriber using their device outside their home network's coverage area.",
+    "extra": "Roaming lets a subscriber keep making/receiving calls on a visited network, not just their home network.",
+    "topic": "network-elements-definitions",
+    "domain": 3,
+    "id": "1d4fba9db047"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "{{c1::Handoff (handover)}} is the process of transferring an ongoing call from one cell to another as a mobile device moves between coverage areas, so the call isn't interrupted.",
+    "extra": "Handoff is what makes seamless mobility possible across cell boundaries.",
+    "topic": "network-elements-definitions",
+    "domain": 3,
+    "id": "be0fff35c2f3"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>What is the key functional difference between a 'subscriber' and a 'roamer' in cellular terminology?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "They are the same thing — just different names for the same status"
+      },
+      {
+        "letter": "B",
+        "text": "A subscriber has a service agreement with a provider; a roamer specifically describes that subscriber while using the network outside their home coverage area"
+      },
+      {
+        "letter": "C",
+        "text": "A roamer never pays for service"
+      },
+      {
+        "letter": "D",
+        "text": "A subscriber only exists in 1G systems"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Every roamer is a subscriber, but not every subscriber is currently roaming — 'roamer' is a situational label for a subscriber whose device is currently operating outside its home network's coverage, relying on a visited network instead.",
+    "topic": "network-elements-definitions",
+    "domain": 3,
+    "id": "dd5323a79ff8"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The {{c1::forward channel (downlink)}} carries data from the base station to the mobile; the {{c2::reverse channel (uplink)}} carries data from the mobile back to the base station.",
+    "extra": "This forward/reverse naming convention is consistent across both voice and control channels.",
+    "topic": "channel-types",
+    "domain": 3,
+    "id": "df6058e680e6"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The common air interface (CAI) defines four channel types: {{c1::forward voice channels (FVC), reverse voice channels (RVC), forward control channels (FCC), and reverse control channels (RCC)}}.",
+    "extra": "Voice channels carry the actual call; control channels handle setup and signaling.",
+    "topic": "channel-types",
+    "domain": 3,
+    "id": "c15e1bfa4eac"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Control channels are sometimes called 'setup channels.' Why?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because they carry the actual voice/data of an ongoing call"
+      },
+      {
+        "letter": "B",
+        "text": "Because they're only involved in initiating a call and moving it to an unused voice channel, and are monitored by idle mobiles"
+      },
+      {
+        "letter": "C",
+        "text": "Because they physically set up the antenna tower"
+      },
+      {
+        "letter": "D",
+        "text": "Because they configure the base station's hardware at installation time"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Control channels don't carry the conversation itself — their whole job is call setup/signaling: request, initiation, and assignment to a voice channel. Once the call is handed off to a voice channel, the control channel's role in that call is done, which is exactly why 'setup channel' is an apt nickname.",
+    "topic": "channel-types",
+    "domain": 3,
+    "id": "637e00f57f84"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Which pair correctly matches a channel type to its direction of travel?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Forward voice channel — mobile to base station"
+      },
+      {
+        "letter": "B",
+        "text": "Reverse control channel — mobile to base station"
+      },
+      {
+        "letter": "C",
+        "text": "Reverse voice channel — base station to mobile"
+      },
+      {
+        "letter": "D",
+        "text": "Forward control channel — mobile to base station"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "'Reverse' always means mobile → base station (uplink), and 'forward' always means base station → mobile (downlink) — this holds for both voice and control channels, so only 'reverse control channel — mobile to base station' is consistent.",
+    "topic": "channel-types",
+    "domain": 3,
+    "id": "10bfb0d2c977"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The PSTN (Public Switched Telephone Network) is the traditional {{c1::circuit-switched}} telephone network comprising interconnected voice-oriented public telephone networks worldwide.",
+    "extra": "It's also known by names like landlines, POTS (Plain Old Telephone Service), or fixed-line telephones.",
+    "topic": "pstn-basics",
+    "domain": 3,
+    "id": "69f255f11d07"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>How does a cellular system typically connect a mobile subscriber's call to a landline (PSTN) subscriber?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Directly, with no intermediate network element"
+      },
+      {
+        "letter": "B",
+        "text": "Via the MSC, which is connected to the PSTN and can bridge a call between a mobile subscriber and a fixed PSTN subscriber"
+      },
+      {
+        "letter": "C",
+        "text": "Only through satellite relay"
+      },
+      {
+        "letter": "D",
+        "text": "Cellular systems cannot connect to the PSTN at all"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The MSC is explicitly the bridge point: it's connected both to the cellular base stations and to the PSTN, so it can establish and route a call between a mobile user and a fixed-line user on the other network.",
+    "topic": "pstn-basics",
+    "domain": 3,
+    "id": "7e05049f2fb6"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "Two types of channels exist between a mobile unit and the BS: {{c1::control channels}} (for setup/maintenance signaling) and {{c2::traffic channels}} (carrying the actual voice or data connection).",
+    "extra": "This split mirrors the FVC/RVC vs FCC/RCC distinction, just described at the mobile-to-BS level.",
+    "topic": "cellular-system-operation",
+    "domain": 3,
+    "id": "ea66a86e8934"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The MTSO/MSC assigns the {{c1::voice channel}} to each call, performs {{c2::handoffs}}, and monitors calls for billing information.",
+    "extra": "These three duties span the full lifecycle of a call: setup, in-progress mobility, and post-call accounting.",
+    "topic": "cellular-system-operation",
+    "domain": 3,
+    "id": "2f0f656084b1"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Why does the MSC/MTSO need to keep monitoring an ongoing call even after it's been set up and assigned a voice channel?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Only for billing purposes, nothing else"
+      },
+      {
+        "letter": "B",
+        "text": "To perform handoffs as the mobile moves between cells, and to gather billing information — both require ongoing awareness of the call in progress"
+      },
+      {
+        "letter": "C",
+        "text": "Because voice channels expire every few seconds and must be reassigned constantly"
+      },
+      {
+        "letter": "D",
+        "text": "It doesn't monitor calls after setup"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Handoff is a live decision that has to react to a moving subscriber's changing signal conditions mid-call, and billing needs call-duration data — both require the MSC/MTSO to keep tracking a call throughout its lifetime, not just at setup.",
+    "topic": "cellular-system-operation",
+    "domain": 3,
+    "id": "e2a8375108ae"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "Among shapes that tile a region without overlap or gaps (square, equilateral triangle, hexagon), the {{c1::hexagon}} has the largest area for a given center-to-perimeter distance, so it covers a region with the fewest cells.",
+    "extra": "This is exactly why hexagons, not circles or squares, became the standard analytical model for cell shape.",
+    "topic": "cell-shape-geometry",
+    "domain": 4,
+    "id": "4cf586162164"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The actual radio coverage area of a cell, determined from field measurements or propagation models, is called the {{c1::footprint}}.",
+    "extra": "The hexagon is the idealized model; the footprint is the messy real-world shape it approximates.",
+    "topic": "cell-shape-geometry",
+    "domain": 4,
+    "id": "102796042348"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>A circle seems like the most natural shape to represent a base station's coverage. Why does the lecture favor hexagons instead for the cellular design model?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Circles cannot represent a coverage area at all"
+      },
+      {
+        "letter": "B",
+        "text": "Adjacent circles can't be tiled over a map without gaps or overlaps, whereas hexagons tile a region perfectly with no gaps or overlaps"
+      },
+      {
+        "letter": "C",
+        "text": "Circles have a smaller area than hexagons for any given radius"
+      },
+      {
+        "letter": "D",
+        "text": "Base station antennas physically cannot produce circular coverage"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "A circle is the most realistic footprint shape physically, but circles can't perfectly tile a plane — you either leave uncovered gaps or force overlaps. Hexagons trade a bit of physical realism for a shape that tiles the coverage region cleanly, which is why they're the adopted analytical model even though real footprints are irregular.",
+    "topic": "cell-shape-geometry",
+    "domain": 4,
+    "id": "e43ae72414c9"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "{{c1::Frequency reuse (frequency planning)}} is the process of selecting and allocating channel groups to cellular base stations so the same channels can be reused in different, sufficiently separated cells.",
+    "extra": "This is described as the basic premise behind all of cellular system design.",
+    "topic": "frequency-reuse-fundamentals",
+    "domain": 4,
+    "id": "2e64708d1466"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "Cells labeled with the same letter in a frequency-reuse diagram use the {{c1::same group of channels}}, and the repeating group of N cells that together use the full channel set is called a {{c2::cluster}}.",
+    "extra": "The cluster is the unit that gets replicated across the coverage area.",
+    "topic": "frequency-reuse-fundamentals",
+    "domain": 4,
+    "id": "ef8bbba9b716"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>A total of S duplex channels are divided among a cluster of N cells (k channels per cell, k&lt;S), and this cluster is replicated M times across the system. What does the total system capacity C equal?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "C = S (capacity is fixed regardless of replication)"
+      },
+      {
+        "letter": "B",
+        "text": "C = M × k × N"
+      },
+      {
+        "letter": "C",
+        "text": "C = M × k, the same value regardless of N"
+      },
+      {
+        "letter": "D",
+        "text": "C = S / M"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Each cluster contributes k channels per cell across its N cells; replicating the cluster M times across the coverage area multiplies that same channel set by M — so total capacity scales directly with M (and with k×N, the channels per cluster), which is exactly why maximizing reuse (many replications) is the whole point of the cellular concept.",
+    "topic": "frequency-reuse-fundamentals",
+    "domain": 4,
+    "id": "5a7b46c81d4e"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Why is the frequency reuse factor of a system equal to 1/N rather than some other fraction?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because each cell only uses N% of the channels"
+      },
+      {
+        "letter": "B",
+        "text": "Because the total channel set S is divided evenly among the N cells of a cluster, so any one cell gets a 1/N share of the system's total channels"
+      },
+      {
+        "letter": "C",
+        "text": "Because N is always equal to the number of sectors"
+      },
+      {
+        "letter": "D",
+        "text": "1/N is just an arbitrary convention with no derivation"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "By construction, a cluster's full channel set is split across its N member cells; if split evenly, each individual cell holds exactly a 1/N fraction of the total — this is the direct definition of the reuse factor, not an independent assumption.",
+    "topic": "frequency-reuse-fundamentals",
+    "domain": 4,
+    "id": "0974ffbf6a20"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The geometry of hexagonal cells restricts the possible cluster sizes N to values satisfying {{c1::N = i² + ij + j²}}, where i and j are non-negative integers (giving N = 1, 3, 4, 7, 9, 12, 13, …).",
+    "extra": "Real cellular systems standardize on N = 4, 7, or 12, all valid values from this formula.",
+    "topic": "cluster-size-formula",
+    "domain": 4,
+    "id": "3687568c1792"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "To locate the nearest co-channel cell from a given cell, move {{c1::i cells along a chain of hexagons}}, turn {{c2::60° counter-clockwise}}, then move {{c3::j cells}}.",
+    "extra": "This geometric procedure is the practical way to find which cells share a channel group in a hexagonal layout.",
+    "topic": "cluster-size-formula",
+    "domain": 4,
+    "id": "fff020ec1846"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Using N = i² + ij + j², which of the following is NOT a valid cellular cluster size?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "N = 7 (i=2, j=1: 4+2+1=7)"
+      },
+      {
+        "letter": "B",
+        "text": "N = 4 (i=2, j=0: 4+0+0=4)"
+      },
+      {
+        "letter": "C",
+        "text": "N = 5"
+      },
+      {
+        "letter": "D",
+        "text": "N = 3 (i=1, j=1: 1+1+1=3)"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "N=5 cannot be written as i²+ij+j² for any non-negative integers i,j — checking small combinations only produces N = 1, 3, 4, 7, 9, 12, 13, 16, 19, 21, 28, … which skips 5, 6, 8, 10, 11, etc. This is exactly why cellular systems standardize on cluster sizes like 4, 7, and 12 rather than arbitrary integers.",
+    "topic": "cluster-size-formula",
+    "domain": 4,
+    "id": "22dc4871d1bc"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>A system needs a smaller cluster size N to maximize capacity. What's the direct tradeoff of choosing a smaller N?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "There is no tradeoff — smaller N is always strictly better"
+      },
+      {
+        "letter": "B",
+        "text": "Co-channel cells end up closer together (smaller reuse distance), increasing co-channel interference and reducing transmission quality"
+      },
+      {
+        "letter": "C",
+        "text": "Smaller N always increases the total available spectrum"
+      },
+      {
+        "letter": "D",
+        "text": "Smaller N eliminates the need for handoff"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "N and the reuse distance move together — shrinking N packs co-channel cells closer, which raises interference and hurts call quality, even though it also raises capacity by allowing more clusters (and thus more channel-set copies) to fit in the coverage area. Cellular design is exactly this capacity-vs-quality tradeoff.",
+    "topic": "cluster-size-formula",
+    "domain": 4,
+    "id": "0d6a41c1732a"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "In a {{c1::fixed}} channel assignment strategy, each cell has a predetermined set of voice channels; if all are occupied, a new call attempt is blocked.",
+    "extra": "This is the simplest strategy but can waste capacity when traffic is unevenly distributed across cells.",
+    "topic": "channel-assignment-strategies",
+    "domain": 4,
+    "id": "afa2c2236180"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "In a {{c1::dynamic}} channel assignment strategy, no channel is permanently tied to a cell — each call request triggers the MSC to allocate a channel based on factors like blocking likelihood, channel usage frequency, and reuse distance.",
+    "extra": "This flexibility reduces blocking but requires much more real-time coordination from the MSC.",
+    "topic": "channel-assignment-strategies",
+    "domain": 4,
+    "id": "4114b0848666"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>A cell using the fixed-assignment 'borrowing strategy' runs out of its own free channels. What happens next, and who supervises it?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "The call is simply blocked with no alternative"
+      },
+      {
+        "letter": "B",
+        "text": "The cell may borrow a channel from a neighboring cell, with the MSC supervising to ensure the borrowing doesn't disrupt calls already in progress in the donor cell"
+      },
+      {
+        "letter": "C",
+        "text": "The base station randomly assigns any frequency in the entire spectrum"
+      },
+      {
+        "letter": "D",
+        "text": "The subscriber is automatically handed off to a different network"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Borrowing is a controlled exception to fixed assignment — the MSC has to police it because taking a channel from a neighbor risks colliding with (interfering with) a call already using that same channel in the donor cell nearby.",
+    "topic": "channel-assignment-strategies",
+    "domain": 4,
+    "id": "8bb7d7b8cfcb"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>What is the direct cost of dynamic channel assignment's benefit of reduced call blocking?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "There is no cost — it's strictly superior in every way"
+      },
+      {
+        "letter": "B",
+        "text": "Increased storage and computational load on the MSC, since it must continuously track real-time channel occupancy, traffic distribution, and signal strength across the system"
+      },
+      {
+        "letter": "C",
+        "text": "It requires more total radio spectrum than fixed assignment"
+      },
+      {
+        "letter": "D",
+        "text": "It eliminates the possibility of co-channel interference entirely"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Dynamic assignment's flexibility comes from constantly re-deciding which channel to use based on live system-wide data — that real-time bookkeeping is exactly the computational/storage burden the lecture flags as dynamic assignment's tradeoff against fixed assignment's simplicity.",
+    "topic": "channel-assignment-strategies",
+    "domain": 4,
+    "id": "a71a54ca7436"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "{{c1::Co-channel interference}} is interference between cells that reuse the same set of frequencies (co-channel cells), and unlike thermal noise, it {{c2::cannot be overcome by simply increasing transmit power}}.",
+    "extra": "This distinction between fixable noise and non-fixable co-channel interference is central to cellular capacity planning.",
+    "topic": "co-channel-interference",
+    "domain": 5,
+    "id": "36f4500f3568"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The minimum distance between the centers of two cells using the same channel is called the {{c1::reuse distance, D}}.",
+    "extra": "D is the numerator in the co-channel reuse ratio Q = D/R.",
+    "topic": "co-channel-interference",
+    "domain": 5,
+    "id": "e0a8bc9e2655"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Why can't co-channel interference be fixed the way thermal noise can, by simply increasing the transmitter's carrier power?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because higher power always reduces range"
+      },
+      {
+        "letter": "B",
+        "text": "Because increasing the desired signal's power also increases the interference it causes to neighboring co-channel cells, so the interference scales right along with the desired signal"
+      },
+      {
+        "letter": "C",
+        "text": "Because transmitters have a hard legal power cap that can never be raised"
+      },
+      {
+        "letter": "D",
+        "text": "Because co-channel interference isn't actually related to transmit power at all"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Thermal noise is a fixed background level independent of your signal, so boosting your signal power genuinely improves your SNR. But raising a cell's transmit power also raises the interference that same signal causes in its co-channel neighbors — the interferer and the desired signal scale together, so the S/I ratio doesn't actually improve the way S/N would.",
+    "topic": "co-channel-interference",
+    "domain": 5,
+    "id": "9a4ae290448b"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "For a hexagonal cell layout, the co-channel reuse ratio is Q = D/R = {{c1::√(3N)}}, where D is the reuse distance, R is the cell radius, and N is the cluster size.",
+    "extra": "This single formula ties cluster-size choice directly to interference/quality performance.",
+    "topic": "signal-to-interference-ratio",
+    "domain": 5,
+    "id": "7e2b5d87530f"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "A {{c1::small}} value of Q gives larger system capacity (small cluster size N), while a {{c2::large}} value of Q improves transmission quality by reducing co-channel interference — a fundamental design trade-off.",
+    "extra": "Cellular system design is essentially the art of picking a Q (via N) that balances these two competing goals.",
+    "topic": "signal-to-interference-ratio",
+    "domain": 5,
+    "id": "c49c004bb5ae"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The average received power at distance d from a transmitter falls off approximately as {{c1::d⁻ⁿ}}, where n is the path loss exponent, typically ranging between {{c2::2 and 4}} in urban cellular systems.",
+    "extra": "n=2 corresponds to ideal free-space propagation; real environments push n higher due to obstructions.",
+    "topic": "signal-to-interference-ratio",
+    "domain": 5,
+    "id": "67d8599b5c75"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>A network engineer increases the cluster size N from 4 to 12 to improve call quality. What happens to Q = √(3N) and to the resulting signal-to-interference ratio?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Q decreases, and S/I gets worse"
+      },
+      {
+        "letter": "B",
+        "text": "Q increases, and S/I improves, since co-channel cells are now farther apart relative to cell radius"
+      },
+      {
+        "letter": "C",
+        "text": "Q stays exactly the same regardless of N"
+      },
+      {
+        "letter": "D",
+        "text": "Q increases but S/I is unrelated to Q"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Q = √(3N) grows with N, so a larger cluster size directly increases the reuse ratio D/R — co-channel cells end up spaced farther apart relative to cell size, which reduces the interference power reaching the desired cell and raises S/I. This is the exact quality side of the capacity-vs-quality trade-off from choosing cluster size.",
+    "topic": "signal-to-interference-ratio",
+    "domain": 5,
+    "id": "38b5b5d06bbe"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Path loss exponent n=4 is typical in dense urban environments while n=2 corresponds to free-space (unobstructed) propagation. Physically, why is n larger in a dense urban environment?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because urban areas have more base stations"
+      },
+      {
+        "letter": "B",
+        "text": "Because buildings, reflections, and obstructions cause signal power to attenuate with distance faster than the simple inverse-square free-space law"
+      },
+      {
+        "letter": "C",
+        "text": "Because urban base stations transmit less power"
+      },
+      {
+        "letter": "D",
+        "text": "Path loss exponent doesn't depend on environment at all"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Free-space propagation (n=2) is the idealized inverse-square law with no obstructions. Real urban environments add multipath, reflection, diffraction, and shadowing from buildings, all of which cause received power to drop off faster with distance than free space predicts — captured by pushing n higher, toward 3–4.",
+    "topic": "signal-to-interference-ratio",
+    "domain": 5,
+    "id": "c52a0ff830df"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "{{c1::Cell splitting}} is the process of subdividing a congested cell into smaller cells (each with its own base station), increasing capacity by increasing how many times channels can be reused per unit area.",
+    "extra": "It's essentially a rescaling of the existing cluster geometry, not a redesign of the frequency reuse plan.",
+    "topic": "cell-splitting",
+    "domain": 5,
+    "id": "1ad09233022c"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "When a cell of radius R is split into microcells of half that radius, the new base stations' transmit power must be {{c1::reduced}} so that the received power at the new, smaller cell boundary matches the received power at the old cell boundary — preserving the frequency reuse plan.",
+    "extra": "Matching boundary received power is what keeps the interference behavior identical to before the split.",
+    "topic": "cell-splitting",
+    "domain": 5,
+    "id": "3e81fb141fee"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Why must cell splitting keep the co-channel reuse ratio D/R unchanged, rather than just shrinking R while leaving D fixed?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "D/R has no effect on interference so it doesn't matter"
+      },
+      {
+        "letter": "B",
+        "text": "D/R governs the co-channel interference level (via Q); keeping it fixed while rescaling R (and D) preserves interference performance while packing in more, smaller cells for higher capacity"
+      },
+      {
+        "letter": "C",
+        "text": "Because D/R must always equal exactly 1"
+      },
+      {
+        "letter": "D",
+        "text": "Because regulations fix D/R by law"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Q = D/R is what determines the S/I ratio and thus call quality. Cell splitting is designed to be a pure rescaling — shrink R and D by the same factor — so the interference performance (Q, and therefore S/I) stays exactly as good as before, while the smaller cells alone deliver the capacity gain.",
+    "topic": "cell-splitting",
+    "domain": 5,
+    "id": "1762639ebf9e"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "{{c1::Sectoring}} reduces co-channel interference by replacing a single omnidirectional antenna with several directional antennas, each covering only a sector of the cell (commonly three 120° or six 60° sectors).",
+    "extra": "Directional antennas focus energy away from most of the surrounding co-channel cells, which is what cuts interference.",
+    "topic": "sectoring",
+    "domain": 5,
+    "id": "b81457580c32"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "A key advantage of sectoring is that it lets planners reduce the {{c1::cluster size N}} while still keeping interference acceptable, since each interfering neighbor now only 'sees' a fraction of the cell.",
+    "extra": "Smaller N with acceptable interference means more capacity — sectoring buys back some of what a smaller cluster size would otherwise cost in quality.",
+    "topic": "sectoring",
+    "domain": 5,
+    "id": "837fde55c700"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>What is the main disadvantage of sectoring, as described in the lecture?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "It has no meaningful disadvantage"
+      },
+      {
+        "letter": "B",
+        "text": "Loss of trunking efficiency, since channels are now split into smaller per-sector pools rather than shared across the whole cell"
+      },
+      {
+        "letter": "C",
+        "text": "It always increases co-channel interference"
+      },
+      {
+        "letter": "D",
+        "text": "It makes handoff between sectors impossible"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Trunking efficiency improves when more channels are pooled together (fewer, bigger pools serve traffic more efficiently than many small ones) — sectoring works against this by dividing a cell's channels into smaller per-sector subsets, which is exactly the efficiency loss the lecture flags as sectoring's cost.",
+    "topic": "sectoring",
+    "domain": 5,
+    "id": "53fbe37ab503"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The lecture lists four main techniques for increasing cellular capacity: adding new channels, {{c1::frequency borrowing}}, {{c2::cell splitting}}, and {{c3::cell sectoring}}.",
+    "extra": "These range from the simplest (activate unused spectrum) to the most structural (redesign the cell layout).",
+    "topic": "capacity-improvement-techniques",
+    "domain": 5,
+    "id": "9a8e735e187c"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>A newly-launched network with mostly unused spectrum needs a quick, low-effort capacity boost before congestion actually appears. Which technique fits best, and why?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Cell splitting, since it always requires new base station sites first"
+      },
+      {
+        "letter": "B",
+        "text": "Adding new channels, since a newly-launched system typically doesn't use its full allotted spectrum yet, so growth can be managed by activating more of it"
+      },
+      {
+        "letter": "C",
+        "text": "Sectoring, since it requires no infrastructure changes"
+      },
+      {
+        "letter": "D",
+        "text": "Frequency borrowing, since it permanently reassigns channels between cells"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The lecture notes that at rollout, a system typically doesn't use its full allotted channel set — so the cheapest first lever for growth is simply activating more of that already-available spectrum, before resorting to structural changes like splitting or sectoring.",
+    "topic": "capacity-improvement-techniques",
+    "domain": 5,
+    "id": "f36412843c73"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The handoff margin Δ = Pr(handoff threshold) − Pr(minimum usable) must be chosen carefully: too large causes {{c1::unnecessary handoffs}} burdening the MSC, while too small risks {{c2::a dropped call}} before handoff completes.",
+    "extra": "Δ is a tuning parameter that balances MSC load against call-continuity risk.",
+    "topic": "handoff-strategies",
+    "domain": 5,
+    "id": "df79f1a4d072"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The time a call can be maintained within a single cell without a handoff is called the {{c1::dwell time}}.",
+    "extra": "Dwell time depends on propagation, interference, distance from the base station, and other time-varying effects.",
+    "topic": "handoff-strategies",
+    "domain": 5,
+    "id": "89f214b72462"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Modern digital systems like GSM use a smaller handoff margin Δ (0-6 dB) than older analog systems (6-12 dB). What made this possible?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Digital signals don't need any margin at all"
+      },
+      {
+        "letter": "B",
+        "text": "Faster handoff execution — the mobile assists in choosing candidates, completing the handoff in 1-2 seconds instead of ~10, leaving less time for the signal to degrade before the handoff finishes"
+      },
+      {
+        "letter": "C",
+        "text": "GSM cells are physically larger, so less margin is needed"
+      },
+      {
+        "letter": "D",
+        "text": "Digital systems don't perform handoffs"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Δ exists to guarantee enough time to complete a handoff before the signal drops below usability. If the handoff itself gets much faster (mobile-assisted handoff cutting execution from ~10s to ~1-2s), you need less of a safety cushion to still finish in time — hence the smaller Δ in modern digital systems.",
+    "topic": "handoff-strategies",
+    "domain": 5,
+    "id": "12a584d6de5e"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "{{c1::Call dropping probability}} is the probability that a call is terminated due to a handoff, while {{c2::handoff blocking probability}} is the probability that a handoff itself cannot be completed.",
+    "extra": "These are two distinct failure modes: one loses the call outright, the other simply fails to hand it off (which may then cause a drop).",
+    "topic": "handoff-performance-metrics",
+    "domain": 5,
+    "id": "cd6aa3e1444c"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Which handoff metric specifically measures the risk that a handoff happens while reception conditions are already inadequate — i.e. the handoff was executed too late or too poorly to actually help?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Rate of handoff"
+      },
+      {
+        "letter": "B",
+        "text": "Probability of unsuccessful handoff"
+      },
+      {
+        "letter": "C",
+        "text": "Cell blocking probability"
+      },
+      {
+        "letter": "D",
+        "text": "Interruption duration"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "'Probability of unsuccessful handoff' is defined precisely as a handoff being executed under inadequate reception conditions — distinct from handoff blocking (can't even attempt it) or call dropping (loses the call entirely); it specifically captures a poorly-timed or poorly-executed handoff attempt.",
+    "topic": "handoff-performance-metrics",
+    "domain": 5,
+    "id": "cae5ebe83679"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "The {{c1::umbrella cell}} approach co-locates a large, high-power cell with smaller microcells (using different antenna heights/power) so high-speed users get large-cell coverage with fewer handoffs, while pedestrians get microcell coverage.",
+    "extra": "The base station can hand a decelerating high-speed user down into the co-located microcell without MSC intervention.",
+    "topic": "practical-handoff-issues",
+    "domain": 5,
+    "id": "96eecae251f0"
+  },
+  {
+    "type": "cloze",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "text": "{{c1::Cell dragging}} occurs when a slow-moving user with a strong line-of-sight signal keeps their signal above the handoff threshold well beyond the cell's intended range, delaying a needed handoff and creating interference/traffic problems.",
+    "extra": "It's fixed by carefully tuning handoff thresholds and radio coverage parameters, not by changing the user's behavior.",
+    "topic": "practical-handoff-issues",
+    "domain": 5,
+    "id": "da40091a7f84"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>Why does the umbrella cell approach specifically target the problem of high-speed vehicles passing through many small cells?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "Because high-speed users don't actually need any coverage"
+      },
+      {
+        "letter": "B",
+        "text": "A fast-moving user in a field of small microcells would trigger frequent handoffs in quick succession, burdening the MSC; keeping such users on a larger umbrella cell avoids most of those handoffs"
+      },
+      {
+        "letter": "C",
+        "text": "Because umbrella cells only work for pedestrian users"
+      },
+      {
+        "letter": "D",
+        "text": "Because high-speed users are always given priority billing"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Handoff frequency scales with how fast a user crosses cell boundaries — in a field of small microcells, a fast vehicle would cross many boundaries per minute, generating a handoff storm the MSC has to process. Placing such users on a big umbrella cell means far fewer boundary crossings, and thus far fewer handoffs, for the same physical travel distance.",
+    "topic": "practical-handoff-issues",
+    "domain": 5,
+    "id": "0272d509f3b5"
+  },
+  {
+    "type": "mcq",
+    "deck": "Wireless Communication Systems",
+    "tags": [
+      "lec2"
+    ],
+    "question": "<p>How does cell dragging create a problem even though the user's own call quality (signal strength at the base station) remains fine throughout?</p>",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "It doesn't create any real problem"
+      },
+      {
+        "letter": "B",
+        "text": "The user has physically moved deep into a neighboring cell's territory while still nominally being served by the original, distant base station, creating interference and traffic-management issues for that neighboring cell"
+      },
+      {
+        "letter": "C",
+        "text": "It only affects billing accuracy"
+      },
+      {
+        "letter": "D",
+        "text": "Cell dragging only happens to stationary users"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The lecture's core point is that a strong LOS signal can stay above the handoff threshold long after the user has left the intended coverage area — so even though the user's own link looks fine, they're now occupying resources far from where they should logically be served, interfering with and complicating traffic management in the cell they've actually wandered into.",
+    "topic": "practical-handoff-issues",
+    "domain": 5,
+    "id": "daa39f3ee9ed"
+  }
+]

@@ -1,0 +1,197 @@
+[
+  {
+    "domain": 1,
+    "title": "Wireless Communication Fundamentals",
+    "count": 22,
+    "topics": [
+      {
+        "slug": "applications-overview",
+        "title": "Applications Overview",
+        "count": 3
+      },
+      {
+        "slug": "cellular-generations",
+        "title": "Cellular Generations",
+        "count": 3
+      },
+      {
+        "slug": "duplexing-modes",
+        "title": "Duplexing Modes",
+        "count": 3
+      },
+      {
+        "slug": "history-evolution-wireless",
+        "title": "History Evolution Wireless",
+        "count": 3
+      },
+      {
+        "slug": "paging-systems",
+        "title": "Paging Systems",
+        "count": 2
+      },
+      {
+        "slug": "radio-frequency-spectrum",
+        "title": "Radio Frequency Spectrum",
+        "count": 5
+      },
+      {
+        "slug": "wireless-system-elements",
+        "title": "Wireless System Elements",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "domain": 2,
+    "title": "Antennas & Propagation",
+    "count": 19,
+    "topics": [
+      {
+        "slug": "antenna-basics",
+        "title": "Antenna Basics",
+        "count": 3
+      },
+      {
+        "slug": "antenna-directivity",
+        "title": "Antenna Directivity",
+        "count": 2
+      },
+      {
+        "slug": "antenna-efficiency",
+        "title": "Antenna Efficiency",
+        "count": 2
+      },
+      {
+        "slug": "antenna-gain",
+        "title": "Antenna Gain",
+        "count": 2
+      },
+      {
+        "slug": "antenna-types",
+        "title": "Antenna Types",
+        "count": 3
+      },
+      {
+        "slug": "effective-aperture",
+        "title": "Effective Aperture",
+        "count": 2
+      },
+      {
+        "slug": "radiation-patterns",
+        "title": "Radiation Patterns",
+        "count": 3
+      },
+      {
+        "slug": "wavelength-frequency-relation",
+        "title": "Wavelength Frequency Relation",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "domain": 3,
+    "title": "Cellular Network Architecture",
+    "count": 18,
+    "topics": [
+      {
+        "slug": "cellular-concept-origins",
+        "title": "Cellular Concept Origins",
+        "count": 4
+      },
+      {
+        "slug": "cellular-system-operation",
+        "title": "Cellular System Operation",
+        "count": 3
+      },
+      {
+        "slug": "channel-types",
+        "title": "Channel Types",
+        "count": 4
+      },
+      {
+        "slug": "network-elements-definitions",
+        "title": "Network Elements Definitions",
+        "count": 5
+      },
+      {
+        "slug": "pstn-basics",
+        "title": "Pstn Basics",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "domain": 4,
+    "title": "Cell Design & Frequency Reuse",
+    "count": 15,
+    "topics": [
+      {
+        "slug": "cell-shape-geometry",
+        "title": "Cell Shape Geometry",
+        "count": 3
+      },
+      {
+        "slug": "channel-assignment-strategies",
+        "title": "Channel Assignment Strategies",
+        "count": 4
+      },
+      {
+        "slug": "cluster-size-formula",
+        "title": "Cluster Size Formula",
+        "count": 4
+      },
+      {
+        "slug": "frequency-reuse-fundamentals",
+        "title": "Frequency Reuse Fundamentals",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "domain": 5,
+    "title": "Capacity, Interference & Handoff",
+    "count": 25,
+    "topics": [
+      {
+        "slug": "capacity-improvement-techniques",
+        "title": "Capacity Improvement Techniques",
+        "count": 2
+      },
+      {
+        "slug": "cell-splitting",
+        "title": "Cell Splitting",
+        "count": 3
+      },
+      {
+        "slug": "co-channel-interference",
+        "title": "Co Channel Interference",
+        "count": 3
+      },
+      {
+        "slug": "handoff-performance-metrics",
+        "title": "Handoff Performance Metrics",
+        "count": 2
+      },
+      {
+        "slug": "handoff-strategies",
+        "title": "Handoff Strategies",
+        "count": 3
+      },
+      {
+        "slug": "practical-handoff-issues",
+        "title": "Practical Handoff Issues",
+        "count": 4
+      },
+      {
+        "slug": "sectoring",
+        "title": "Sectoring",
+        "count": 3
+      },
+      {
+        "slug": "signal-to-interference-ratio",
+        "title": "Signal To Interference Ratio",
+        "count": 5
+      }
+    ]
+  }
+]

@@ -3,5 +3,10 @@
     "slug": "robotics",
     "title": "CPEN 424 — Robotics",
     "shortLabel": "CPEN 424"
+  },
+  {
+    "slug": "wireless-comm",
+    "title": "Wireless Communication Systems",
+    "shortLabel": "Wireless Comm"
   }
 ]
