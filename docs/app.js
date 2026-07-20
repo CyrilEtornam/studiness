@@ -259,6 +259,13 @@
     });
   }
 
+  function courseName(c) {
+    // Prefer the course name over the code, e.g. "CPEN 424 — Robotics" -> "Robotics".
+    var t = c.title || c.shortLabel || c.slug;
+    var i = t.indexOf('—');
+    return i >= 0 ? t.slice(i + 1).trim() : t;
+  }
+
   function renderCourseBar() {
     var bar = document.getElementById('course-bar');
     if (state.courses.length < 2) {
@@ -270,7 +277,7 @@
     bar.innerHTML = state.courses.map(function (c) {
       var current = c.slug === state.course;
       return '<button class="course-chip' + (current ? ' is-active' : '') + '" data-slug="' + escapeAttr(c.slug) + '"' +
-        (current ? ' aria-current="page"' : '') + '>' + escapeHtml(c.shortLabel || c.title) + '</button>';
+        (current ? ' aria-current="page"' : '') + '>' + escapeHtml(courseName(c)) + '</button>';
     }).join('');
   }
 
