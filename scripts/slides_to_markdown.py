@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert a course's lecture-slide PDFs (sources/<slug>/*.pdf) to markdown
+"""Convert a course's lecture slides (sources/<slug>/*.pdf, *.pptx) to markdown
 (staging/<slug>/*.md) via the `markitdown` CLI. Mechanical step only — no
 card drafting happens here, see staging/README.md for that step.
 
@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+SLIDE_EXTENSIONS = ("*.pdf", "*.pptx")
 
 
 def main():
@@ -23,17 +24,17 @@ def main():
     if not src_dir.is_dir():
         sys.exit(f"No such source folder: {src_dir}")
 
-    pdfs = sorted(src_dir.glob("*.pdf"))
-    if not pdfs:
-        sys.exit(f"No PDFs found in {src_dir}")
+    slides = sorted(f for pattern in SLIDE_EXTENSIONS for f in src_dir.glob(pattern))
+    if not slides:
+        sys.exit(f"No PDF/PPTX slides found in {src_dir}")
 
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    for pdf in pdfs:
-        out_path = out_dir / (pdf.stem + ".md")
-        print(f"{pdf.name} -> {out_path.relative_to(ROOT)}")
+    for slide in slides:
+        out_path = out_dir / (slide.stem + ".md")
+        print(f"{slide.name} -> {out_path.relative_to(ROOT)}")
         result = subprocess.run(
-            ["markitdown", str(pdf), "-o", str(out_path)],
+            ["markitdown", str(slide), "-o", str(out_path)],
             capture_output=True, text=True
         )
         if result.returncode != 0:
